@@ -20,7 +20,6 @@
 		4AAAFB7925994DCB00FD8EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */; };
 		4AAAFB7A25994DCB00FD8EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */; };
 		4AAAFB8B2599596D00FD8EAD /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAAFB8A2599596D00FD8EAD /* NetworkExtension.framework */; };
-		4AAAFB8E2599596D00FD8EAD /* SimplePushProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB8D2599596D00FD8EAD /* SimplePushProvider.swift */; };
 		4AAAFBA725995BAB00FD8EAD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFBA625995BAB00FD8EAD /* SettingsView.swift */; };
 		4AAAFBA825995BAB00FD8EAD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFBA625995BAB00FD8EAD /* SettingsView.swift */; };
 		4ABC440D2574869C0078378C /* AudioListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC440C2574869C0078378C /* AudioListener.swift */; };
@@ -108,9 +107,6 @@
 		4AAAFB8325994DE000FD8EAD /* Turncast.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Turncast.entitlements; sourceTree = "<group>"; };
 		4AAAFB892599596D00FD8EAD /* TurncastNetworkExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TurncastNetworkExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AAAFB8A2599596D00FD8EAD /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
-		4AAAFB8D2599596D00FD8EAD /* SimplePushProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePushProvider.swift; sourceTree = "<group>"; };
-		4AAAFB8F2599596D00FD8EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4AAAFB902599596D00FD8EAD /* TurncastNetworkExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TurncastNetworkExtension.entitlements; sourceTree = "<group>"; };
 		4AAAFBA625995BAB00FD8EAD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4ABC440C2574869C0078378C /* AudioListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListener.swift; sourceTree = "<group>"; };
 		4ABC440F257486AE0078378C /* PlayStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStatus.swift; sourceTree = "<group>"; };
@@ -189,7 +185,6 @@
 				4AAAFB6225994DC900FD8EAD /* Shared */,
 				4AAAFB6B25994DCB00FD8EAD /* iOS */,
 				4AAAFB7225994DCB00FD8EAD /* macOS */,
-				4AAAFB8C2599596D00FD8EAD /* TurncastNetworkExtension */,
 				4AE338AF259E8A6700F034A1 /* Turncast */,
 				4A872B8E24565775002A0523 /* Products */,
 				4AAAFB542599493E00FD8EAD /* Frameworks */,
@@ -280,16 +275,6 @@
 				4AAAFB7425994DCB00FD8EAD /* macOS.entitlements */,
 			);
 			path = macOS;
-			sourceTree = "<group>";
-		};
-		4AAAFB8C2599596D00FD8EAD /* TurncastNetworkExtension */ = {
-			isa = PBXGroup;
-			children = (
-				4AAAFB8D2599596D00FD8EAD /* SimplePushProvider.swift */,
-				4AAAFB8F2599596D00FD8EAD /* Info.plist */,
-				4AAAFB902599596D00FD8EAD /* TurncastNetworkExtension.entitlements */,
-			);
-			path = TurncastNetworkExtension;
 			sourceTree = "<group>";
 		};
 		4AE338AF259E8A6700F034A1 /* Turncast */ = {
@@ -574,7 +559,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AAAFB8E2599596D00FD8EAD /* SimplePushProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
