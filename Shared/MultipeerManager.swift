@@ -67,7 +67,9 @@ extension MultipeerManager: MCNearbyServiceAdvertiserDelegate {
         }
         
         // start playing
+        #if os(tvOS)
         streamSource?.playing = true
+        #endif
         
         invitationHandler(true, session)
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { [weak self] in

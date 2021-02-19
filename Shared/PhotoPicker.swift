@@ -14,7 +14,7 @@ import SwiftUI
 // From https://developer.apple.com/forums/thread/651743
 struct PhotoPicker: UIViewControllerRepresentable {
     let configuration: PHPickerConfiguration
-    @Binding var isPresented: Bool
+    @Binding var currentPresentation: CurrentPresentation?
     @Binding var albumImage: Image
     @Binding var albumImageData: CGImage
     
@@ -38,7 +38,7 @@ struct PhotoPicker: UIViewControllerRepresentable {
         }
         func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
             print(results)
-            parent.isPresented = false // Set isPresented to false because picking has finished.
+            parent.currentPresentation = nil // picking has finished
             if let result = results.first {
                 result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] (object, error) in
                     guard let image = object as? UIImage else { return }

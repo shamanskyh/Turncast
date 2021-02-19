@@ -7,20 +7,30 @@
 //
 
 import AVFoundation
+import MediaPlayer
 import PhotosUI
 import SwiftUI
+
+enum CurrentPresentation: String, Identifiable {
+    case photoPicker = "PhotoPicker"
+    case mediaPicker = "MediaPicker"
+    
+    var id: String {
+        return self.rawValue
+    }
+}
 
 struct ContentView: View {
     
     @StateObject var streamSource = StreamSource()
     @StateObject var metadataStore = MetadataStore()
-    @State var presentingPhotoPicker: Bool = false
+    @State var currentPresentation: CurrentPresentation? = nil
     
     let multipeerManager = MultipeerManager.shared
     
     var body: some View {
         VStack(alignment: .center) {
-            if metadataStore.canEdit {
+            if metadataStore.canEdit && UIDevice.current.userInterfaceIdiom != .tv {
                 ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
                     metadataStore.albumImage
                         .resizable()
@@ -30,7 +40,7 @@ struct ContentView: View {
                         .padding()
                     #if !os(tvOS)
                     Button("Upload") {
-                        presentingPhotoPicker = true
+                        currentPresentation = .photoPicker
                     }.offset(x: 0.0, y: -40.0)
                     #endif
                 }
@@ -45,6 +55,11 @@ struct ContentView: View {
                             .multilineTextAlignment(.center)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding([.leading, .trailing], 40)
+                        Button(action: {
+                            currentPresentation = .mediaPicker
+                        }) {
+                            Image(systemName: "music.note.list")
+                        }.disabled(mediaAccessDenied).padding(.top)
                     }
                 }
                 #elseif os(tvOS)
@@ -76,9 +91,9 @@ struct ContentView: View {
                             self.metadataStore.canEdit = true
                         } label: {
                             Image(systemName: "pencil")
-                        }
+                        }.padding(.top)
                     }
-                }.offset(x: 30.0)
+                }
                 #endif
             }
             HStack {
@@ -97,13 +112,19 @@ struct ContentView: View {
         }.tabItem {
             Image(systemName: "play")
             Text("Now Playing")
-        }.sheet(isPresented: $presentingPhotoPicker) {
+        }.sheet(item: $currentPresentation) { presentation in
             #if !os(tvOS)
-            let configuration = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
-            PhotoPicker(configuration: configuration,
-                        isPresented: $presentingPhotoPicker,
-                        albumImage: $metadataStore.albumImage,
-                        albumImageData: $metadataStore.albumImageData)
+            switch presentation {
+            case .photoPicker:
+                let configuration = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
+                PhotoPicker(configuration: configuration,
+                            currentPresentation: $currentPresentation,
+                            albumImage: $metadataStore.albumImage,
+                            albumImageData: $metadataStore.albumImageData)
+            case .mediaPicker:
+                MediaPicker(currentPresentation: $currentPresentation,
+                            metadataStore: metadataStore)
+            }
             #endif
         }.onAppear {
             #if os(tvOS)
@@ -113,6 +134,9 @@ struct ContentView: View {
             multipeerManager.metadataStore = metadataStore
             multipeerManager.streamSource = streamSource
             streamSource.multipeerManager = multipeerManager
+            #if HOME_USE
+            MPMediaPickerController.preheatMediaPicker()
+            #endif
         }
     }
     
@@ -130,6 +154,10 @@ struct ContentView: View {
         #else
         return 200.0
         #endif
+    }
+    
+    var mediaAccessDenied: Bool {
+        return MPMediaLibrary.authorizationStatus() == .denied
     }
     
     var playStopButton: some View {

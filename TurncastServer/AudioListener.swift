@@ -342,6 +342,19 @@ extension AudioListener: AVCaptureFileOutputRecordingDelegate {
                         }
                     }
                     
+                    // update image and metadata just in case
+                    let encoder = JSONEncoder()
+                    if let metadataData = try? encoder.encode(metadata),
+                       let urlForMetadata = try? URLHelpers.urlForAlbumMetadata(artist: albumArtist, album: albumTitle),
+                       let urlForImageData = try? URLHelpers.urlForAlbumImage(artist: albumArtist, album: albumTitle) {
+                        do {
+                            try metadataData.write(to: urlForMetadata)
+                            try albumImageData.write(to: urlForImageData)
+                        } catch {
+                            print(error)
+                        }
+                    }
+                    
                     resetMetadata()
                     trainAndSaveClassifier()
                 }

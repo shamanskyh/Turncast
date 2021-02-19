@@ -13,13 +13,15 @@
 		4A872B9824565777002A0523 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A872B9724565777002A0523 /* Preview Assets.xcassets */; };
 		4A872B9B24565777002A0523 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A872B9924565777002A0523 /* Main.storyboard */; };
 		4A8A9AE225A11E7900116AD4 /* IPAddressHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A9AE125A11E7900116AD4 /* IPAddressHelper.swift */; };
+		4AA82D7425DB813A00354BF2 /* MediaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA82D7325DB813A00354BF2 /* MediaPicker.swift */; };
+		4AA82DA125DBA25B00354BF2 /* CupertinoJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 4AA82DA025DBA25B00354BF2 /* CupertinoJWT */; };
+		4AA82DA625DBA28100354BF2 /* CupertinoJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 4AA82DA525DBA28100354BF2 /* CupertinoJWT */; };
 		4AAAFB7525994DCB00FD8EAD /* TurncastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */; };
 		4AAAFB7625994DCB00FD8EAD /* TurncastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */; };
 		4AAAFB7725994DCB00FD8EAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6425994DC900FD8EAD /* ContentView.swift */; };
 		4AAAFB7825994DCB00FD8EAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6425994DC900FD8EAD /* ContentView.swift */; };
 		4AAAFB7925994DCB00FD8EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */; };
 		4AAAFB7A25994DCB00FD8EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */; };
-		4AAAFB8B2599596D00FD8EAD /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAAFB8A2599596D00FD8EAD /* NetworkExtension.framework */; };
 		4AAAFBA725995BAB00FD8EAD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFBA625995BAB00FD8EAD /* SettingsView.swift */; };
 		4AAAFBA825995BAB00FD8EAD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFBA625995BAB00FD8EAD /* SettingsView.swift */; };
 		4ABC440D2574869C0078378C /* AudioListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC440C2574869C0078378C /* AudioListener.swift */; };
@@ -96,6 +98,8 @@
 		4A872B9C24565777002A0523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A872B9D24565777002A0523 /* TurncastServer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TurncastServer.entitlements; sourceTree = "<group>"; };
 		4A8A9AE125A11E7900116AD4 /* IPAddressHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressHelper.swift; sourceTree = "<group>"; };
+		4AA82D7325DB813A00354BF2 /* MediaPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaPicker.swift; path = iOS/MediaPicker.swift; sourceTree = SOURCE_ROOT; };
+		4AA82D7E25DB93AE00354BF2 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurncastApp.swift; sourceTree = "<group>"; };
 		4AAAFB6425994DC900FD8EAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,7 +109,6 @@
 		4AAAFB7325994DCB00FD8EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AAAFB7425994DCB00FD8EAD /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		4AAAFB8325994DE000FD8EAD /* Turncast.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Turncast.entitlements; sourceTree = "<group>"; };
-		4AAAFB892599596D00FD8EAD /* TurncastNetworkExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TurncastNetworkExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AAAFB8A2599596D00FD8EAD /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		4AAAFBA625995BAB00FD8EAD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4ABC440C2574869C0078378C /* AudioListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListener.swift; sourceTree = "<group>"; };
@@ -136,6 +139,7 @@
 			files = (
 				4AC5CE52259925430045B371 /* HaishinKit in Frameworks */,
 				4AE33852259A5E1100F034A1 /* Logboard in Frameworks */,
+				4AA82DA125DBA25B00354BF2 /* CupertinoJWT in Frameworks */,
 				4AE33917259FD7E300F034A1 /* MultipeerMessages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA82DA625DBA28100354BF2 /* CupertinoJWT in Frameworks */,
 				4AE3392B259FDE5900F034A1 /* MultipeerMessages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,14 +158,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AE3392D259FDE5F00F034A1 /* MultipeerMessages in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4AAAFB862599596D00FD8EAD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4AAAFB8B2599596D00FD8EAD /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +194,6 @@
 				4A872B8D24565775002A0523 /* Turncast Server.app */,
 				4AAAFB6A25994DCB00FD8EAD /* Turncast.app */,
 				4AAAFB7125994DCB00FD8EAD /* Turncast.app */,
-				4AAAFB892599596D00FD8EAD /* TurncastNetworkExtension.appex */,
 				4AE338AE259E8A6700F034A1 /* Turncast (tvOS).app */,
 			);
 			name = Products;
@@ -256,6 +252,7 @@
 				4AE338F4259FC38B00F034A1 /* PhotoPicker.swift */,
 				4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */,
 				4AD6362525D3B03C00133C39 /* URLTester.swift */,
+				4AA82D7E25DB93AE00354BF2 /* BridgingHeader.h */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -263,6 +260,7 @@
 		4AAAFB6B25994DCB00FD8EAD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4AA82D7325DB813A00354BF2 /* MediaPicker.swift */,
 				4AAAFB6C25994DCB00FD8EAD /* Info.plist */,
 			);
 			path = iOS;
@@ -319,6 +317,7 @@
 				4AC5CE51259925430045B371 /* HaishinKit */,
 				4AE33851259A5E1100F034A1 /* Logboard */,
 				4AE33916259FD7E300F034A1 /* MultipeerMessages */,
+				4AA82DA025DBA25B00354BF2 /* CupertinoJWT */,
 			);
 			productName = TurntableMonitor;
 			productReference = 4A872B8D24565775002A0523 /* Turncast Server.app */;
@@ -341,6 +340,7 @@
 			name = "Turncast (iOS)";
 			packageProductDependencies = (
 				4AE3392A259FDE5900F034A1 /* MultipeerMessages */,
+				4AA82DA525DBA28100354BF2 /* CupertinoJWT */,
 			);
 			productName = "Turncast (iOS)";
 			productReference = 4AAAFB6A25994DCB00FD8EAD /* Turncast.app */;
@@ -366,25 +366,6 @@
 			productName = "Turncast (macOS)";
 			productReference = 4AAAFB7125994DCB00FD8EAD /* Turncast.app */;
 			productType = "com.apple.product-type.application";
-		};
-		4AAAFB882599596D00FD8EAD /* TurncastNetworkExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4AAAFB942599596D00FD8EAD /* Build configuration list for PBXNativeTarget "TurncastNetworkExtension" */;
-			buildPhases = (
-				4AAAFB852599596D00FD8EAD /* Sources */,
-				4AAAFB862599596D00FD8EAD /* Frameworks */,
-				4AAAFB872599596D00FD8EAD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TurncastNetworkExtension;
-			packageProductDependencies = (
-			);
-			productName = TurncastNetworkExtension;
-			productReference = 4AAAFB892599596D00FD8EAD /* TurncastNetworkExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 		4AE338AD259E8A6700F034A1 /* Turncast (tvOS) */ = {
 			isa = PBXNativeTarget;
@@ -426,9 +407,6 @@
 					4AAAFB7025994DCB00FD8EAD = {
 						CreatedOnToolsVersion = 12.3;
 					};
-					4AAAFB882599596D00FD8EAD = {
-						CreatedOnToolsVersion = 12.3;
-					};
 					4AE338AD259E8A6700F034A1 = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -446,6 +424,7 @@
 			packageReferences = (
 				4AC5CE50259925430045B371 /* XCRemoteSwiftPackageReference "HaishinKit" */,
 				4AE33850259A5E1100F034A1 /* XCRemoteSwiftPackageReference "Logboard" */,
+				4AA82D9F25DBA25B00354BF2 /* XCRemoteSwiftPackageReference "CupertinoJWT" */,
 			);
 			productRefGroup = 4A872B8E24565775002A0523 /* Products */;
 			projectDirPath = "";
@@ -455,7 +434,6 @@
 				4AAAFB6925994DCB00FD8EAD /* Turncast (iOS) */,
 				4AAAFB7025994DCB00FD8EAD /* Turncast (macOS) */,
 				4AE338AD259E8A6700F034A1 /* Turncast (tvOS) */,
-				4AAAFB882599596D00FD8EAD /* TurncastNetworkExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -484,13 +462,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AAAFB7A25994DCB00FD8EAD /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4AAAFB872599596D00FD8EAD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +501,7 @@
 			files = (
 				4AE338F5259FC38B00F034A1 /* PhotoPicker.swift in Sources */,
 				4AD6362625D3B03C00133C39 /* URLTester.swift in Sources */,
+				4AA82D7425DB813A00354BF2 /* MediaPicker.swift in Sources */,
 				4AE338ED259E98A100F034A1 /* MetadataStore.swift in Sources */,
 				4AAAFBA725995BAB00FD8EAD /* SettingsView.swift in Sources */,
 				4AAAFB7725994DCB00FD8EAD /* ContentView.swift in Sources */,
@@ -552,13 +524,6 @@
 				4AE338EE259E98A100F034A1 /* MetadataStore.swift in Sources */,
 				4AE3380E2599634700F034A1 /* StreamSource.swift in Sources */,
 				4AAAFB7625994DCB00FD8EAD /* TurncastApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4AAAFB852599596D00FD8EAD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,7 +709,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "TurncastServer/Preview\\ Content";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -771,7 +736,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "TurncastServer/Preview\\ Content";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -800,15 +765,22 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					HOME_USE,
+				);
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-DHOME_USE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = Turncast;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = Shared/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -830,9 +802,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = Turncast;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = Shared/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -888,51 +862,6 @@
 				PRODUCT_NAME = Turncast;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		4AAAFB952599596D00FD8EAD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TurncastNetworkExtension/TurncastNetworkExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5TXHQBF3Z;
-				INFOPLIST_FILE = TurncastNetworkExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast.TurncastNetworkExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		4AAAFB962599596D00FD8EAD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TurncastNetworkExtension/TurncastNetworkExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5TXHQBF3Z;
-				INFOPLIST_FILE = TurncastNetworkExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast.TurncastNetworkExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -1028,15 +957,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4AAAFB942599596D00FD8EAD /* Build configuration list for PBXNativeTarget "TurncastNetworkExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4AAAFB952599596D00FD8EAD /* Debug */,
-				4AAAFB962599596D00FD8EAD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4AE338BA259E8A6A00F034A1 /* Build configuration list for PBXNativeTarget "Turncast (tvOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1049,6 +969,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4AA82D9F25DBA25B00354BF2 /* XCRemoteSwiftPackageReference "CupertinoJWT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/terwanerik/CupertinoJWT.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.2;
+			};
+		};
 		4AC5CE50259925430045B371 /* XCRemoteSwiftPackageReference "HaishinKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/shogo4405/HaishinKit.swift";
@@ -1068,6 +996,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4AA82DA025DBA25B00354BF2 /* CupertinoJWT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AA82D9F25DBA25B00354BF2 /* XCRemoteSwiftPackageReference "CupertinoJWT" */;
+			productName = CupertinoJWT;
+		};
+		4AA82DA525DBA28100354BF2 /* CupertinoJWT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AA82D9F25DBA25B00354BF2 /* XCRemoteSwiftPackageReference "CupertinoJWT" */;
+			productName = CupertinoJWT;
+		};
 		4AAAFB5F25994AF200FD8EAD /* SimplePushKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SimplePushKit;
