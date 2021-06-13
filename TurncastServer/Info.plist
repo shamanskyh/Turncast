@@ -24,8 +24,6 @@
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2020 Harry Shamansky. All rights reserved.</string>
-	<key>NSMainStoryboardFile</key>
-	<string>Main</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Turncast Server accesses your audio input to detect when the turntable is playing and when it is stopped. </string>
 	<key>NSPrincipalClass</key>
@@ -34,5 +32,10 @@
 	<true/>
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

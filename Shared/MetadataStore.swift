@@ -65,6 +65,12 @@ class MetadataStore: ObservableObject {
         }
     }
     
+    var downloadingImage: Bool = false {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    
     func updateNowPlayingInfoCenter() {
         let artworkCGImage = albumImageData
         let artwork = MPMediaItemArtwork(boundsSize: CGSize(width: albumImageData.width, height: albumImageData.height)) { (size) -> UIImage in

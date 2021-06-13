@@ -23,23 +23,28 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     let sampleFileOutput = AVCaptureAudioFileOutput()
     
     @AppStorage("inputName") var inputName: String = "iMic"
-    @AppStorage("offThreshold") var offThreshold: Double = -40.0
-    @AppStorage("onThreshold") var onThreshold: Double = -45.0
-    @AppStorage("disconnectDelay") var disconnectDelay: Double = 600.0
+    @AppStorage("offThreshold") var offThreshold: Double = -47.0
+    @AppStorage("onThreshold") var onThreshold: Double = -30.0
+    @AppStorage("disconnectDelay") var disconnectDelay: Double = 1200.0
     @AppStorage("sampleLength") var sampleLength: Double = 5.0
-    @AppStorage("sampleDelay") var sampleDelay: Double = 8.0
-    @AppStorage("onLength") var onLength: Double = 1.0
+    @AppStorage("sampleDelay") var sampleDelay: Double = 10.0
+    @AppStorage("onLength") var onLength: Double = 2.0
     @AppStorage("offLength") var offLength: Double = 4.0
     @AppStorage("maxFiles") var maxFiles: Int = 8
+    @AppStorage("pathToAtvRemote") var pathToATVRemote: String = ""
+    @AppStorage("appleTVID") var appleTVID: String = ""
+    @AppStorage("appleTVCredentials") var appleTVCredentials: String = ""
     
     let sampleRate: Int = 8000
     @Published var connectionStatus = ConnectionStatus.disconnected
     @Published var averagePowerLevel: Float = Float.leastNormalMagnitude
     @Published var errorMessage: String? = nil
     @Published var training: Bool = false
+    @Published var downloadingImage: Bool = false
     var nextUIUpdateDate = Date()
     var onDate: Date?
     var offDate: Date?
+    var needsRetrain: Bool = false
     
     var captureDevice: AVCaptureDevice?
     var httpStream: HTTPStream?
@@ -55,6 +60,14 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
         case .waitingToRecognize:
             return false
         }
+    }
+    
+    func beginImageDownload() {
+        downloadingImage = true
+    }
+    
+    func endImageDownload() {
+        downloadingImage = false
     }
     
     internal var blockBroadcast = false
@@ -168,6 +181,13 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
             connectionStatus = .connected
         }
         
+        // connect to our apple tv if we have one
+        if !pathToATVRemote.isEmpty && !appleTVID.isEmpty && !appleTVCredentials.isEmpty {
+            AppleTVUtilities.openTurncast(atvRemotePath: pathToATVRemote,
+                                          appleTVID: appleTVID,
+                                          appleTVCredentials: appleTVCredentials)
+        }
+        
         // broadcast temporary data
         albumTitle = "Listening…"
         albumArtist = ""
@@ -198,8 +218,8 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
             stream.publish("turntable")
 
             httpService = HLSService(domain: "", type: "_http._tcp", name: "HaishinKit", port: 8080)
-            httpService?.startRunning()
             httpService?.addHTTPStream(stream)
+            httpService?.startRunning()
             
             connectionStatus = .connected
         } else {
@@ -224,16 +244,22 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     }
     
     func endStreaming() {
+        let service = httpService
+        let stream = httpStream
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(Int(disconnectDelay))) { [weak self] in
             guard let strongSelf = self else { return }
             if strongSelf.connectionStatus == .waitingToDisconnect {
-                if let stream = strongSelf.httpStream {
-                    strongSelf.httpService?.removeHTTPStream(stream)
-                    stream.dispose()
+                if let stream = stream {
+                    stream.attachAudio(nil)
+                    service?.removeHTTPStream(stream)
+                    service?.stopRunning()
+                    stream.publish(nil)
                 }
-                strongSelf.httpService?.stopRunning()
+                if strongSelf.needsRetrain {
+                    strongSelf.trainAndSaveClassifier()
+                    strongSelf.needsRetrain = false
+                }
                 strongSelf.httpStream = nil
-                strongSelf.httpService = nil
                 strongSelf.connectionStatus = .disconnected
             }
         }
@@ -315,8 +341,10 @@ extension AudioListener: AVCaptureFileOutputRecordingDelegate {
                     }
                     strongSelf.multipeerManager?.broadcast(message: confidence > 0.95 ? .canEdit(false) : .canEdit(true))
                 } else {
-                    // if we don't, open up the prompt to add metadata. Wait 10 seconds and re-sample.
+                    // if we don't, open up the prompt to add metadata.
                     strongSelf.recognitionStatus = .unknownAlbum
+                    strongSelf.albumTitle = Self.unknownAlbum
+                    strongSelf.albumArtist = Self.unknownArtist
                     strongSelf.multipeerManager?.broadcast(message: .canEdit(true))
                 }
             }
@@ -356,7 +384,7 @@ extension AudioListener: AVCaptureFileOutputRecordingDelegate {
                     }
                     
                     resetMetadata()
-                    trainAndSaveClassifier()
+                    needsRetrain = true
                 }
             case .unknownAlbum:
                 // new album - save the info. Should be fine if these directories already exist (like this is the b-side)
@@ -379,8 +407,7 @@ extension AudioListener: AVCaptureFileOutputRecordingDelegate {
                         }
                         
                         resetMetadata()
-                        
-                        trainAndSaveClassifier()
+                        needsRetrain = true
                     }
                 } else {
                     resetMetadata()

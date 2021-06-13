@@ -45,12 +45,30 @@ class MultipeerManager: NSObject {
     }
     
     func sendMessageToServer(message: MultipeerMessage) {
-        let encoder = JSONEncoder()
-        if let data = try? encoder.encode(message), let serverPeerID = serverPeerID {
-            do {
-                try session.send(data, toPeers: [serverPeerID], with: .reliable)
-            } catch {
-                print(error)
+        switch message {
+        case .imageData(let data):
+            DispatchQueue.global(qos: .background).async { [weak self] in
+                // store a local file
+                do {
+                    let temporaryDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(),
+                                                        isDirectory: true)
+                    let temporaryFilename = ProcessInfo().globallyUniqueString
+                    let temporaryFileURL = temporaryDirectoryURL.appendingPathComponent(temporaryFilename)
+                    try data.write(to: temporaryFileURL)
+                    guard let strongSelf = self, let serverPeerID = strongSelf.serverPeerID else { return }
+                    strongSelf.session.sendResource(at: temporaryFileURL, withName: "AlbumArt", toPeer: serverPeerID, withCompletionHandler: nil)
+                } catch {
+                    print(error)
+                }
+            }
+        default:
+            let encoder = JSONEncoder()
+            if let data = try? encoder.encode(message), let serverPeerID = serverPeerID {
+                do {
+                    try session.send(data, toPeers: [serverPeerID], with: .reliable)
+                } catch {
+                    print(error)
+                }
             }
         }
     }
@@ -92,11 +110,33 @@ extension MultipeerManager: MCSessionDelegate {
     }
     
     func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
-        // no-op
+        DispatchQueue.main.async { [weak self] in
+            self?.metadataStore?.downloadingImage = true
+        }
     }
     
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
-        // no-op
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.metadataStore?.downloadingImage = false
+            strongSelf.metadataStore?.blockUpdates = true
+            DispatchQueue.global(qos: .background).async {
+                guard let strongSelf = self else { return }
+                if let url = localURL,
+                   let data = try? Data(contentsOf: url),
+                   let uiImage = UIImage(data: data) {
+                    let swiftUIImage = Image(uiImage: uiImage)
+                    if let cgImage = uiImage.cgImage {
+                        DispatchQueue.main.sync {
+                            guard let strongSelf = self else { return }
+                            strongSelf.metadataStore?.albumImageData = cgImage
+                            strongSelf.metadataStore?.albumImage = swiftUIImage
+                        }
+                    }
+                }
+                strongSelf.metadataStore?.blockUpdates = false
+            }
+        }
     }
     
     func session(_ session: MCSession,
@@ -127,13 +167,20 @@ extension MultipeerManager: MCSessionDelegate {
                     strongSelf.metadataStore?.blockUpdates = false
                 case .imageData(let data):
                     strongSelf.metadataStore?.blockUpdates = true
-                    if let uiImage = UIImage(data: data) {
-                        strongSelf.metadataStore?.albumImage = Image(uiImage: uiImage)
-                        if let cgImage = uiImage.cgImage {
-                            strongSelf.metadataStore?.albumImageData = cgImage
+                    DispatchQueue.global(qos: .background).async {
+                        guard let strongSelf = self else { return }
+                        if let uiImage = UIImage(data: data) {
+                            let swiftUIImage = Image(uiImage: uiImage)
+                            if let cgImage = uiImage.cgImage {
+                                DispatchQueue.main.sync {
+                                    guard let strongSelf = self else { return }
+                                    strongSelf.metadataStore?.albumImageData = cgImage
+                                    strongSelf.metadataStore?.albumImage = swiftUIImage
+                                }
+                            }
                         }
+                        strongSelf.metadataStore?.blockUpdates = false
                     }
-                    strongSelf.metadataStore?.blockUpdates = false
                 }
             }
         }

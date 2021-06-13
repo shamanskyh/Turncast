@@ -27,6 +27,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Turncast uses your music library to import an album&apos;s artwork, title, and artist easily.</string>
 	<key>NSBonjourServices</key>
 	<array>
 		<string>_turncast._tcp</string>
@@ -63,7 +65,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>Turncast uses your music library to import an album&apos;s artwork, title, and artist easily.</string>
 </dict>
 </plist>

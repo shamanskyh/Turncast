@@ -108,7 +108,23 @@ struct DecimalField : View {
                 self.textValue = self.formatter.string(from: NSDecimalNumber(value: value)) ?? ""
         }
     }
+    
+    static func decibelFormatter() -> NumberFormatter {
+        let nf = NumberFormatter()
+        nf.numberStyle = .decimal
+        nf.isLenient = true
+        return nf
+    }
+    
+    static func secondsFormatter() -> NumberFormatter {
+        let nf = NumberFormatter()
+        nf.numberStyle = .none
+        nf.isLenient = true
+        return nf
+    }
 }
+
+
 
 struct DecimalField_Previews: PreviewProvider {
     static var previews: some View {

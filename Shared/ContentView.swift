@@ -38,11 +38,15 @@ struct ContentView: View {
                         .frame(height: albumArtSize)
                         .cornerRadius(12.0)
                         .padding()
-                    #if !os(tvOS)
-                    Button("Upload") {
-                        currentPresentation = .photoPicker
-                    }.offset(x: 0.0, y: -40.0)
-                    #endif
+                    if metadataStore.downloadingImage {
+                        ProgressView()
+                    } else {
+                        #if !os(tvOS)
+                        Button("Upload") {
+                            currentPresentation = .photoPicker
+                        }.offset(x: 0.0, y: -40.0)
+                        #endif
+                    }
                 }
                 #if !os(tvOS)
                 HStack {
@@ -71,12 +75,17 @@ struct ContentView: View {
                     .frame(width: albumArtSize)
                 #endif
             } else {
-                metadataStore.albumImage
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: albumArtSize)
-                    .cornerRadius(12.0)
-                    .padding()
+                ZStack {
+                    metadataStore.albumImage
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: albumArtSize)
+                        .cornerRadius(12.0)
+                        .padding()
+                    if metadataStore.downloadingImage {
+                        ProgressView()
+                    }
+                }
                 #if os(tvOS)
                 VStack {
                     Text(metadataStore.albumTitle).font(.headline)
@@ -127,9 +136,6 @@ struct ContentView: View {
             }
             #endif
         }.onAppear {
-            #if os(tvOS)
-            UIApplication.shared.isIdleTimerDisabled = true
-            #endif
             metadataStore.multipeerManager = multipeerManager
             multipeerManager.metadataStore = metadataStore
             multipeerManager.streamSource = streamSource
@@ -157,7 +163,11 @@ struct ContentView: View {
     }
     
     var mediaAccessDenied: Bool {
+        #if os(iOS)
         return MPMediaLibrary.authorizationStatus() == .denied
+        #else
+        return true
+        #endif
     }
     
     var playStopButton: some View {

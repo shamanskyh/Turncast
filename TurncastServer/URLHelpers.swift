@@ -27,10 +27,15 @@ class URLHelpers {
     }
     
     static func urlForApplicationSupportDirectory() throws -> URL {
-        return try FileManager.default.url(for: .applicationSupportDirectory,
+        let appSupportDir = try FileManager.default.url(for: .applicationSupportDirectory,
                                            in: .userDomainMask,
                                            appropriateFor: nil,
                                            create: true)
+            
+        try FileManager.default.createDirectory(at: appSupportDir.appendingPathComponent("Turncast", isDirectory: true),
+                                                withIntermediateDirectories: true)
+        
+        return appSupportDir.appendingPathComponent("Turncast", isDirectory: true)
     }
     
     static func urlForClassificationAndMetadataInfo() throws -> URL {
