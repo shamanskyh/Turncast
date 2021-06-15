@@ -13,62 +13,9 @@ struct ContentView: View {
     
     @ObservedObject var listener: AudioListener
     let formatter = NumberFormatter()
-    
-    @State var showingImageImporter = false
 
     var body: some View {
         VStack(spacing: 20.0) {
-            switch listener.recognitionStatus {
-            case .waitingToRecognize:
-                HStack(alignment: .center, spacing: 12.0) {
-                    ZStack {
-                        listener.albumImage.resizable().cornerRadius(6.0).frame(width: 100, height: 100)
-                        if listener.downloadingImage {
-                            ProgressView()
-                        }
-                    }
-                    
-                    VStack(alignment: .leading) {
-                        Text(listener.albumTitle).font(.headline)
-                        Text(listener.albumArtist).font(.subheadline)
-                    }
-                }
-            case .unknownAlbum:
-                HStack(alignment: .center, spacing: 12.0) {
-                    ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-                        listener.albumImage.resizable().cornerRadius(6.0).frame(width: 100, height: 100)
-                        if listener.downloadingImage {
-                            ProgressView()
-                        } else {
-                            Button("Upload") {
-                                self.showingImageImporter = true
-                            }.padding(.bottom, 8.0)
-                        }
-                    }
-                    VStack(alignment: .leading) {
-                        TextField("Unknown Album", text: $listener.albumTitle)
-                            .font(.headline)
-                            .frame(width: 200.0)
-                        TextField("Unknown Artist", text: $listener.albumArtist)
-                            .font(.subheadline)
-                            .frame(width: 200.0)
-                    }
-                }
-            default:
-                HStack(alignment: .center, spacing: 12.0) {
-                    ZStack {
-                        listener.albumImage.resizable().cornerRadius(6.0).frame(width: 100, height: 100)
-                        if listener.downloadingImage {
-                            ProgressView()
-                        }
-                    }
-                    VStack(alignment: .leading) {
-                        Text(listener.albumTitle).font(.headline)
-                        Text(listener.albumArtist).font(.subheadline)
-                    }
-                }
-            }
-            
             if listener.errorMessage != nil {
                 Text(listener.errorMessage!)
                     .lineLimit(nil)
@@ -105,21 +52,9 @@ struct ContentView: View {
                 }
             }
         }
-        .frame(width: 375, height: 250, alignment: .center)
+        .frame(width: 200, height: 100, alignment: .center)
         .onAppear {
             self.listener.beginListening()
-        }
-        .fileImporter(isPresented: $showingImageImporter, allowedContentTypes: [.image]) { (result) in
-            do {
-                let selectedFile: URL = try result.get()
-                if let nsImage = NSImage(contentsOf: selectedFile) {
-                    let cgImage = nsImage.cgImage(forProposedRect: nil, context: nil, hints: nil)
-                    listener.albumImage = Image(nsImage: nsImage)
-                    listener.albumImageData = cgImage!
-                }
-            } catch {
-                print(error)
-            }
         }
     }
     

@@ -11,14 +11,12 @@
 		4A1A13CD2634B1FD001298B9 /* TurncastServerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13CC2634B1FD001298B9 /* TurncastServerApp.swift */; };
 		4A1A13D82634B3C0001298B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13D72634B3C0001298B9 /* SettingsView.swift */; };
 		4A1A13DD2634B46B001298B9 /* InputSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13DC2634B46B001298B9 /* InputSettingsView.swift */; };
-		4A1A13E22634B5A0001298B9 /* MetadataSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13E12634B5A0001298B9 /* MetadataSettingsView.swift */; };
 		4A1A13E72634B684001298B9 /* AppleTVSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13E62634B684001298B9 /* AppleTVSettingsView.swift */; };
 		4A1A13EC2634BD93001298B9 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13EB2634BD93001298B9 /* Shell.swift */; };
 		4A872B9324565775002A0523 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A872B9224565775002A0523 /* ContentView.swift */; };
 		4A872B9524565777002A0523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A872B9424565777002A0523 /* Assets.xcassets */; };
 		4A872B9824565777002A0523 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A872B9724565777002A0523 /* Preview Assets.xcassets */; };
 		4A8A9AE225A11E7900116AD4 /* IPAddressHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A9AE125A11E7900116AD4 /* IPAddressHelper.swift */; };
-		4AA82D7425DB813A00354BF2 /* MediaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA82D7325DB813A00354BF2 /* MediaPicker.swift */; };
 		4AA82DA125DBA25B00354BF2 /* CupertinoJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 4AA82DA025DBA25B00354BF2 /* CupertinoJWT */; };
 		4AA82DA625DBA28100354BF2 /* CupertinoJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 4AA82DA525DBA28100354BF2 /* CupertinoJWT */; };
 		4AAAFB7525994DCB00FD8EAD /* TurncastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */; };
@@ -27,8 +25,6 @@
 		4AAAFB7825994DCB00FD8EAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6425994DC900FD8EAD /* ContentView.swift */; };
 		4AAAFB7925994DCB00FD8EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */; };
 		4AAAFB7A25994DCB00FD8EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */; };
-		4AAAFBA725995BAB00FD8EAD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFBA625995BAB00FD8EAD /* SettingsView.swift */; };
-		4AAAFBA825995BAB00FD8EAD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFBA625995BAB00FD8EAD /* SettingsView.swift */; };
 		4AAEE18B263FBFA800CB3F5B /* HaishinKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4AAEE18A263FBFA800CB3F5B /* HaishinKit */; };
 		4ABC440D2574869C0078378C /* AudioListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC440C2574869C0078378C /* AudioListener.swift */; };
 		4ABC4410257486AE0078378C /* PlayStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC440F257486AE0078378C /* PlayStatus.swift */; };
@@ -36,31 +32,132 @@
 		4AD6362625D3B03C00133C39 /* URLTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD6362525D3B03C00133C39 /* URLTester.swift */; };
 		4AD6362725D3B03C00133C39 /* URLTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD6362525D3B03C00133C39 /* URLTester.swift */; };
 		4AD6362825D3B03C00133C39 /* URLTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD6362525D3B03C00133C39 /* URLTester.swift */; };
+		4AE2B4412676C583004EAE4D /* SAPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4122676C582004EAE4D /* SAPlayer.swift */; };
+		4AE2B4422676C583004EAE4D /* SAPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4122676C582004EAE4D /* SAPlayer.swift */; };
+		4AE2B4432676C583004EAE4D /* SAPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4122676C582004EAE4D /* SAPlayer.swift */; };
+		4AE2B4442676C583004EAE4D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4142676C582004EAE4D /* Constants.swift */; };
+		4AE2B4452676C583004EAE4D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4142676C582004EAE4D /* Constants.swift */; };
+		4AE2B4462676C583004EAE4D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4142676C582004EAE4D /* Constants.swift */; };
+		4AE2B4472676C583004EAE4D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4152676C582004EAE4D /* Date.swift */; };
+		4AE2B4482676C583004EAE4D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4152676C582004EAE4D /* Date.swift */; };
+		4AE2B4492676C583004EAE4D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4152676C582004EAE4D /* Date.swift */; };
+		4AE2B44A2676C583004EAE4D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4162676C582004EAE4D /* Log.swift */; };
+		4AE2B44B2676C583004EAE4D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4162676C582004EAE4D /* Log.swift */; };
+		4AE2B44C2676C583004EAE4D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4162676C582004EAE4D /* Log.swift */; };
+		4AE2B44D2676C583004EAE4D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4172676C582004EAE4D /* Data.swift */; };
+		4AE2B44E2676C583004EAE4D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4172676C582004EAE4D /* Data.swift */; };
+		4AE2B44F2676C583004EAE4D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4172676C582004EAE4D /* Data.swift */; };
+		4AE2B4502676C583004EAE4D /* DirectorThreadSafeClosures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4182676C582004EAE4D /* DirectorThreadSafeClosures.swift */; };
+		4AE2B4512676C583004EAE4D /* DirectorThreadSafeClosures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4182676C582004EAE4D /* DirectorThreadSafeClosures.swift */; };
+		4AE2B4522676C583004EAE4D /* DirectorThreadSafeClosures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4182676C582004EAE4D /* DirectorThreadSafeClosures.swift */; };
+		4AE2B4532676C583004EAE4D /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4192676C582004EAE4D /* URL.swift */; };
+		4AE2B4542676C583004EAE4D /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4192676C582004EAE4D /* URL.swift */; };
+		4AE2B4552676C583004EAE4D /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4192676C582004EAE4D /* URL.swift */; };
+		4AE2B4562676C583004EAE4D /* SALockScreenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41A2676C582004EAE4D /* SALockScreenInfo.swift */; };
+		4AE2B4572676C583004EAE4D /* SALockScreenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41A2676C582004EAE4D /* SALockScreenInfo.swift */; };
+		4AE2B4582676C583004EAE4D /* SALockScreenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41A2676C582004EAE4D /* SALockScreenInfo.swift */; };
+		4AE2B4592676C583004EAE4D /* SAPlayerFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41B2676C582004EAE4D /* SAPlayerFeatures.swift */; };
+		4AE2B45A2676C583004EAE4D /* SAPlayerFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41B2676C582004EAE4D /* SAPlayerFeatures.swift */; };
+		4AE2B45B2676C583004EAE4D /* SAPlayerFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41B2676C582004EAE4D /* SAPlayerFeatures.swift */; };
+		4AE2B45C2676C583004EAE4D /* SAPlayerUpdateSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41C2676C582004EAE4D /* SAPlayerUpdateSubscription.swift */; };
+		4AE2B45D2676C583004EAE4D /* SAPlayerUpdateSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41C2676C582004EAE4D /* SAPlayerUpdateSubscription.swift */; };
+		4AE2B45E2676C583004EAE4D /* SAPlayerUpdateSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41C2676C582004EAE4D /* SAPlayerUpdateSubscription.swift */; };
+		4AE2B45F2676C583004EAE4D /* SAPlayerDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41D2676C582004EAE4D /* SAPlayerDownloader.swift */; };
+		4AE2B4602676C583004EAE4D /* SAPlayerDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41D2676C582004EAE4D /* SAPlayerDownloader.swift */; };
+		4AE2B4612676C583004EAE4D /* SAPlayerDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41D2676C582004EAE4D /* SAPlayerDownloader.swift */; };
+		4AE2B4622676C583004EAE4D /* SAPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41E2676C582004EAE4D /* SAPlayerDelegate.swift */; };
+		4AE2B4632676C583004EAE4D /* SAPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41E2676C582004EAE4D /* SAPlayerDelegate.swift */; };
+		4AE2B4642676C583004EAE4D /* SAPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41E2676C582004EAE4D /* SAPlayerDelegate.swift */; };
+		4AE2B4652676C583004EAE4D /* LockScreenViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41F2676C582004EAE4D /* LockScreenViewProtocol.swift */; };
+		4AE2B4662676C583004EAE4D /* LockScreenViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41F2676C582004EAE4D /* LockScreenViewProtocol.swift */; };
+		4AE2B4672676C583004EAE4D /* LockScreenViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B41F2676C582004EAE4D /* LockScreenViewProtocol.swift */; };
+		4AE2B4682676C583004EAE4D /* AudioQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4212676C582004EAE4D /* AudioQueue.swift */; };
+		4AE2B4692676C583004EAE4D /* AudioQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4212676C582004EAE4D /* AudioQueue.swift */; };
+		4AE2B46A2676C583004EAE4D /* AudioQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4212676C582004EAE4D /* AudioQueue.swift */; };
+		4AE2B46B2676C583004EAE4D /* AudioDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4222676C582004EAE4D /* AudioDataManager.swift */; };
+		4AE2B46C2676C583004EAE4D /* AudioDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4222676C582004EAE4D /* AudioDataManager.swift */; };
+		4AE2B46D2676C583004EAE4D /* AudioDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4222676C582004EAE4D /* AudioDataManager.swift */; };
+		4AE2B46E2676C583004EAE4D /* AudioStreamWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4242676C582004EAE4D /* AudioStreamWorker.swift */; };
+		4AE2B46F2676C583004EAE4D /* AudioStreamWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4242676C582004EAE4D /* AudioStreamWorker.swift */; };
+		4AE2B4702676C583004EAE4D /* AudioStreamWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4242676C582004EAE4D /* AudioStreamWorker.swift */; };
+		4AE2B4712676C583004EAE4D /* StreamProgressDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4252676C582004EAE4D /* StreamProgressDTO.swift */; };
+		4AE2B4722676C583004EAE4D /* StreamProgressDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4252676C582004EAE4D /* StreamProgressDTO.swift */; };
+		4AE2B4732676C583004EAE4D /* StreamProgressDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4252676C582004EAE4D /* StreamProgressDTO.swift */; };
+		4AE2B4742676C583004EAE4D /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4272676C582004EAE4D /* FileStorage.swift */; };
+		4AE2B4752676C583004EAE4D /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4272676C582004EAE4D /* FileStorage.swift */; };
+		4AE2B4762676C583004EAE4D /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4272676C582004EAE4D /* FileStorage.swift */; };
+		4AE2B4772676C583004EAE4D /* AudioDownloadWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4282676C582004EAE4D /* AudioDownloadWorker.swift */; };
+		4AE2B4782676C583004EAE4D /* AudioDownloadWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4282676C582004EAE4D /* AudioDownloadWorker.swift */; };
+		4AE2B4792676C583004EAE4D /* AudioDownloadWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4282676C582004EAE4D /* AudioDownloadWorker.swift */; };
+		4AE2B47A2676C583004EAE4D /* StreamProgressPTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4292676C582004EAE4D /* StreamProgressPTO.swift */; };
+		4AE2B47B2676C583004EAE4D /* StreamProgressPTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4292676C582004EAE4D /* StreamProgressPTO.swift */; };
+		4AE2B47C2676C583004EAE4D /* StreamProgressPTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4292676C582004EAE4D /* StreamProgressPTO.swift */; };
+		4AE2B47D2676C583004EAE4D /* AudioDiskEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B42B2676C582004EAE4D /* AudioDiskEngine.swift */; };
+		4AE2B47E2676C583004EAE4D /* AudioDiskEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B42B2676C582004EAE4D /* AudioDiskEngine.swift */; };
+		4AE2B47F2676C583004EAE4D /* AudioDiskEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B42B2676C582004EAE4D /* AudioDiskEngine.swift */; };
+		4AE2B4802676C583004EAE4D /* AudioStreamEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B42C2676C582004EAE4D /* AudioStreamEngine.swift */; };
+		4AE2B4812676C583004EAE4D /* AudioStreamEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B42C2676C582004EAE4D /* AudioStreamEngine.swift */; };
+		4AE2B4822676C583004EAE4D /* AudioStreamEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B42C2676C582004EAE4D /* AudioStreamEngine.swift */; };
+		4AE2B4832676C583004EAE4D /* AudioConverterListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B42E2676C583004EAE4D /* AudioConverterListener.swift */; };
+		4AE2B4842676C583004EAE4D /* AudioConverterListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B42E2676C583004EAE4D /* AudioConverterListener.swift */; };
+		4AE2B4852676C583004EAE4D /* AudioConverterListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B42E2676C583004EAE4D /* AudioConverterListener.swift */; };
+		4AE2B4862676C583004EAE4D /* AudioConverterErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B42F2676C583004EAE4D /* AudioConverterErrors.swift */; };
+		4AE2B4872676C583004EAE4D /* AudioConverterErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B42F2676C583004EAE4D /* AudioConverterErrors.swift */; };
+		4AE2B4882676C583004EAE4D /* AudioConverterErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B42F2676C583004EAE4D /* AudioConverterErrors.swift */; };
+		4AE2B4892676C583004EAE4D /* AudioConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4302676C583004EAE4D /* AudioConverter.swift */; };
+		4AE2B48A2676C583004EAE4D /* AudioConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4302676C583004EAE4D /* AudioConverter.swift */; };
+		4AE2B48B2676C583004EAE4D /* AudioConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4302676C583004EAE4D /* AudioConverter.swift */; };
+		4AE2B48C2676C583004EAE4D /* SAAudioAvailabilityRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4312676C583004EAE4D /* SAAudioAvailabilityRange.swift */; };
+		4AE2B48D2676C583004EAE4D /* SAAudioAvailabilityRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4312676C583004EAE4D /* SAAudioAvailabilityRange.swift */; };
+		4AE2B48E2676C583004EAE4D /* SAAudioAvailabilityRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4312676C583004EAE4D /* SAAudioAvailabilityRange.swift */; };
+		4AE2B48F2676C583004EAE4D /* SAPlayingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4322676C583004EAE4D /* SAPlayingStatus.swift */; };
+		4AE2B4902676C583004EAE4D /* SAPlayingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4322676C583004EAE4D /* SAPlayingStatus.swift */; };
+		4AE2B4912676C583004EAE4D /* SAPlayingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4322676C583004EAE4D /* SAPlayingStatus.swift */; };
+		4AE2B4922676C583004EAE4D /* AudioParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4342676C583004EAE4D /* AudioParser.swift */; };
+		4AE2B4932676C583004EAE4D /* AudioParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4342676C583004EAE4D /* AudioParser.swift */; };
+		4AE2B4942676C583004EAE4D /* AudioParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4342676C583004EAE4D /* AudioParser.swift */; };
+		4AE2B4952676C583004EAE4D /* AudioParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4352676C583004EAE4D /* AudioParsable.swift */; };
+		4AE2B4962676C583004EAE4D /* AudioParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4352676C583004EAE4D /* AudioParsable.swift */; };
+		4AE2B4972676C583004EAE4D /* AudioParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4352676C583004EAE4D /* AudioParsable.swift */; };
+		4AE2B4982676C583004EAE4D /* AudioParserPropertyListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4362676C583004EAE4D /* AudioParserPropertyListener.swift */; };
+		4AE2B4992676C583004EAE4D /* AudioParserPropertyListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4362676C583004EAE4D /* AudioParserPropertyListener.swift */; };
+		4AE2B49A2676C583004EAE4D /* AudioParserPropertyListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4362676C583004EAE4D /* AudioParserPropertyListener.swift */; };
+		4AE2B49B2676C583004EAE4D /* AudioParserPacketListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4372676C583004EAE4D /* AudioParserPacketListener.swift */; };
+		4AE2B49C2676C583004EAE4D /* AudioParserPacketListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4372676C583004EAE4D /* AudioParserPacketListener.swift */; };
+		4AE2B49D2676C583004EAE4D /* AudioParserPacketListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4372676C583004EAE4D /* AudioParserPacketListener.swift */; };
+		4AE2B49E2676C583004EAE4D /* AudioParserErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4382676C583004EAE4D /* AudioParserErrors.swift */; };
+		4AE2B49F2676C583004EAE4D /* AudioParserErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4382676C583004EAE4D /* AudioParserErrors.swift */; };
+		4AE2B4A02676C583004EAE4D /* AudioParserErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4382676C583004EAE4D /* AudioParserErrors.swift */; };
+		4AE2B4A12676C583004EAE4D /* AudioThrottler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4392676C583004EAE4D /* AudioThrottler.swift */; };
+		4AE2B4A22676C583004EAE4D /* AudioThrottler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4392676C583004EAE4D /* AudioThrottler.swift */; };
+		4AE2B4A32676C583004EAE4D /* AudioThrottler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4392676C583004EAE4D /* AudioThrottler.swift */; };
+		4AE2B4A42676C583004EAE4D /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43A2676C583004EAE4D /* AudioEngine.swift */; };
+		4AE2B4A52676C583004EAE4D /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43A2676C583004EAE4D /* AudioEngine.swift */; };
+		4AE2B4A62676C583004EAE4D /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43A2676C583004EAE4D /* AudioEngine.swift */; };
+		4AE2B4A72676C583004EAE4D /* SAPlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43B2676C583004EAE4D /* SAPlayerPresenter.swift */; };
+		4AE2B4A82676C583004EAE4D /* SAPlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43B2676C583004EAE4D /* SAPlayerPresenter.swift */; };
+		4AE2B4A92676C583004EAE4D /* SAPlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43B2676C583004EAE4D /* SAPlayerPresenter.swift */; };
+		4AE2B4AA2676C583004EAE4D /* AudioClockDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43D2676C583004EAE4D /* AudioClockDirector.swift */; };
+		4AE2B4AB2676C583004EAE4D /* AudioClockDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43D2676C583004EAE4D /* AudioClockDirector.swift */; };
+		4AE2B4AC2676C583004EAE4D /* AudioClockDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43D2676C583004EAE4D /* AudioClockDirector.swift */; };
+		4AE2B4AD2676C583004EAE4D /* DownloadProgressDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43E2676C583004EAE4D /* DownloadProgressDirector.swift */; };
+		4AE2B4AE2676C583004EAE4D /* DownloadProgressDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43E2676C583004EAE4D /* DownloadProgressDirector.swift */; };
+		4AE2B4AF2676C583004EAE4D /* DownloadProgressDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43E2676C583004EAE4D /* DownloadProgressDirector.swift */; };
+		4AE2B4B02676C583004EAE4D /* AudioQueueDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43F2676C583004EAE4D /* AudioQueueDirector.swift */; };
+		4AE2B4B12676C583004EAE4D /* AudioQueueDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43F2676C583004EAE4D /* AudioQueueDirector.swift */; };
+		4AE2B4B22676C583004EAE4D /* AudioQueueDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B43F2676C583004EAE4D /* AudioQueueDirector.swift */; };
+		4AE2B4B32676C583004EAE4D /* StreamingDownloadDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4402676C583004EAE4D /* StreamingDownloadDirector.swift */; };
+		4AE2B4B42676C583004EAE4D /* StreamingDownloadDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4402676C583004EAE4D /* StreamingDownloadDirector.swift */; };
+		4AE2B4B52676C583004EAE4D /* StreamingDownloadDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4402676C583004EAE4D /* StreamingDownloadDirector.swift */; };
 		4AE338052599620A00F034A1 /* AirPlayRoutePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338042599620A00F034A1 /* AirPlayRoutePickerView.swift */; };
 		4AE3380D2599634700F034A1 /* StreamSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3380C2599634700F034A1 /* StreamSource.swift */; };
 		4AE3380E2599634700F034A1 /* StreamSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3380C2599634700F034A1 /* StreamSource.swift */; };
 		4AE33888259BCEA600F034A1 /* URLHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE33887259BCEA600F034A1 /* URLHelpers.swift */; };
-		4AE33890259BCEAA00F034A1 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3387E259BCE4200F034A1 /* Metadata.swift */; };
-		4AE3389B259D205B00F034A1 /* RecognitionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3389A259D205B00F034A1 /* RecognitionStatus.swift */; };
-		4AE338A3259D427F00F034A1 /* ResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338A2259D427F00F034A1 /* ResultsObserver.swift */; };
 		4AE338C9259E8AC900F034A1 /* TurncastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */; };
 		4AE338CA259E8AC900F034A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6425994DC900FD8EAD /* ContentView.swift */; };
 		4AE338CD259E8AC900F034A1 /* StreamSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3380C2599634700F034A1 /* StreamSource.swift */; };
 		4AE338DA259E8B1B00F034A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */; };
 		4AE338E3259E8BBB00F034A1 /* AirPlayRoutePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338042599620A00F034A1 /* AirPlayRoutePickerView.swift */; };
-		4AE338ED259E98A100F034A1 /* MetadataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338EC259E98A100F034A1 /* MetadataStore.swift */; };
-		4AE338EE259E98A100F034A1 /* MetadataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338EC259E98A100F034A1 /* MetadataStore.swift */; };
-		4AE338EF259E98A100F034A1 /* MetadataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338EC259E98A100F034A1 /* MetadataStore.swift */; };
-		4AE338F5259FC38B00F034A1 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338F4259FC38B00F034A1 /* PhotoPicker.swift */; };
-		4AE338F6259FC38B00F034A1 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338F4259FC38B00F034A1 /* PhotoPicker.swift */; };
-		4AE3390B259FD20500F034A1 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3390A259FD20500F034A1 /* MultipeerManager.swift */; };
-		4AE33917259FD7E300F034A1 /* MultipeerMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 4AE33916259FD7E300F034A1 /* MultipeerMessages */; };
-		4AE3391F259FDDE300F034A1 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */; };
-		4AE33920259FDDE300F034A1 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */; };
-		4AE33921259FDDE400F034A1 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */; };
-		4AE3392B259FDE5900F034A1 /* MultipeerMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 4AE3392A259FDE5900F034A1 /* MultipeerMessages */; };
-		4AE3392D259FDE5F00F034A1 /* MultipeerMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 4AE3392C259FDE5F00F034A1 /* MultipeerMessages */; };
-		4AE3392F259FDE6600F034A1 /* MultipeerMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 4AE3392E259FDE6600F034A1 /* MultipeerMessages */; };
 		4AFD72BB25D79D7D009D5D3D /* IntegerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD72BA25D79D7D009D5D3D /* IntegerField.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,7 +190,6 @@
 		4A1A13CC2634B1FD001298B9 /* TurncastServerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurncastServerApp.swift; sourceTree = "<group>"; };
 		4A1A13D72634B3C0001298B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4A1A13DC2634B46B001298B9 /* InputSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSettingsView.swift; sourceTree = "<group>"; };
-		4A1A13E12634B5A0001298B9 /* MetadataSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataSettingsView.swift; sourceTree = "<group>"; };
 		4A1A13E62634B684001298B9 /* AppleTVSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTVSettingsView.swift; sourceTree = "<group>"; };
 		4A1A13EB2634BD93001298B9 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		4A872B8D24565775002A0523 /* Turncast Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Turncast Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +199,6 @@
 		4A872B9C24565777002A0523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A872B9D24565777002A0523 /* TurncastServer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TurncastServer.entitlements; sourceTree = "<group>"; };
 		4A8A9AE125A11E7900116AD4 /* IPAddressHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressHelper.swift; sourceTree = "<group>"; };
-		4AA82D7325DB813A00354BF2 /* MediaPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaPicker.swift; path = iOS/MediaPicker.swift; sourceTree = SOURCE_ROOT; };
 		4AA82D7E25DB93AE00354BF2 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurncastApp.swift; sourceTree = "<group>"; };
 		4AAAFB6425994DC900FD8EAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,25 +210,55 @@
 		4AAAFB7425994DCB00FD8EAD /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		4AAAFB8325994DE000FD8EAD /* Turncast.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Turncast.entitlements; sourceTree = "<group>"; };
 		4AAAFB8A2599596D00FD8EAD /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
-		4AAAFBA625995BAB00FD8EAD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4ABC440C2574869C0078378C /* AudioListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListener.swift; sourceTree = "<group>"; };
 		4ABC440F257486AE0078378C /* PlayStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStatus.swift; sourceTree = "<group>"; };
 		4ABC441425748AC20078378C /* DecimalField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalField.swift; sourceTree = "<group>"; };
 		4AD6362525D3B03C00133C39 /* URLTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLTester.swift; sourceTree = "<group>"; };
+		4AE2B4122676C582004EAE4D /* SAPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAPlayer.swift; sourceTree = "<group>"; };
+		4AE2B4142676C582004EAE4D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4AE2B4152676C582004EAE4D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		4AE2B4162676C582004EAE4D /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		4AE2B4172676C582004EAE4D /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		4AE2B4182676C582004EAE4D /* DirectorThreadSafeClosures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectorThreadSafeClosures.swift; sourceTree = "<group>"; };
+		4AE2B4192676C582004EAE4D /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		4AE2B41A2676C582004EAE4D /* SALockScreenInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SALockScreenInfo.swift; sourceTree = "<group>"; };
+		4AE2B41B2676C582004EAE4D /* SAPlayerFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAPlayerFeatures.swift; sourceTree = "<group>"; };
+		4AE2B41C2676C582004EAE4D /* SAPlayerUpdateSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAPlayerUpdateSubscription.swift; sourceTree = "<group>"; };
+		4AE2B41D2676C582004EAE4D /* SAPlayerDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAPlayerDownloader.swift; sourceTree = "<group>"; };
+		4AE2B41E2676C582004EAE4D /* SAPlayerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAPlayerDelegate.swift; sourceTree = "<group>"; };
+		4AE2B41F2676C582004EAE4D /* LockScreenViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockScreenViewProtocol.swift; sourceTree = "<group>"; };
+		4AE2B4212676C582004EAE4D /* AudioQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioQueue.swift; sourceTree = "<group>"; };
+		4AE2B4222676C582004EAE4D /* AudioDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDataManager.swift; sourceTree = "<group>"; };
+		4AE2B4242676C582004EAE4D /* AudioStreamWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioStreamWorker.swift; sourceTree = "<group>"; };
+		4AE2B4252676C582004EAE4D /* StreamProgressDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamProgressDTO.swift; sourceTree = "<group>"; };
+		4AE2B4272676C582004EAE4D /* FileStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		4AE2B4282676C582004EAE4D /* AudioDownloadWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDownloadWorker.swift; sourceTree = "<group>"; };
+		4AE2B4292676C582004EAE4D /* StreamProgressPTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamProgressPTO.swift; sourceTree = "<group>"; };
+		4AE2B42B2676C582004EAE4D /* AudioDiskEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDiskEngine.swift; sourceTree = "<group>"; };
+		4AE2B42C2676C582004EAE4D /* AudioStreamEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioStreamEngine.swift; sourceTree = "<group>"; };
+		4AE2B42E2676C583004EAE4D /* AudioConverterListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioConverterListener.swift; sourceTree = "<group>"; };
+		4AE2B42F2676C583004EAE4D /* AudioConverterErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioConverterErrors.swift; sourceTree = "<group>"; };
+		4AE2B4302676C583004EAE4D /* AudioConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioConverter.swift; sourceTree = "<group>"; };
+		4AE2B4312676C583004EAE4D /* SAAudioAvailabilityRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAAudioAvailabilityRange.swift; sourceTree = "<group>"; };
+		4AE2B4322676C583004EAE4D /* SAPlayingStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAPlayingStatus.swift; sourceTree = "<group>"; };
+		4AE2B4342676C583004EAE4D /* AudioParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioParser.swift; sourceTree = "<group>"; };
+		4AE2B4352676C583004EAE4D /* AudioParsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioParsable.swift; sourceTree = "<group>"; };
+		4AE2B4362676C583004EAE4D /* AudioParserPropertyListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioParserPropertyListener.swift; sourceTree = "<group>"; };
+		4AE2B4372676C583004EAE4D /* AudioParserPacketListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioParserPacketListener.swift; sourceTree = "<group>"; };
+		4AE2B4382676C583004EAE4D /* AudioParserErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioParserErrors.swift; sourceTree = "<group>"; };
+		4AE2B4392676C583004EAE4D /* AudioThrottler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioThrottler.swift; sourceTree = "<group>"; };
+		4AE2B43A2676C583004EAE4D /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
+		4AE2B43B2676C583004EAE4D /* SAPlayerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAPlayerPresenter.swift; sourceTree = "<group>"; };
+		4AE2B43D2676C583004EAE4D /* AudioClockDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioClockDirector.swift; sourceTree = "<group>"; };
+		4AE2B43E2676C583004EAE4D /* DownloadProgressDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadProgressDirector.swift; sourceTree = "<group>"; };
+		4AE2B43F2676C583004EAE4D /* AudioQueueDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioQueueDirector.swift; sourceTree = "<group>"; };
+		4AE2B4402676C583004EAE4D /* StreamingDownloadDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingDownloadDirector.swift; sourceTree = "<group>"; };
 		4AE338042599620A00F034A1 /* AirPlayRoutePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayRoutePickerView.swift; sourceTree = "<group>"; };
 		4AE3380C2599634700F034A1 /* StreamSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamSource.swift; sourceTree = "<group>"; };
-		4AE3387E259BCE4200F034A1 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		4AE33887259BCEA600F034A1 /* URLHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHelpers.swift; sourceTree = "<group>"; };
-		4AE3389A259D205B00F034A1 /* RecognitionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionStatus.swift; sourceTree = "<group>"; };
-		4AE338A2259D427F00F034A1 /* ResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
 		4AE338AE259E8A6700F034A1 /* Turncast (tvOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Turncast (tvOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE338B7259E8A6A00F034A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4AE338B9259E8A6A00F034A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4AE338EC259E98A100F034A1 /* MetadataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataStore.swift; sourceTree = "<group>"; };
-		4AE338F4259FC38B00F034A1 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
-		4AE338FB259FD07B00F034A1 /* MultipeerMessages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MultipeerMessages; sourceTree = "<group>"; };
-		4AE3390A259FD20500F034A1 /* MultipeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerManager.swift; sourceTree = "<group>"; };
-		4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerManager.swift; sourceTree = "<group>"; };
 		4AFD72BA25D79D7D009D5D3D /* IntegerField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,7 +269,6 @@
 			files = (
 				4AA82DA125DBA25B00354BF2 /* CupertinoJWT in Frameworks */,
 				4AAEE18B263FBFA800CB3F5B /* HaishinKit in Frameworks */,
-				4AE33917259FD7E300F034A1 /* MultipeerMessages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +277,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AA82DA625DBA28100354BF2 /* CupertinoJWT in Frameworks */,
-				4AE3392B259FDE5900F034A1 /* MultipeerMessages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +284,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AE3392D259FDE5F00F034A1 /* MultipeerMessages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +291,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AE3392F259FDE6600F034A1 /* MultipeerMessages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +301,6 @@
 			isa = PBXGroup;
 			children = (
 				4A11A1E725D8D5AD004BC3D6 /* Turncast (tvOS).entitlements */,
-				4AE338FB259FD07B00F034A1 /* MultipeerMessages */,
 				4AAAFB8325994DE000FD8EAD /* Turncast.entitlements */,
 				4A872B8F24565775002A0523 /* TurncastServer */,
 				4AAAFB6225994DC900FD8EAD /* Shared */,
@@ -215,11 +335,6 @@
 				4A1A13DC2634B46B001298B9 /* InputSettingsView.swift */,
 				4AFD72BA25D79D7D009D5D3D /* IntegerField.swift */,
 				4A8A9AE125A11E7900116AD4 /* IPAddressHelper.swift */,
-				4AE3387E259BCE4200F034A1 /* Metadata.swift */,
-				4A1A13E12634B5A0001298B9 /* MetadataSettingsView.swift */,
-				4AE3390A259FD20500F034A1 /* MultipeerManager.swift */,
-				4AE3389A259D205B00F034A1 /* RecognitionStatus.swift */,
-				4AE338A2259D427F00F034A1 /* ResultsObserver.swift */,
 				4AE33887259BCEA600F034A1 /* URLHelpers.swift */,
 				4A872B9424565777002A0523 /* Assets.xcassets */,
 				4A872B9C24565777002A0523 /* Info.plist */,
@@ -251,15 +366,12 @@
 		4AAAFB6225994DC900FD8EAD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4AE2B4112676C582004EAE4D /* SwiftAudioPlayer */,
 				4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */,
 				4AAAFB6425994DC900FD8EAD /* ContentView.swift */,
 				4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */,
-				4AAAFBA625995BAB00FD8EAD /* SettingsView.swift */,
 				4AE3380C2599634700F034A1 /* StreamSource.swift */,
 				4AE338042599620A00F034A1 /* AirPlayRoutePickerView.swift */,
-				4AE338EC259E98A100F034A1 /* MetadataStore.swift */,
-				4AE338F4259FC38B00F034A1 /* PhotoPicker.swift */,
-				4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */,
 				4AD6362525D3B03C00133C39 /* URLTester.swift */,
 				4AA82D7E25DB93AE00354BF2 /* BridgingHeader.h */,
 			);
@@ -269,7 +381,6 @@
 		4AAAFB6B25994DCB00FD8EAD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4AA82D7325DB813A00354BF2 /* MediaPicker.swift */,
 				4AAAFB6C25994DCB00FD8EAD /* Info.plist */,
 			);
 			path = iOS;
@@ -282,6 +393,116 @@
 				4AAAFB7425994DCB00FD8EAD /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		4AE2B4112676C582004EAE4D /* SwiftAudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				4AE2B4122676C582004EAE4D /* SAPlayer.swift */,
+				4AE2B4132676C582004EAE4D /* Util */,
+				4AE2B41A2676C582004EAE4D /* SALockScreenInfo.swift */,
+				4AE2B41B2676C582004EAE4D /* SAPlayerFeatures.swift */,
+				4AE2B41C2676C582004EAE4D /* SAPlayerUpdateSubscription.swift */,
+				4AE2B41D2676C582004EAE4D /* SAPlayerDownloader.swift */,
+				4AE2B41E2676C582004EAE4D /* SAPlayerDelegate.swift */,
+				4AE2B41F2676C582004EAE4D /* LockScreenViewProtocol.swift */,
+				4AE2B4202676C582004EAE4D /* Model */,
+				4AE2B42A2676C582004EAE4D /* Engine */,
+				4AE2B43B2676C583004EAE4D /* SAPlayerPresenter.swift */,
+				4AE2B43C2676C583004EAE4D /* Directors */,
+			);
+			path = SwiftAudioPlayer;
+			sourceTree = "<group>";
+		};
+		4AE2B4132676C582004EAE4D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4AE2B4142676C582004EAE4D /* Constants.swift */,
+				4AE2B4152676C582004EAE4D /* Date.swift */,
+				4AE2B4162676C582004EAE4D /* Log.swift */,
+				4AE2B4172676C582004EAE4D /* Data.swift */,
+				4AE2B4182676C582004EAE4D /* DirectorThreadSafeClosures.swift */,
+				4AE2B4192676C582004EAE4D /* URL.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		4AE2B4202676C582004EAE4D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4AE2B4212676C582004EAE4D /* AudioQueue.swift */,
+				4AE2B4222676C582004EAE4D /* AudioDataManager.swift */,
+				4AE2B4232676C582004EAE4D /* Streaming */,
+				4AE2B4262676C582004EAE4D /* Downloading */,
+				4AE2B4292676C582004EAE4D /* StreamProgressPTO.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4AE2B4232676C582004EAE4D /* Streaming */ = {
+			isa = PBXGroup;
+			children = (
+				4AE2B4242676C582004EAE4D /* AudioStreamWorker.swift */,
+				4AE2B4252676C582004EAE4D /* StreamProgressDTO.swift */,
+			);
+			path = Streaming;
+			sourceTree = "<group>";
+		};
+		4AE2B4262676C582004EAE4D /* Downloading */ = {
+			isa = PBXGroup;
+			children = (
+				4AE2B4272676C582004EAE4D /* FileStorage.swift */,
+				4AE2B4282676C582004EAE4D /* AudioDownloadWorker.swift */,
+			);
+			path = Downloading;
+			sourceTree = "<group>";
+		};
+		4AE2B42A2676C582004EAE4D /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				4AE2B42B2676C582004EAE4D /* AudioDiskEngine.swift */,
+				4AE2B42C2676C582004EAE4D /* AudioStreamEngine.swift */,
+				4AE2B42D2676C582004EAE4D /* Converter */,
+				4AE2B4312676C583004EAE4D /* SAAudioAvailabilityRange.swift */,
+				4AE2B4322676C583004EAE4D /* SAPlayingStatus.swift */,
+				4AE2B4332676C583004EAE4D /* Parser */,
+				4AE2B4392676C583004EAE4D /* AudioThrottler.swift */,
+				4AE2B43A2676C583004EAE4D /* AudioEngine.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		4AE2B42D2676C582004EAE4D /* Converter */ = {
+			isa = PBXGroup;
+			children = (
+				4AE2B42E2676C583004EAE4D /* AudioConverterListener.swift */,
+				4AE2B42F2676C583004EAE4D /* AudioConverterErrors.swift */,
+				4AE2B4302676C583004EAE4D /* AudioConverter.swift */,
+			);
+			path = Converter;
+			sourceTree = "<group>";
+		};
+		4AE2B4332676C583004EAE4D /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				4AE2B4342676C583004EAE4D /* AudioParser.swift */,
+				4AE2B4352676C583004EAE4D /* AudioParsable.swift */,
+				4AE2B4362676C583004EAE4D /* AudioParserPropertyListener.swift */,
+				4AE2B4372676C583004EAE4D /* AudioParserPacketListener.swift */,
+				4AE2B4382676C583004EAE4D /* AudioParserErrors.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		4AE2B43C2676C583004EAE4D /* Directors */ = {
+			isa = PBXGroup;
+			children = (
+				4AE2B43D2676C583004EAE4D /* AudioClockDirector.swift */,
+				4AE2B43E2676C583004EAE4D /* DownloadProgressDirector.swift */,
+				4AE2B43F2676C583004EAE4D /* AudioQueueDirector.swift */,
+				4AE2B4402676C583004EAE4D /* StreamingDownloadDirector.swift */,
+			);
+			path = Directors;
 			sourceTree = "<group>";
 		};
 		4AE338AF259E8A6700F034A1 /* Turncast */ = {
@@ -323,7 +544,6 @@
 			);
 			name = "Turncast Server";
 			packageProductDependencies = (
-				4AE33916259FD7E300F034A1 /* MultipeerMessages */,
 				4AA82DA025DBA25B00354BF2 /* CupertinoJWT */,
 				4AAEE18A263FBFA800CB3F5B /* HaishinKit */,
 			);
@@ -347,7 +567,6 @@
 			);
 			name = "Turncast (iOS)";
 			packageProductDependencies = (
-				4AE3392A259FDE5900F034A1 /* MultipeerMessages */,
 				4AA82DA525DBA28100354BF2 /* CupertinoJWT */,
 			);
 			productName = "Turncast (iOS)";
@@ -369,7 +588,6 @@
 			);
 			name = "Turncast (macOS)";
 			packageProductDependencies = (
-				4AE3392C259FDE5F00F034A1 /* MultipeerMessages */,
 			);
 			productName = "Turncast (macOS)";
 			productReference = 4AAAFB7125994DCB00FD8EAD /* Turncast.app */;
@@ -390,7 +608,6 @@
 			);
 			name = "Turncast (tvOS)";
 			packageProductDependencies = (
-				4AE3392E259FDE6600F034A1 /* MultipeerMessages */,
 			);
 			productName = Turncast;
 			productReference = 4AE338AE259E8A6700F034A1 /* Turncast (tvOS).app */;
@@ -487,9 +704,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A1A13EC2634BD93001298B9 /* Shell.swift in Sources */,
-				4AE33890259BCEAA00F034A1 /* Metadata.swift in Sources */,
-				4AE338A3259D427F00F034A1 /* ResultsObserver.swift in Sources */,
-				4A1A13E22634B5A0001298B9 /* MetadataSettingsView.swift in Sources */,
 				4A872B9324565775002A0523 /* ContentView.swift in Sources */,
 				4A01FD672635F67100CFC204 /* AppleTVUtilities.swift in Sources */,
 				4AE33888259BCEA600F034A1 /* URLHelpers.swift in Sources */,
@@ -497,11 +711,9 @@
 				4A1A13CD2634B1FD001298B9 /* TurncastServerApp.swift in Sources */,
 				4A1A13D82634B3C0001298B9 /* SettingsView.swift in Sources */,
 				4ABC441525748AC20078378C /* DecimalField.swift in Sources */,
-				4AE3390B259FD20500F034A1 /* MultipeerManager.swift in Sources */,
 				4A1A13E72634B684001298B9 /* AppleTVSettingsView.swift in Sources */,
 				4ABC440D2574869C0078378C /* AudioListener.swift in Sources */,
 				4A8A9AE225A11E7900116AD4 /* IPAddressHelper.swift in Sources */,
-				4AE3389B259D205B00F034A1 /* RecognitionStatus.swift in Sources */,
 				4A1A13DD2634B46B001298B9 /* InputSettingsView.swift in Sources */,
 				4AFD72BB25D79D7D009D5D3D /* IntegerField.swift in Sources */,
 			);
@@ -511,16 +723,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AE338F5259FC38B00F034A1 /* PhotoPicker.swift in Sources */,
+				4AE2B4772676C583004EAE4D /* AudioDownloadWorker.swift in Sources */,
+				4AE2B46B2676C583004EAE4D /* AudioDataManager.swift in Sources */,
+				4AE2B49E2676C583004EAE4D /* AudioParserErrors.swift in Sources */,
+				4AE2B4A72676C583004EAE4D /* SAPlayerPresenter.swift in Sources */,
+				4AE2B4B32676C583004EAE4D /* StreamingDownloadDirector.swift in Sources */,
+				4AE2B4412676C583004EAE4D /* SAPlayer.swift in Sources */,
+				4AE2B4832676C583004EAE4D /* AudioConverterListener.swift in Sources */,
+				4AE2B4592676C583004EAE4D /* SAPlayerFeatures.swift in Sources */,
+				4AE2B4AA2676C583004EAE4D /* AudioClockDirector.swift in Sources */,
+				4AE2B4562676C583004EAE4D /* SALockScreenInfo.swift in Sources */,
+				4AE2B47A2676C583004EAE4D /* StreamProgressPTO.swift in Sources */,
+				4AE2B45F2676C583004EAE4D /* SAPlayerDownloader.swift in Sources */,
+				4AE2B45C2676C583004EAE4D /* SAPlayerUpdateSubscription.swift in Sources */,
+				4AE2B4922676C583004EAE4D /* AudioParser.swift in Sources */,
+				4AE2B4652676C583004EAE4D /* LockScreenViewProtocol.swift in Sources */,
+				4AE2B44D2676C583004EAE4D /* Data.swift in Sources */,
+				4AE2B4A12676C583004EAE4D /* AudioThrottler.swift in Sources */,
 				4AD6362625D3B03C00133C39 /* URLTester.swift in Sources */,
-				4AA82D7425DB813A00354BF2 /* MediaPicker.swift in Sources */,
-				4AE338ED259E98A100F034A1 /* MetadataStore.swift in Sources */,
-				4AAAFBA725995BAB00FD8EAD /* SettingsView.swift in Sources */,
+				4AE2B44A2676C583004EAE4D /* Log.swift in Sources */,
+				4AE2B4B02676C583004EAE4D /* AudioQueueDirector.swift in Sources */,
+				4AE2B4982676C583004EAE4D /* AudioParserPropertyListener.swift in Sources */,
+				4AE2B4712676C583004EAE4D /* StreamProgressDTO.swift in Sources */,
+				4AE2B47D2676C583004EAE4D /* AudioDiskEngine.swift in Sources */,
+				4AE2B4952676C583004EAE4D /* AudioParsable.swift in Sources */,
+				4AE2B4742676C583004EAE4D /* FileStorage.swift in Sources */,
 				4AAAFB7725994DCB00FD8EAD /* ContentView.swift in Sources */,
+				4AE2B4682676C583004EAE4D /* AudioQueue.swift in Sources */,
+				4AE2B4472676C583004EAE4D /* Date.swift in Sources */,
 				4AE3380D2599634700F034A1 /* StreamSource.swift in Sources */,
-				4AE3391F259FDDE300F034A1 /* MultipeerManager.swift in Sources */,
+				4AE2B4442676C583004EAE4D /* Constants.swift in Sources */,
+				4AE2B4AD2676C583004EAE4D /* DownloadProgressDirector.swift in Sources */,
+				4AE2B4862676C583004EAE4D /* AudioConverterErrors.swift in Sources */,
 				4AE338052599620A00F034A1 /* AirPlayRoutePickerView.swift in Sources */,
+				4AE2B4502676C583004EAE4D /* DirectorThreadSafeClosures.swift in Sources */,
 				4AAAFB7525994DCB00FD8EAD /* TurncastApp.swift in Sources */,
+				4AE2B4622676C583004EAE4D /* SAPlayerDelegate.swift in Sources */,
+				4AE2B46E2676C583004EAE4D /* AudioStreamWorker.swift in Sources */,
+				4AE2B48C2676C583004EAE4D /* SAAudioAvailabilityRange.swift in Sources */,
+				4AE2B48F2676C583004EAE4D /* SAPlayingStatus.swift in Sources */,
+				4AE2B4892676C583004EAE4D /* AudioConverter.swift in Sources */,
+				4AE2B4802676C583004EAE4D /* AudioStreamEngine.swift in Sources */,
+				4AE2B4A42676C583004EAE4D /* AudioEngine.swift in Sources */,
+				4AE2B4532676C583004EAE4D /* URL.swift in Sources */,
+				4AE2B49B2676C583004EAE4D /* AudioParserPacketListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,14 +774,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AAAFBA825995BAB00FD8EAD /* SettingsView.swift in Sources */,
 				4AAAFB7825994DCB00FD8EAD /* ContentView.swift in Sources */,
-				4AE33920259FDDE300F034A1 /* MultipeerManager.swift in Sources */,
-				4AE338F6259FC38B00F034A1 /* PhotoPicker.swift in Sources */,
+				4AE2B4752676C583004EAE4D /* FileStorage.swift in Sources */,
 				4AD6362725D3B03C00133C39 /* URLTester.swift in Sources */,
-				4AE338EE259E98A100F034A1 /* MetadataStore.swift in Sources */,
+				4AE2B4512676C583004EAE4D /* DirectorThreadSafeClosures.swift in Sources */,
+				4AE2B4812676C583004EAE4D /* AudioStreamEngine.swift in Sources */,
+				4AE2B4542676C583004EAE4D /* URL.swift in Sources */,
+				4AE2B4482676C583004EAE4D /* Date.swift in Sources */,
+				4AE2B48A2676C583004EAE4D /* AudioConverter.swift in Sources */,
+				4AE2B4A52676C583004EAE4D /* AudioEngine.swift in Sources */,
+				4AE2B4902676C583004EAE4D /* SAPlayingStatus.swift in Sources */,
 				4AE3380E2599634700F034A1 /* StreamSource.swift in Sources */,
+				4AE2B4A22676C583004EAE4D /* AudioThrottler.swift in Sources */,
+				4AE2B4872676C583004EAE4D /* AudioConverterErrors.swift in Sources */,
+				4AE2B4932676C583004EAE4D /* AudioParser.swift in Sources */,
+				4AE2B45D2676C583004EAE4D /* SAPlayerUpdateSubscription.swift in Sources */,
+				4AE2B4572676C583004EAE4D /* SALockScreenInfo.swift in Sources */,
+				4AE2B4992676C583004EAE4D /* AudioParserPropertyListener.swift in Sources */,
+				4AE2B4662676C583004EAE4D /* LockScreenViewProtocol.swift in Sources */,
+				4AE2B48D2676C583004EAE4D /* SAAudioAvailabilityRange.swift in Sources */,
+				4AE2B45A2676C583004EAE4D /* SAPlayerFeatures.swift in Sources */,
+				4AE2B49F2676C583004EAE4D /* AudioParserErrors.swift in Sources */,
+				4AE2B4422676C583004EAE4D /* SAPlayer.swift in Sources */,
+				4AE2B4842676C583004EAE4D /* AudioConverterListener.swift in Sources */,
+				4AE2B49C2676C583004EAE4D /* AudioParserPacketListener.swift in Sources */,
+				4AE2B46C2676C583004EAE4D /* AudioDataManager.swift in Sources */,
 				4AAAFB7625994DCB00FD8EAD /* TurncastApp.swift in Sources */,
+				4AE2B44B2676C583004EAE4D /* Log.swift in Sources */,
+				4AE2B46F2676C583004EAE4D /* AudioStreamWorker.swift in Sources */,
+				4AE2B4B42676C583004EAE4D /* StreamingDownloadDirector.swift in Sources */,
+				4AE2B4722676C583004EAE4D /* StreamProgressDTO.swift in Sources */,
+				4AE2B4AB2676C583004EAE4D /* AudioClockDirector.swift in Sources */,
+				4AE2B4AE2676C583004EAE4D /* DownloadProgressDirector.swift in Sources */,
+				4AE2B4602676C583004EAE4D /* SAPlayerDownloader.swift in Sources */,
+				4AE2B4B12676C583004EAE4D /* AudioQueueDirector.swift in Sources */,
+				4AE2B4A82676C583004EAE4D /* SAPlayerPresenter.swift in Sources */,
+				4AE2B4632676C583004EAE4D /* SAPlayerDelegate.swift in Sources */,
+				4AE2B44E2676C583004EAE4D /* Data.swift in Sources */,
+				4AE2B4692676C583004EAE4D /* AudioQueue.swift in Sources */,
+				4AE2B47E2676C583004EAE4D /* AudioDiskEngine.swift in Sources */,
+				4AE2B4782676C583004EAE4D /* AudioDownloadWorker.swift in Sources */,
+				4AE2B47B2676C583004EAE4D /* StreamProgressPTO.swift in Sources */,
+				4AE2B4962676C583004EAE4D /* AudioParsable.swift in Sources */,
+				4AE2B4452676C583004EAE4D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,13 +824,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AE2B4792676C583004EAE4D /* AudioDownloadWorker.swift in Sources */,
+				4AE2B46D2676C583004EAE4D /* AudioDataManager.swift in Sources */,
+				4AE2B4A02676C583004EAE4D /* AudioParserErrors.swift in Sources */,
+				4AE2B4A92676C583004EAE4D /* SAPlayerPresenter.swift in Sources */,
+				4AE2B4B52676C583004EAE4D /* StreamingDownloadDirector.swift in Sources */,
+				4AE2B4432676C583004EAE4D /* SAPlayer.swift in Sources */,
+				4AE2B4852676C583004EAE4D /* AudioConverterListener.swift in Sources */,
+				4AE2B45B2676C583004EAE4D /* SAPlayerFeatures.swift in Sources */,
+				4AE2B4AC2676C583004EAE4D /* AudioClockDirector.swift in Sources */,
+				4AE2B4582676C583004EAE4D /* SALockScreenInfo.swift in Sources */,
+				4AE2B47C2676C583004EAE4D /* StreamProgressPTO.swift in Sources */,
+				4AE2B4612676C583004EAE4D /* SAPlayerDownloader.swift in Sources */,
+				4AE2B45E2676C583004EAE4D /* SAPlayerUpdateSubscription.swift in Sources */,
+				4AE2B4942676C583004EAE4D /* AudioParser.swift in Sources */,
+				4AE2B4672676C583004EAE4D /* LockScreenViewProtocol.swift in Sources */,
+				4AE2B44F2676C583004EAE4D /* Data.swift in Sources */,
+				4AE2B4A32676C583004EAE4D /* AudioThrottler.swift in Sources */,
 				4AE338E3259E8BBB00F034A1 /* AirPlayRoutePickerView.swift in Sources */,
-				4AE33921259FDDE400F034A1 /* MultipeerManager.swift in Sources */,
+				4AE2B44C2676C583004EAE4D /* Log.swift in Sources */,
+				4AE2B4B22676C583004EAE4D /* AudioQueueDirector.swift in Sources */,
+				4AE2B49A2676C583004EAE4D /* AudioParserPropertyListener.swift in Sources */,
+				4AE2B4732676C583004EAE4D /* StreamProgressDTO.swift in Sources */,
+				4AE2B47F2676C583004EAE4D /* AudioDiskEngine.swift in Sources */,
+				4AE2B4972676C583004EAE4D /* AudioParsable.swift in Sources */,
+				4AE2B4762676C583004EAE4D /* FileStorage.swift in Sources */,
 				4AE338C9259E8AC900F034A1 /* TurncastApp.swift in Sources */,
-				4AE338EF259E98A100F034A1 /* MetadataStore.swift in Sources */,
+				4AE2B46A2676C583004EAE4D /* AudioQueue.swift in Sources */,
+				4AE2B4492676C583004EAE4D /* Date.swift in Sources */,
 				4AD6362825D3B03C00133C39 /* URLTester.swift in Sources */,
+				4AE2B4462676C583004EAE4D /* Constants.swift in Sources */,
+				4AE2B4AF2676C583004EAE4D /* DownloadProgressDirector.swift in Sources */,
+				4AE2B4882676C583004EAE4D /* AudioConverterErrors.swift in Sources */,
 				4AE338CA259E8AC900F034A1 /* ContentView.swift in Sources */,
+				4AE2B4522676C583004EAE4D /* DirectorThreadSafeClosures.swift in Sources */,
 				4AE338CD259E8AC900F034A1 /* StreamSource.swift in Sources */,
+				4AE2B4642676C583004EAE4D /* SAPlayerDelegate.swift in Sources */,
+				4AE2B4702676C583004EAE4D /* AudioStreamWorker.swift in Sources */,
+				4AE2B48E2676C583004EAE4D /* SAAudioAvailabilityRange.swift in Sources */,
+				4AE2B4912676C583004EAE4D /* SAPlayingStatus.swift in Sources */,
+				4AE2B48B2676C583004EAE4D /* AudioConverter.swift in Sources */,
+				4AE2B4822676C583004EAE4D /* AudioStreamEngine.swift in Sources */,
+				4AE2B4A62676C583004EAE4D /* AudioEngine.swift in Sources */,
+				4AE2B4552676C583004EAE4D /* URL.swift in Sources */,
+				4AE2B49D2676C583004EAE4D /* AudioParserPacketListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,7 +1028,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_ASSET_PATHS = "TurncastServer/Preview\\ Content";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -721,8 +1039,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.TurncastServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -737,7 +1055,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_ASSET_PATHS = "TurncastServer/Preview\\ Content";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -748,8 +1066,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.TurncastServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -772,11 +1090,12 @@
 					HOME_USE,
 				);
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				OTHER_SWIFT_FLAGS = "-DHOME_USE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = Turncast;
@@ -798,11 +1117,12 @@
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = Turncast;
@@ -832,7 +1152,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = Turncast;
 				SDKROOT = macosx;
@@ -858,7 +1179,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = Turncast;
 				SDKROOT = macosx;
@@ -874,7 +1196,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Turncast (tvOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Turncast/Preview Content\"";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_PREVIEWS = YES;
@@ -883,12 +1205,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 14.3;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Debug;
 		};
@@ -900,7 +1223,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Turncast (tvOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Turncast/Preview Content\"";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_PREVIEWS = YES;
@@ -909,12 +1232,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 14.3;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1017,23 +1341,7 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = SimplePushServer;
 		};
-		4AE33916259FD7E300F034A1 /* MultipeerMessages */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MultipeerMessages;
-		};
 		4AE33918259FD7EA00F034A1 /* MultipeerMessages */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MultipeerMessages;
-		};
-		4AE3392A259FDE5900F034A1 /* MultipeerMessages */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MultipeerMessages;
-		};
-		4AE3392C259FDE5F00F034A1 /* MultipeerMessages */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MultipeerMessages;
-		};
-		4AE3392E259FDE6600F034A1 /* MultipeerMessages */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MultipeerMessages;
 		};

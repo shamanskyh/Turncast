@@ -8,103 +8,23 @@
 
 import AVFoundation
 import MediaPlayer
-import PhotosUI
+import ShazamKit
 import SwiftUI
-
-enum CurrentPresentation: String, Identifiable {
-    case photoPicker = "PhotoPicker"
-    case mediaPicker = "MediaPicker"
-    
-    var id: String {
-        return self.rawValue
-    }
-}
 
 struct ContentView: View {
     
     @StateObject var streamSource = StreamSource()
-    @StateObject var metadataStore = MetadataStore()
-    @State var currentPresentation: CurrentPresentation? = nil
-    
-    let multipeerManager = MultipeerManager.shared
     
     var body: some View {
         VStack(alignment: .center) {
-            if metadataStore.canEdit && UIDevice.current.userInterfaceIdiom != .tv {
-                ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-                    metadataStore.albumImage
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: albumArtSize)
-                        .cornerRadius(12.0)
-                        .padding()
-                    if metadataStore.downloadingImage {
-                        ProgressView()
-                    } else {
-                        #if !os(tvOS)
-                        Button("Upload") {
-                            currentPresentation = .photoPicker
-                        }.offset(x: 0.0, y: -40.0)
-                        #endif
-                    }
-                }
-                #if !os(tvOS)
-                HStack {
-                    VStack {
-                        TextField("Album Title", text: $metadataStore.albumTitle)
-                            .multilineTextAlignment(.center)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding([.leading, .trailing], 40)
-                        TextField("Artist", text: $metadataStore.artist)
-                            .multilineTextAlignment(.center)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding([.leading, .trailing], 40)
-                        Button(action: {
-                            currentPresentation = .mediaPicker
-                        }) {
-                            Image(systemName: "music.note.list")
-                        }.disabled(mediaAccessDenied).padding(.top)
-                    }
-                }
-                #elseif os(tvOS)
-                TextField("Album Title", text: $metadataStore.albumTitle)
-                    .multilineTextAlignment(.center)
-                    .frame(width: albumArtSize)
-                TextField("Artist", text: $metadataStore.artist)
-                    .multilineTextAlignment(.center)
-                    .frame(width: albumArtSize)
-                #endif
-            } else {
-                ZStack {
-                    metadataStore.albumImage
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: albumArtSize)
-                        .cornerRadius(12.0)
-                        .padding()
-                    if metadataStore.downloadingImage {
-                        ProgressView()
-                    }
-                }
-                #if os(tvOS)
-                VStack {
-                    Text(metadataStore.albumTitle).font(.headline)
-                    Text(metadataStore.artist).font(.subheadline)
-                }
-                #elseif os(iOS)
-                HStack {
-                    VStack {
-                        Text(metadataStore.albumTitle).font(.headline)
-                        Text(metadataStore.artist).font(.subheadline)
-                        Button {
-                            self.metadataStore.canEdit = true
-                        } label: {
-                            Image(systemName: "pencil")
-                        }.padding(.top)
-                    }
-                }
-                #endif
-            }
+            streamSource.albumArt
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: albumArtSize)
+                .cornerRadius(12.0)
+                .padding()
+            Text(streamSource.title).font(.headline)
+            Text(streamSource.artist).font(.subheadline)
             HStack {
                 #if os(iOS)
                 playStopButton
@@ -118,31 +38,6 @@ struct ContentView: View {
                     .frame(width: 50, height: 50)
                 #endif
             }.padding(.top, 40)
-        }.tabItem {
-            Image(systemName: "play")
-            Text("Now Playing")
-        }.sheet(item: $currentPresentation) { presentation in
-            #if !os(tvOS)
-            switch presentation {
-            case .photoPicker:
-                let configuration = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
-                PhotoPicker(configuration: configuration,
-                            currentPresentation: $currentPresentation,
-                            albumImage: $metadataStore.albumImage,
-                            albumImageData: $metadataStore.albumImageData)
-            case .mediaPicker:
-                MediaPicker(currentPresentation: $currentPresentation,
-                            metadataStore: metadataStore)
-            }
-            #endif
-        }.onAppear {
-            metadataStore.multipeerManager = multipeerManager
-            multipeerManager.metadataStore = metadataStore
-            multipeerManager.streamSource = streamSource
-            streamSource.multipeerManager = multipeerManager
-            #if HOME_USE
-            MPMediaPickerController.preheatMediaPicker()
-            #endif
         }
     }
     
@@ -159,14 +54,6 @@ struct ContentView: View {
         return 600.0
         #else
         return 200.0
-        #endif
-    }
-    
-    var mediaAccessDenied: Bool {
-        #if os(iOS)
-        return MPMediaLibrary.authorizationStatus() == .denied
-        #else
-        return true
         #endif
     }
     
