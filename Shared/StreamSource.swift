@@ -8,32 +8,41 @@
 
 import Foundation
 import MediaPlayer
-import MediaToolbox.MTAudioProcessingTap
 import SwiftUI
 
 class StreamSource: ObservableObject {
     
-    @Published var albumArt = Image("NoInfo")
-    @Published var title = "Not Playing"
-    @Published var artist = ""
+    var player: AVPlayer?
+
+    weak var multipeerManager: MultipeerManager?
     
     var playing: Bool = false {
         willSet {
             objectWillChange.send()
             if newValue {
-
-                let url = URL(string: "http://192.168.68.80:8080/turntable/playlist.m3u8")!
-
+                
+                let url: URL
+                if let serverIP = multipeerManager?.serverIPAddress {
+                    if let urlWithIP = URL(string: "http://\(serverIP):8080/turntable/playlist.m3u8") {
+                        url = urlWithIP
+                    } else {
+                        url = URL(string: "http://192.168.68.80:8080/turntable/playlist.m3u8")!
+                    }
+                } else {
+                    url = URL(string: "http://192.168.68.80:8080/turntable/playlist.m3u8")!
+                }
+                
                 // error check the case where we don't have anything to play
                 // if this happens, retry the player in a second
                 url.verify { [weak self] (valid) in
                     guard let strongSelf = self else { return }
                     if valid {
-                        DispatchQueue.main.async {
-                            SAPlayer.shared.startAudioStreamed(withRemoteUrl: url, bitrate: .low)
-                            SAPlayer.shared.rate = 1.0
-                            SAPlayer.shared.volume = 1.0
-                            SAPlayer.shared.play()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { [weak strongSelf] in
+                            guard let strongStrongSelf = strongSelf else { return }
+                            strongStrongSelf.player = AVPlayer(url: url)
+                            strongStrongSelf.player?.rate = 1.0
+                            strongStrongSelf.player?.volume = 1.0
+                            strongStrongSelf.player?.play()
                         }
                     } else {
                         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) { [weak strongSelf] in
@@ -47,7 +56,7 @@ class StreamSource: ObservableObject {
                     }
                 }
             } else {
-                SAPlayer.shared.pause()
+                player?.pause()
             }
         }
     }
@@ -74,6 +83,10 @@ class StreamSource: ObservableObject {
         UIApplication.shared.beginReceivingRemoteControlEvents()
         #endif
         
+        if let serverIP = multipeerManager?.serverIPAddress {
+            player = AVPlayer(url: URL(string: "http://\(serverIP):8080/turntable/playlist.m3u8")!)
+        }
+        
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.togglePlayPauseCommand.isEnabled = false
         commandCenter.stopCommand.isEnabled = true
@@ -91,10 +104,6 @@ class StreamSource: ObservableObject {
         commandCenter.skipBackwardCommand.isEnabled = false
         commandCenter.seekForwardCommand.isEnabled = false
         commandCenter.seekBackwardCommand.isEnabled = false
-        
-//        // Tap the audio here
-//        SAPlayer.shared.engine!.mainMixerNode.installTap(onBus: 0, bufferSize: 1024, format: nil) { buffer, time in
-//            print("Buffer called with time of \(time)")
-//        }
     }
+    
 }

@@ -14,7 +14,7 @@ struct SettingsView: View {
     @ObservedObject var listener: AudioListener
     
     private enum Tabs: Hashable {
-        case input, appleTV
+        case input, metadata, appleTV
     }
     
     var body: some View {
@@ -24,6 +24,11 @@ struct SettingsView: View {
                     Label("Input", systemImage: "waveform")
                 }
                 .tag(Tabs.input)
+            MetadataSettingsView(listener: listener)
+                .tabItem {
+                    Label("Metadata", systemImage: "heart.text.square")
+                }
+                .tag(Tabs.metadata)
             AppleTVSettingsView(listener: listener)
                 .tabItem {
                     Label("Apple TV", systemImage: "appletv")
