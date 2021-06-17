@@ -15,21 +15,19 @@ public let turncastServiceType = "turncast"
 public enum MultipeerMessage {
     /// A request to broadcast an update to all connected clients
     case broadcastUpdate
-    case canEdit(Bool)
     case albumTitle(String)
     case artist(String)
-    case imageData(Data)
-    case devicePushNotificationRegistration(String)
+    case imageURL(URL)
+    case clearImageURL
 }
 
 extension MultipeerMessage {
     enum CodingKeys: CodingKey {
         case broadcastUpdate
-        case canEdit
         case albumTitle
         case artist
-        case imageData
-        case devicePushNotificationRegistration
+        case imageURL
+        case clearImageURL
     }
 }
 
@@ -39,16 +37,14 @@ extension MultipeerMessage: Encodable {
         switch self {
         case .broadcastUpdate:
             try container.encode(true, forKey: .broadcastUpdate)
-        case .canEdit(let canEdit):
-            try container.encode(canEdit, forKey: .canEdit)
         case .albumTitle(let title):
             try container.encode(title, forKey: .albumTitle)
         case .artist(let artist):
             try container.encode(artist, forKey: .artist)
-        case .imageData(let data):
-            try container.encode(data, forKey: .imageData)
-        case .devicePushNotificationRegistration(let device):
-            try container.encode(device, forKey: .devicePushNotificationRegistration)
+        case .imageURL(let url):
+            try container.encode(url, forKey: .imageURL)
+        case .clearImageURL:
+            try container.encode(true, forKey: .clearImageURL)
         }
     }
 }
@@ -60,21 +56,17 @@ extension MultipeerMessage: Decodable {
         switch key {
         case .broadcastUpdate:
             self = .broadcastUpdate
-        case .canEdit:
-            let canEdit = try container.decode(Bool.self, forKey: .canEdit)
-            self = .canEdit(canEdit)
         case .albumTitle:
             let title = try container.decode(String.self, forKey: .albumTitle)
             self = .albumTitle(title)
         case .artist:
             let artist = try container.decode(String.self, forKey: .artist)
             self = .artist(artist)
-        case .imageData:
-            let data = try container.decode(Data.self, forKey: .imageData)
-            self = .imageData(data)
-        case .devicePushNotificationRegistration:
-            let data = try container.decode(String.self, forKey: .devicePushNotificationRegistration)
-            self = .devicePushNotificationRegistration(data)
+        case .imageURL:
+            let url = try container.decode(URL.self, forKey: .imageURL)
+            self = .imageURL(url)
+        case .clearImageURL:
+            self = .clearImageURL
         default:
             throw DecodingError.dataCorrupted(
                 DecodingError.Context(

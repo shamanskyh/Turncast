@@ -20,9 +20,6 @@ class MetadataStore: ObservableObject {
     var albumImageData: CGImage = UIImage(named: "NoInfo")!.cgImage! {
         willSet {
             objectWillChange.send()
-            if !blockUpdates {
-                multipeerManager?.sendMessageToServer(message: .imageData(newValue.png!))
-            }
         }
         didSet {
             updateNowPlayingInfoCenter()
@@ -54,20 +51,6 @@ class MetadataStore: ObservableObject {
         }
         didSet {
             updateNowPlayingInfoCenter()
-        }
-    }
-    var canEdit: Bool = false {
-        willSet {
-            objectWillChange.send()
-            if !blockUpdates {
-                multipeerManager?.sendMessageToServer(message: .canEdit(newValue))
-            }
-        }
-    }
-    
-    var downloadingImage: Bool = false {
-        willSet {
-            objectWillChange.send()
         }
     }
     

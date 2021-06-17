@@ -13,15 +13,11 @@ import os
 import SwiftUI
 
 protocol MetadataSource: AnyObject {
-    var shouldAllowEditing: Bool { get }
-    var albumImageData: CGImage { get set }
     var albumImage: Image { get set }
+    var albumImageURL: URL? { get set }
     var albumTitle: String { get set }
     var albumArtist: String { get set }
     var blockBroadcast: Bool { get set }
-    func updateRecognitionStateToNewMetadata()
-    func beginImageDownload()
-    func endImageDownload()
 }
 
 class MultipeerManager: NSObject {
@@ -69,28 +65,7 @@ class MultipeerManager: NSObject {
     }
     
     func broadcast(message: MultipeerMessage) {
-        switch message {
-        // prefer sending images using the sendResource method, but make this transparent to the caller
-        case .imageData(let data):
-            DispatchQueue.global(qos: .background).async { [weak self] in
-                // store a local file
-                do {
-                    let temporaryDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(),
-                                                        isDirectory: true)
-                    let temporaryFilename = ProcessInfo().globallyUniqueString
-                    let temporaryFileURL = temporaryDirectoryURL.appendingPathComponent(temporaryFilename)
-                    try data.write(to: temporaryFileURL)
-                    guard let strongSelf = self else { return }
-                    for peer in strongSelf.peers {
-                        strongSelf.session.sendResource(at: temporaryFileURL, withName: "AlbumArt", toPeer: peer, withCompletionHandler: nil)
-                    }
-                } catch {
-                    self?.logger.error("\(error.localizedDescription)")
-                }
-            }
-        default:
-            self.broadcast(message: message, to: peers)
-        }
+        self.broadcast(message: message, to: peers)
     }
 }
 
@@ -139,36 +114,10 @@ extension MultipeerManager: MCSessionDelegate {
     
     func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
         // no-op
-        DispatchQueue.main.async { [weak self] in
-            self?.delegate?.beginImageDownload()
-        }
     }
     
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
-        // this can only be the image
-        DispatchQueue.main.async { [weak self] in
-            self?.delegate?.endImageDownload()
-        }
-        
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            if let url = localURL,
-               let imageData = try? Data(contentsOf: url),
-               let nsImage = NSImage(data: imageData),
-               let cgImage = nsImage.cgImage(forProposedRect: nil, context: nil, hints: nil) {
-                let image = Image(nsImage: nsImage)
-                DispatchQueue.main.async {
-                    guard let strongSelf = self else { return }
-                    strongSelf.delegate?.blockBroadcast = true
-                    strongSelf.delegate?.albumImage = image
-                    strongSelf.delegate?.albumImageData = cgImage
-                    strongSelf.delegate?.blockBroadcast = false
-                    strongSelf.delegate?.updateRecognitionStateToNewMetadata()
-                    for otherPeer in strongSelf.peers.filter({ $0 != peerID }) {
-                        strongSelf.session.sendResource(at: url, withName: resourceName, toPeer: otherPeer, withCompletionHandler: nil)
-                    }
-                }
-            }
-        }
+        // no-op
     }
     
     func session(_ session: MCSession,
@@ -184,54 +133,41 @@ extension MultipeerManager: MCSessionDelegate {
                 switch multipeerMessage {
                 case .broadcastUpdate:
                     if let delegate = strongSelf.delegate {
-                        strongSelf.broadcast(message: .canEdit(delegate.shouldAllowEditing))
                         strongSelf.broadcast(message: .albumTitle(delegate.albumTitle))
                         strongSelf.broadcast(message: .artist(delegate.albumArtist))
-                        strongSelf.broadcast(message: .imageData(delegate.albumImageData.png!))
+                        if let imageURL = delegate.albumImageURL {
+                            strongSelf.broadcast(message: .imageURL(imageURL))
+                        } else {
+                            strongSelf.broadcast(message: .clearImageURL)
+                        }
                     }
-                case .canEdit(_):
-                    // we should never receive this since clients can't control the edit state
-                    strongSelf.logger.error("Client told server to allow/disallow editing -- something's wrong")
-                    break
                 case .albumTitle(let title):
                     strongSelf.delegate?.blockBroadcast = true
                     strongSelf.delegate?.albumTitle = title
                     strongSelf.delegate?.blockBroadcast = false
-                    strongSelf.delegate?.updateRecognitionStateToNewMetadata()
                     strongSelf.broadcast(message: multipeerMessage, to: strongSelf.peers.filter({ $0 != peerID }))
                 case .artist(let artist):
                     strongSelf.delegate?.blockBroadcast = true
                     strongSelf.delegate?.albumArtist = artist
                     strongSelf.delegate?.blockBroadcast = false
-                    strongSelf.delegate?.updateRecognitionStateToNewMetadata()
                     strongSelf.broadcast(message: multipeerMessage, to: strongSelf.peers.filter({ $0 != peerID }))
-                case .imageData(let data):
+                case .imageURL(let url):
                     DispatchQueue.global(qos: .background).async {
-                        if let nsImage = NSImage(data: data) {
-                            let cgImage = nsImage.cgImage(forProposedRect: nil, context: nil, hints: nil)!
+                        if let nsImage = NSImage(contentsOf: url) {
                             let image = Image(nsImage: nsImage)
                             DispatchQueue.main.async {
                                 guard let strongSelf = self else { return }
                                 strongSelf.delegate?.blockBroadcast = true
                                 strongSelf.delegate?.albumImage = image
-                                strongSelf.delegate?.albumImageData = cgImage
                                 strongSelf.delegate?.blockBroadcast = false
-                                strongSelf.delegate?.updateRecognitionStateToNewMetadata()
                                 strongSelf.broadcast(message: multipeerMessage, to: strongSelf.peers.filter({ $0 != peerID }))
                             }
                         }
                     }
-                case .devicePushNotificationRegistration(let token):
-                    // store the token, do nothing else
-                    if let initialTokens = UserDefaults.standard.stringArray(forKey: "DeviceTokens") {
-                        var deviceTokens = initialTokens
-                        deviceTokens.append(token)
-                        UserDefaults.standard.set(deviceTokens, forKey: "DeviceTokens")
-                    } else {
-                        UserDefaults.standard.set([token], forKey: "DeviceTokens")
-                    }
-                    
-                    
+                case .clearImageURL:
+                    strongSelf.delegate?.blockBroadcast = true
+                    strongSelf.delegate?.albumImageURL = nil
+                    strongSelf.delegate?.blockBroadcast = false
                 }
             }
         }

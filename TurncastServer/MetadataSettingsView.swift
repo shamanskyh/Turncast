@@ -41,24 +41,6 @@ struct MetadataSettingsView: View {
                 ))
                     .help("How long after connection should Turncast begin sampling for recognition?")
             }
-            HStack {
-                if listener.training {
-                    Button(action: {
-                        self.listener.cancelTraining()
-                    }) {
-                        Text("Cancel Training")
-                    }
-                    if let progress = listener.currentTrainingJob?.progress {
-                        ProgressView(progress).labelsHidden()
-                    }
-                } else {
-                    Button(action: {
-                        self.listener.trainAndSaveClassifier()
-                    }) {
-                        Text("Retrain Model")
-                    }
-                }
-            }
         }
     }
 }
