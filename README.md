@@ -1,2 +1,2 @@
-# Tinfoil
-Automatic Control of Airfoil based on audio input detection -- have your speakers connect automatically when a record plays.
+# Turncast
+Server and client to play a stereo input (e.g. a record player) through AirPlay speakers.
