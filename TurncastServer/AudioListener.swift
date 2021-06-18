@@ -322,19 +322,3 @@ extension AudioListener: SHSessionDelegate {
         }
     }
 }
-
-extension CGImage {
-    
-    enum CGImageWritingError: Error {
-        case imageDestinationCreationError
-        case imageFinalizationError
-    }
-    
-    func write(to url: URL) throws {
-        guard let destination = CGImageDestinationCreateWithURL(url as CFURL, kUTTypePNG, 1, nil) else { throw CGImageWritingError.imageDestinationCreationError }
-        CGImageDestinationAddImage(destination, self, nil)
-        if !CGImageDestinationFinalize(destination) {
-            throw CGImageWritingError.imageFinalizationError
-        }
-    }
-}
