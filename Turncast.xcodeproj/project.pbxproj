@@ -11,14 +11,12 @@
 		4A1A13CD2634B1FD001298B9 /* TurncastServerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13CC2634B1FD001298B9 /* TurncastServerApp.swift */; };
 		4A1A13D82634B3C0001298B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13D72634B3C0001298B9 /* SettingsView.swift */; };
 		4A1A13DD2634B46B001298B9 /* InputSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13DC2634B46B001298B9 /* InputSettingsView.swift */; };
-		4A1A13E22634B5A0001298B9 /* MetadataSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13E12634B5A0001298B9 /* MetadataSettingsView.swift */; };
 		4A1A13E72634B684001298B9 /* AppleTVSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13E62634B684001298B9 /* AppleTVSettingsView.swift */; };
 		4A1A13EC2634BD93001298B9 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13EB2634BD93001298B9 /* Shell.swift */; };
 		4A872B9324565775002A0523 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A872B9224565775002A0523 /* ContentView.swift */; };
 		4A872B9524565777002A0523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A872B9424565777002A0523 /* Assets.xcassets */; };
 		4A872B9824565777002A0523 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A872B9724565777002A0523 /* Preview Assets.xcassets */; };
 		4A8A9AE225A11E7900116AD4 /* IPAddressHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A9AE125A11E7900116AD4 /* IPAddressHelper.swift */; };
-		4AA82D7425DB813A00354BF2 /* MediaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA82D7325DB813A00354BF2 /* MediaPicker.swift */; };
 		4AA82DA125DBA25B00354BF2 /* CupertinoJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 4AA82DA025DBA25B00354BF2 /* CupertinoJWT */; };
 		4AA82DA625DBA28100354BF2 /* CupertinoJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 4AA82DA525DBA28100354BF2 /* CupertinoJWT */; };
 		4AAAFB7525994DCB00FD8EAD /* TurncastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */; };
@@ -50,8 +48,6 @@
 		4AE338ED259E98A100F034A1 /* MetadataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338EC259E98A100F034A1 /* MetadataStore.swift */; };
 		4AE338EE259E98A100F034A1 /* MetadataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338EC259E98A100F034A1 /* MetadataStore.swift */; };
 		4AE338EF259E98A100F034A1 /* MetadataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338EC259E98A100F034A1 /* MetadataStore.swift */; };
-		4AE338F5259FC38B00F034A1 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338F4259FC38B00F034A1 /* PhotoPicker.swift */; };
-		4AE338F6259FC38B00F034A1 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338F4259FC38B00F034A1 /* PhotoPicker.swift */; };
 		4AE3390B259FD20500F034A1 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3390A259FD20500F034A1 /* MultipeerManager.swift */; };
 		4AE33917259FD7E300F034A1 /* MultipeerMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 4AE33916259FD7E300F034A1 /* MultipeerMessages */; };
 		4AE3391F259FDDE300F034A1 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */; };
@@ -92,7 +88,6 @@
 		4A1A13CC2634B1FD001298B9 /* TurncastServerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurncastServerApp.swift; sourceTree = "<group>"; };
 		4A1A13D72634B3C0001298B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4A1A13DC2634B46B001298B9 /* InputSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSettingsView.swift; sourceTree = "<group>"; };
-		4A1A13E12634B5A0001298B9 /* MetadataSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataSettingsView.swift; sourceTree = "<group>"; };
 		4A1A13E62634B684001298B9 /* AppleTVSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTVSettingsView.swift; sourceTree = "<group>"; };
 		4A1A13EB2634BD93001298B9 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		4A872B8D24565775002A0523 /* Turncast Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Turncast Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +97,6 @@
 		4A872B9C24565777002A0523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A872B9D24565777002A0523 /* TurncastServer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TurncastServer.entitlements; sourceTree = "<group>"; };
 		4A8A9AE125A11E7900116AD4 /* IPAddressHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressHelper.swift; sourceTree = "<group>"; };
-		4AA82D7325DB813A00354BF2 /* MediaPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaPicker.swift; path = iOS/MediaPicker.swift; sourceTree = SOURCE_ROOT; };
 		4AA82D7E25DB93AE00354BF2 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurncastApp.swift; sourceTree = "<group>"; };
 		4AAAFB6425994DC900FD8EAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,7 +122,6 @@
 		4AE338B7259E8A6A00F034A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4AE338B9259E8A6A00F034A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AE338EC259E98A100F034A1 /* MetadataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataStore.swift; sourceTree = "<group>"; };
-		4AE338F4259FC38B00F034A1 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		4AE338FB259FD07B00F034A1 /* MultipeerMessages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MultipeerMessages; sourceTree = "<group>"; };
 		4AE3390A259FD20500F034A1 /* MultipeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerManager.swift; sourceTree = "<group>"; };
 		4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerManager.swift; sourceTree = "<group>"; };
@@ -214,7 +207,6 @@
 				4AFD72BA25D79D7D009D5D3D /* IntegerField.swift */,
 				4A8A9AE125A11E7900116AD4 /* IPAddressHelper.swift */,
 				4AE3387E259BCE4200F034A1 /* Metadata.swift */,
-				4A1A13E12634B5A0001298B9 /* MetadataSettingsView.swift */,
 				4AE3390A259FD20500F034A1 /* MultipeerManager.swift */,
 				4AE338A2259D427F00F034A1 /* ResultsObserver.swift */,
 				4AE33887259BCEA600F034A1 /* URLHelpers.swift */,
@@ -255,7 +247,6 @@
 				4AE3380C2599634700F034A1 /* StreamSource.swift */,
 				4AE338042599620A00F034A1 /* AirPlayRoutePickerView.swift */,
 				4AE338EC259E98A100F034A1 /* MetadataStore.swift */,
-				4AE338F4259FC38B00F034A1 /* PhotoPicker.swift */,
 				4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */,
 				4AD6362525D3B03C00133C39 /* URLTester.swift */,
 				4AA82D7E25DB93AE00354BF2 /* BridgingHeader.h */,
@@ -266,7 +257,6 @@
 		4AAAFB6B25994DCB00FD8EAD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4AA82D7325DB813A00354BF2 /* MediaPicker.swift */,
 				4AAAFB6C25994DCB00FD8EAD /* Info.plist */,
 			);
 			path = iOS;
@@ -486,7 +476,6 @@
 				4A1A13EC2634BD93001298B9 /* Shell.swift in Sources */,
 				4AE33890259BCEAA00F034A1 /* Metadata.swift in Sources */,
 				4AE338A3259D427F00F034A1 /* ResultsObserver.swift in Sources */,
-				4A1A13E22634B5A0001298B9 /* MetadataSettingsView.swift in Sources */,
 				4A872B9324565775002A0523 /* ContentView.swift in Sources */,
 				4A01FD672635F67100CFC204 /* AppleTVUtilities.swift in Sources */,
 				4AE33888259BCEA600F034A1 /* URLHelpers.swift in Sources */,
@@ -507,9 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AE338F5259FC38B00F034A1 /* PhotoPicker.swift in Sources */,
 				4AD6362625D3B03C00133C39 /* URLTester.swift in Sources */,
-				4AA82D7425DB813A00354BF2 /* MediaPicker.swift in Sources */,
 				4AE338ED259E98A100F034A1 /* MetadataStore.swift in Sources */,
 				4AAAFBA725995BAB00FD8EAD /* SettingsView.swift in Sources */,
 				4AAAFB7725994DCB00FD8EAD /* ContentView.swift in Sources */,
@@ -527,7 +514,6 @@
 				4AAAFBA825995BAB00FD8EAD /* SettingsView.swift in Sources */,
 				4AAAFB7825994DCB00FD8EAD /* ContentView.swift in Sources */,
 				4AE33920259FDDE300F034A1 /* MultipeerManager.swift in Sources */,
-				4AE338F6259FC38B00F034A1 /* PhotoPicker.swift in Sources */,
 				4AD6362725D3B03C00133C39 /* URLTester.swift in Sources */,
 				4AE338EE259E98A100F034A1 /* MetadataStore.swift in Sources */,
 				4AE3380E2599634700F034A1 /* StreamSource.swift in Sources */,
@@ -706,7 +692,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 34;
 				DEVELOPMENT_ASSET_PATHS = "TurncastServer/Preview\\ Content";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -733,7 +719,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 34;
 				DEVELOPMENT_ASSET_PATHS = "TurncastServer/Preview\\ Content";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_HARDENED_RUNTIME = YES;

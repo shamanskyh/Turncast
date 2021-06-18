@@ -24,11 +24,9 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     @AppStorage("offThreshold") var offThreshold: Double = -47.0
     @AppStorage("onThreshold") var onThreshold: Double = -30.0
     @AppStorage("disconnectDelay") var disconnectDelay: Double = 1200.0
-    @AppStorage("sampleLength") var sampleLength: Double = 5.0
-    @AppStorage("sampleDelay") var sampleDelay: Double = 10.0
     @AppStorage("onLength") var onLength: Double = 2.0
     @AppStorage("offLength") var offLength: Double = 4.0
-    @AppStorage("maxFiles") var maxFiles: Int = 8
+    @AppStorage("launchAppleTV") var launchAppleTV: Bool = false
     @AppStorage("pathToAtvRemote") var pathToATVRemote: String = ""
     @AppStorage("appleTVID") var appleTVID: String = ""
     @AppStorage("appleTVCredentials") var appleTVCredentials: String = ""
@@ -159,7 +157,7 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
         }
         
         // connect to our apple tv if we have one
-        if !pathToATVRemote.isEmpty && !appleTVID.isEmpty && !appleTVCredentials.isEmpty {
+        if launchAppleTV && !pathToATVRemote.isEmpty && !appleTVID.isEmpty && !appleTVCredentials.isEmpty {
             AppleTVUtilities.openTurncast(atvRemotePath: pathToATVRemote,
                                           appleTVID: appleTVID,
                                           appleTVCredentials: appleTVCredentials)
