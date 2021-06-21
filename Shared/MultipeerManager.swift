@@ -137,6 +137,7 @@ extension MultipeerManager: MCSessionDelegate {
                 case .clearImageURL:
                     strongSelf.metadataStore?.blockUpdates = true
                     strongSelf.metadataStore?.albumImage = Image("NoInfo")
+                    strongSelf.metadataStore?.albumImageData = UIImage(named: "NoInfo")!.cgImage!
                     strongSelf.metadataStore?.blockUpdates = false
                     
                 }

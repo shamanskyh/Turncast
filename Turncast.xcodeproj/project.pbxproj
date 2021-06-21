@@ -34,6 +34,8 @@
 		4AD6362625D3B03C00133C39 /* URLTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD6362525D3B03C00133C39 /* URLTester.swift */; };
 		4AD6362725D3B03C00133C39 /* URLTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD6362525D3B03C00133C39 /* URLTester.swift */; };
 		4AD6362825D3B03C00133C39 /* URLTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD6362525D3B03C00133C39 /* URLTester.swift */; };
+		4AE2B4B726800A84004EAE4D /* MetadataOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4B626800A84004EAE4D /* MetadataOverride.swift */; };
+		4AE2B4B926800B45004EAE4D /* MetadataSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4B826800B45004EAE4D /* MetadataSettings.swift */; };
 		4AE338052599620A00F034A1 /* AirPlayRoutePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338042599620A00F034A1 /* AirPlayRoutePickerView.swift */; };
 		4AE3380D2599634700F034A1 /* StreamSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3380C2599634700F034A1 /* StreamSource.swift */; };
 		4AE3380E2599634700F034A1 /* StreamSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3380C2599634700F034A1 /* StreamSource.swift */; };
@@ -113,6 +115,8 @@
 		4ABC440F257486AE0078378C /* PlayStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStatus.swift; sourceTree = "<group>"; };
 		4ABC441425748AC20078378C /* DecimalField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalField.swift; sourceTree = "<group>"; };
 		4AD6362525D3B03C00133C39 /* URLTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLTester.swift; sourceTree = "<group>"; };
+		4AE2B4B626800A84004EAE4D /* MetadataOverride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataOverride.swift; sourceTree = "<group>"; };
+		4AE2B4B826800B45004EAE4D /* MetadataSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataSettings.swift; sourceTree = "<group>"; };
 		4AE338042599620A00F034A1 /* AirPlayRoutePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayRoutePickerView.swift; sourceTree = "<group>"; };
 		4AE3380C2599634700F034A1 /* StreamSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamSource.swift; sourceTree = "<group>"; };
 		4AE3387E259BCE4200F034A1 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 				4AFD72BA25D79D7D009D5D3D /* IntegerField.swift */,
 				4A8A9AE125A11E7900116AD4 /* IPAddressHelper.swift */,
 				4AE3387E259BCE4200F034A1 /* Metadata.swift */,
+				4AE2B4B626800A84004EAE4D /* MetadataOverride.swift */,
+				4AE2B4B826800B45004EAE4D /* MetadataSettings.swift */,
 				4AE3390A259FD20500F034A1 /* MultipeerManager.swift */,
 				4AE338A2259D427F00F034A1 /* ResultsObserver.swift */,
 				4AE33887259BCEA600F034A1 /* URLHelpers.swift */,
@@ -480,6 +486,7 @@
 				4A01FD672635F67100CFC204 /* AppleTVUtilities.swift in Sources */,
 				4AE33888259BCEA600F034A1 /* URLHelpers.swift in Sources */,
 				4ABC4410257486AE0078378C /* PlayStatus.swift in Sources */,
+				4AE2B4B926800B45004EAE4D /* MetadataSettings.swift in Sources */,
 				4A1A13CD2634B1FD001298B9 /* TurncastServerApp.swift in Sources */,
 				4A1A13D82634B3C0001298B9 /* SettingsView.swift in Sources */,
 				4ABC441525748AC20078378C /* DecimalField.swift in Sources */,
@@ -489,6 +496,7 @@
 				4A8A9AE225A11E7900116AD4 /* IPAddressHelper.swift in Sources */,
 				4A1A13DD2634B46B001298B9 /* InputSettingsView.swift in Sources */,
 				4AFD72BB25D79D7D009D5D3D /* IntegerField.swift in Sources */,
+				4AE2B4B726800A84004EAE4D /* MetadataOverride.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,7 +700,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_ASSET_PATHS = "TurncastServer/Preview\\ Content";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -704,7 +712,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.TurncastServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -719,7 +727,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_ASSET_PATHS = "TurncastServer/Preview\\ Content";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -731,7 +739,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.TurncastServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

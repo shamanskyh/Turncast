@@ -30,6 +30,7 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     @AppStorage("pathToAtvRemote") var pathToATVRemote: String = ""
     @AppStorage("appleTVID") var appleTVID: String = ""
     @AppStorage("appleTVCredentials") var appleTVCredentials: String = ""
+    @AppStorage("MetadataOverrides") var metadataOverrides: [MetadataOverride] = []
     
     let sampleRate: Int = 16000
     @Published var connectionStatus = ConnectionStatus.disconnected
@@ -43,14 +44,7 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     var httpStream: HTTPStream?
     var httpService: HLSService?
     
-    internal var recognize = true {
-        didSet {
-            if !recognize {
-                // reset our session
-                shazamSession = SHSession()
-            }
-        }
-    }
+    internal var recognize = true
     
     internal var blockBroadcast = false
     fileprivate static let unknownAlbumImageName = "UnknownAlbum"
@@ -129,7 +123,8 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
                     audioOutput.setSampleBufferDelegate(self, queue: DispatchQueue.main)
                     if let existingFormatID = audioOutput.audioSettings[AVFormatIDKey] as? Int {
                         audioOutput.audioSettings = [AVSampleRateKey: NSNumber(integerLiteral: sampleRate),
-                                                     AVFormatIDKey: NSNumber(integerLiteral: existingFormatID)]
+                                                     AVFormatIDKey: NSNumber(integerLiteral: existingFormatID),
+                                               AVNumberOfChannelsKey: NSNumber(integerLiteral: 1)]
                     } else {
                         errorMessage = "Could not find existing audio settings"
                     }
@@ -211,6 +206,11 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
         
         // prepare to recognize again
         recognize = true
+        
+        // reset metadata
+        albumTitle = Self.notPlayingAlbum
+        albumArtist = Self.notPlayingArtist
+        albumImageURL = nil
     }
 }
 
@@ -277,10 +277,47 @@ extension AudioListener: SHSessionDelegate {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
             if let mediaItem = match.mediaItems.first {
+                
+                // see if we have an override -- if we do, return early
+                if let isrc = mediaItem.isrc, let metadataOverride = strongSelf.metadataOverrides.filter({ $0.isrc == isrc }).first {
+                    strongSelf.albumTitle = metadataOverride.album
+                    strongSelf.albumArtist = metadataOverride.artist
+                    if let artworkURL = URL(string: metadataOverride.imageURL) {
+                        strongSelf.albumImageURL = artworkURL
+                        DispatchQueue.global(qos: .background).async { [weak self] in
+                            if let nsImage = NSImage(contentsOf: artworkURL) {
+                                let swiftImage = Image(nsImage: nsImage)
+                                DispatchQueue.main.async { [weak self] in
+                                    guard let strongSelf = self else { return }
+                                    strongSelf.albumImage = swiftImage
+                                }
+                            }
+                        }
+                    }
+                    return
+                }
+                
+                defer {
+                    // at the end of it all, grab whatever we set and store it
+                    let metadataOverride = MetadataOverride(isrc: mediaItem.isrc ?? "\(Date())",
+                                                            album: strongSelf.albumTitle,
+                                                            artist: strongSelf.albumArtist,
+                                                            imageURL: strongSelf.albumImageURL?.absoluteString ?? "",
+                                                            notes: "")
+                    // prepend
+                    strongSelf.metadataOverrides.insert(metadataOverride, at: 0)
+                }
+                
                 let shAlbumKey: SHMediaItemProperty = SHMediaItemProperty("sh_albumName")
                 if let matchedAlbumName = mediaItem[shAlbumKey] as? String {
                     strongSelf.albumTitle = matchedAlbumName
-                    strongSelf.albumArtist = mediaItem.artist ?? "Unknown Artist"
+                    // Heuristic: Try to strip anything after "Feat." if the artist contains that
+                    if let mediaItemArtist = mediaItem.artist, let featRange = mediaItemArtist.range(of: " feat.", options: .caseInsensitive) {
+                        strongSelf.albumArtist = String(mediaItemArtist[mediaItemArtist.startIndex..<featRange.lowerBound])
+                    } else {
+                        strongSelf.albumArtist = mediaItem.artist ?? "Unknown Artist"
+                    }
+                    
                     strongSelf.recognize = false
                 } else {
                     strongSelf.albumTitle = mediaItem.title ?? "Unknown Album"
@@ -292,7 +329,7 @@ extension AudioListener: SHSessionDelegate {
                     DispatchQueue.global(qos: .background).async { [weak self] in
                         if let nsImage = NSImage(contentsOf: artworkURL) {
                             let swiftImage = Image(nsImage: nsImage)
-                            DispatchQueue.main.async {
+                            DispatchQueue.main.async { [weak self] in
                                 guard let strongSelf = self else { return }
                                 strongSelf.albumImage = swiftImage
                             }
