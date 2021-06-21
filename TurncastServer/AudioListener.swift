@@ -60,6 +60,9 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
             if newValue == nil {
                 // reset
                 albumImage = Image(Self.unknownAlbumImageName)
+                if !blockBroadcast {
+                    multipeerManager?.broadcast(message: .clearImageURL)
+                }
             }
             if let imageURL = newValue, !blockBroadcast {
                 multipeerManager?.broadcast(message: .imageURL(imageURL))
