@@ -17,29 +17,43 @@ struct ContentView: View {
     let multipeerManager = MultipeerManager.shared
     
     var body: some View {
-        VStack(alignment: .center) {
+        // we want to expand
+        GeometryReader { _ in
+            HStack {
+                Spacer()
+                VStack(alignment: .center) {
+                    metadataStore.albumImage
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: albumArtSize)
+                        .cornerRadius(12.0)
+                        .padding()
+                    Text(metadataStore.albumTitle).font(.headline)
+                    Text(metadataStore.artist).font(.subheadline)
+                    HStack {
+                        #if os(iOS)
+                        playStopButton
+                            .font(.title)
+                            .frame(width: 50, height: 50)
+                        AirPlayRoutePickerView()
+                            .frame(width: 50, height: 50)
+                        #elseif os(tvOS)
+                        playStopButton
+                        AirPlayRoutePickerView()
+                            .frame(width: 50, height: 50)
+                        #endif
+                    }.padding(.top, 40)
+                }
+                Spacer()
+            }
+        }
+        .background(.thickMaterial)
+        .background(alignment: .center) {
             metadataStore.albumImage
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: albumArtSize)
-                .cornerRadius(12.0)
-                .padding()
-            Text(metadataStore.albumTitle).font(.headline)
-            Text(metadataStore.artist).font(.subheadline)
-            HStack {
-                #if os(iOS)
-                playStopButton
-                    .font(.title)
-                    .frame(width: 50, height: 50)
-                AirPlayRoutePickerView()
-                    .frame(width: 50, height: 50)
-                #elseif os(tvOS)
-                playStopButton
-                AirPlayRoutePickerView()
-                    .frame(width: 50, height: 50)
-                #endif
-            }.padding(.top, 40)
-        }.onAppear {
+                .aspectRatio(contentMode: .fill)
+        }
+        .onAppear {
             metadataStore.multipeerManager = multipeerManager
             multipeerManager.metadataStore = metadataStore
             multipeerManager.streamSource = streamSource

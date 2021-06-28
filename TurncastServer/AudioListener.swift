@@ -144,10 +144,18 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
                 errorMessage = "Cannot find audio device containing \"\(inputName)\""
             }
         }
+        
+        // warm our connection
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) { [weak self] in
+            self?.beginStreaming(warmConnection: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(10)) { [weak self] in
+                self?.endStreaming(delayBeforeDisconnect: 1.0)
+            }
+        }
     }
     
     /// must be called on main
-    func beginStreaming() {
+    func beginStreaming(warmConnection: Bool = false) {
         recognize = true
         
         if connectionStatus == .waitingToDisconnect {
@@ -155,17 +163,19 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
         }
         
         // connect to our apple tv if we have one
-        if launchAppleTV && !pathToATVRemote.isEmpty && !appleTVID.isEmpty && !appleTVCredentials.isEmpty {
+        if !warmConnection && launchAppleTV && !pathToATVRemote.isEmpty && !appleTVID.isEmpty && !appleTVCredentials.isEmpty {
             AppleTVUtilities.openTurncast(atvRemotePath: pathToATVRemote,
                                           appleTVID: appleTVID,
                                           appleTVCredentials: appleTVCredentials)
         }
         
         // broadcast temporary data
-        albumTitle = "Listening…"
-        albumArtist = ""
-        albumImageURL = nil
-        albumImage = Image(AudioListener.unknownAlbumImageName)
+        if !warmConnection {
+            albumTitle = "Listening…"
+            albumArtist = ""
+            albumImageURL = nil
+            albumImage = Image(AudioListener.unknownAlbumImageName)
+        }
         
         // Stream
         httpStream = HTTPStream()
@@ -187,10 +197,10 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     }
     
     /// Must be called on main
-    func endStreaming() {
+    func endStreaming(delayBeforeDisconnect: Double? = nil) {
         let service = httpService
         let stream = httpStream
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(Int(disconnectDelay))) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(Int(delayBeforeDisconnect ?? disconnectDelay))) { [weak self] in
             guard let strongSelf = self else { return }
             if strongSelf.connectionStatus == .waitingToDisconnect {
                 if let stream = stream {
