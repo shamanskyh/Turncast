@@ -27,7 +27,15 @@ struct MetadataSettings: View {
                     TextField("Artist", text: metadataOverride.artist)
                 }
                 TableColumn("Artwork") { metadataOverride in
-                    TextField("Image URL of Artwork", text: metadataOverride.imageURL)
+                    if selectedMetadataOverride == metadataOverride.id {
+                        TextField("Image URL of Artwork", text: metadataOverride.imageURL)
+                    } else {
+                        AsyncImage(url: URL(string: metadataOverride.imageURL.wrappedValue)) { image in
+                            image.resizable().resizable().aspectRatio(CGSize(width: 1, height: 1), contentMode: .fit)
+                        } placeholder: {
+                            Image("UnknownAlbum").resizable().aspectRatio(CGSize(width: 1, height: 1), contentMode: .fit)
+                        }
+                    }
                 }
                 TableColumn("Notes") { metadataOverride in
                     TextField("Notes", text: metadataOverride.notes)

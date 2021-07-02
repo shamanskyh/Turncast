@@ -47,7 +47,7 @@ struct ContentView: View {
                 Spacer()
             }
         }
-        .background(.thickMaterial)
+        .background(.regularMaterial)
         .background(alignment: .center) {
             metadataStore.albumImage
                 .resizable()
