@@ -17,48 +17,32 @@
 		4A872B9524565777002A0523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A872B9424565777002A0523 /* Assets.xcassets */; };
 		4A872B9824565777002A0523 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A872B9724565777002A0523 /* Preview Assets.xcassets */; };
 		4A8A9AE225A11E7900116AD4 /* IPAddressHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A9AE125A11E7900116AD4 /* IPAddressHelper.swift */; };
-		4AA82DA125DBA25B00354BF2 /* CupertinoJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 4AA82DA025DBA25B00354BF2 /* CupertinoJWT */; };
-		4AA82DA625DBA28100354BF2 /* CupertinoJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 4AA82DA525DBA28100354BF2 /* CupertinoJWT */; };
 		4AAAFB7525994DCB00FD8EAD /* TurncastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */; };
-		4AAAFB7625994DCB00FD8EAD /* TurncastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */; };
 		4AAAFB7725994DCB00FD8EAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6425994DC900FD8EAD /* ContentView.swift */; };
-		4AAAFB7825994DCB00FD8EAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6425994DC900FD8EAD /* ContentView.swift */; };
 		4AAAFB7925994DCB00FD8EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */; };
-		4AAAFB7A25994DCB00FD8EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */; };
-		4AAAFBA725995BAB00FD8EAD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFBA625995BAB00FD8EAD /* SettingsView.swift */; };
-		4AAAFBA825995BAB00FD8EAD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFBA625995BAB00FD8EAD /* SettingsView.swift */; };
 		4AAEE18B263FBFA800CB3F5B /* HaishinKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4AAEE18A263FBFA800CB3F5B /* HaishinKit */; };
 		4ABC440D2574869C0078378C /* AudioListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC440C2574869C0078378C /* AudioListener.swift */; };
-		4ABC4410257486AE0078378C /* PlayStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC440F257486AE0078378C /* PlayStatus.swift */; };
-		4ABC441525748AC20078378C /* DecimalField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC441425748AC20078378C /* DecimalField.swift */; };
+		4ABC4410257486AE0078378C /* AudioDetectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC440F257486AE0078378C /* AudioDetectionStatus.swift */; };
 		4AD6362625D3B03C00133C39 /* URLTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD6362525D3B03C00133C39 /* URLTester.swift */; };
-		4AD6362725D3B03C00133C39 /* URLTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD6362525D3B03C00133C39 /* URLTester.swift */; };
 		4AD6362825D3B03C00133C39 /* URLTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD6362525D3B03C00133C39 /* URLTester.swift */; };
 		4AE2B4B726800A84004EAE4D /* MetadataOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4B626800A84004EAE4D /* MetadataOverride.swift */; };
 		4AE2B4B926800B45004EAE4D /* MetadataSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4B826800B45004EAE4D /* MetadataSettings.swift */; };
 		4AE338052599620A00F034A1 /* AirPlayRoutePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338042599620A00F034A1 /* AirPlayRoutePickerView.swift */; };
 		4AE3380D2599634700F034A1 /* StreamSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3380C2599634700F034A1 /* StreamSource.swift */; };
-		4AE3380E2599634700F034A1 /* StreamSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3380C2599634700F034A1 /* StreamSource.swift */; };
-		4AE33888259BCEA600F034A1 /* URLHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE33887259BCEA600F034A1 /* URLHelpers.swift */; };
 		4AE33890259BCEAA00F034A1 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3387E259BCE4200F034A1 /* Metadata.swift */; };
-		4AE338A3259D427F00F034A1 /* ResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338A2259D427F00F034A1 /* ResultsObserver.swift */; };
 		4AE338C9259E8AC900F034A1 /* TurncastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */; };
 		4AE338CA259E8AC900F034A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6425994DC900FD8EAD /* ContentView.swift */; };
 		4AE338CD259E8AC900F034A1 /* StreamSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3380C2599634700F034A1 /* StreamSource.swift */; };
 		4AE338DA259E8B1B00F034A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */; };
 		4AE338E3259E8BBB00F034A1 /* AirPlayRoutePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338042599620A00F034A1 /* AirPlayRoutePickerView.swift */; };
 		4AE338ED259E98A100F034A1 /* MetadataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338EC259E98A100F034A1 /* MetadataStore.swift */; };
-		4AE338EE259E98A100F034A1 /* MetadataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338EC259E98A100F034A1 /* MetadataStore.swift */; };
 		4AE338EF259E98A100F034A1 /* MetadataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338EC259E98A100F034A1 /* MetadataStore.swift */; };
 		4AE3390B259FD20500F034A1 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3390A259FD20500F034A1 /* MultipeerManager.swift */; };
 		4AE33917259FD7E300F034A1 /* MultipeerMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 4AE33916259FD7E300F034A1 /* MultipeerMessages */; };
 		4AE3391F259FDDE300F034A1 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */; };
-		4AE33920259FDDE300F034A1 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */; };
 		4AE33921259FDDE400F034A1 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */; };
 		4AE3392B259FDE5900F034A1 /* MultipeerMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 4AE3392A259FDE5900F034A1 /* MultipeerMessages */; };
-		4AE3392D259FDE5F00F034A1 /* MultipeerMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 4AE3392C259FDE5F00F034A1 /* MultipeerMessages */; };
 		4AE3392F259FDE6600F034A1 /* MultipeerMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 4AE3392E259FDE6600F034A1 /* MultipeerMessages */; };
-		4AFD72BB25D79D7D009D5D3D /* IntegerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD72BA25D79D7D009D5D3D /* IntegerField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -99,29 +83,21 @@
 		4A872B9C24565777002A0523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A872B9D24565777002A0523 /* TurncastServer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TurncastServer.entitlements; sourceTree = "<group>"; };
 		4A8A9AE125A11E7900116AD4 /* IPAddressHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressHelper.swift; sourceTree = "<group>"; };
-		4AA82D7E25DB93AE00354BF2 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurncastApp.swift; sourceTree = "<group>"; };
 		4AAAFB6425994DC900FD8EAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AAAFB6A25994DCB00FD8EAD /* Turncast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Turncast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AAAFB6C25994DCB00FD8EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4AAAFB7125994DCB00FD8EAD /* Turncast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Turncast.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4AAAFB7325994DCB00FD8EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4AAAFB7425994DCB00FD8EAD /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		4AAAFB8325994DE000FD8EAD /* Turncast.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Turncast.entitlements; sourceTree = "<group>"; };
 		4AAAFB8A2599596D00FD8EAD /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
-		4AAAFBA625995BAB00FD8EAD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4ABC440C2574869C0078378C /* AudioListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListener.swift; sourceTree = "<group>"; };
-		4ABC440F257486AE0078378C /* PlayStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStatus.swift; sourceTree = "<group>"; };
-		4ABC441425748AC20078378C /* DecimalField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalField.swift; sourceTree = "<group>"; };
+		4ABC440F257486AE0078378C /* AudioDetectionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDetectionStatus.swift; sourceTree = "<group>"; };
 		4AD6362525D3B03C00133C39 /* URLTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLTester.swift; sourceTree = "<group>"; };
 		4AE2B4B626800A84004EAE4D /* MetadataOverride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataOverride.swift; sourceTree = "<group>"; };
 		4AE2B4B826800B45004EAE4D /* MetadataSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataSettings.swift; sourceTree = "<group>"; };
 		4AE338042599620A00F034A1 /* AirPlayRoutePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayRoutePickerView.swift; sourceTree = "<group>"; };
 		4AE3380C2599634700F034A1 /* StreamSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamSource.swift; sourceTree = "<group>"; };
 		4AE3387E259BCE4200F034A1 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
-		4AE33887259BCEA600F034A1 /* URLHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHelpers.swift; sourceTree = "<group>"; };
-		4AE338A2259D427F00F034A1 /* ResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
 		4AE338AE259E8A6700F034A1 /* Turncast (tvOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Turncast (tvOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE338B7259E8A6A00F034A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4AE338B9259E8A6A00F034A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,7 +105,6 @@
 		4AE338FB259FD07B00F034A1 /* MultipeerMessages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MultipeerMessages; sourceTree = "<group>"; };
 		4AE3390A259FD20500F034A1 /* MultipeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerManager.swift; sourceTree = "<group>"; };
 		4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerManager.swift; sourceTree = "<group>"; };
-		4AFD72BA25D79D7D009D5D3D /* IntegerField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +112,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AA82DA125DBA25B00354BF2 /* CupertinoJWT in Frameworks */,
 				4AAEE18B263FBFA800CB3F5B /* HaishinKit in Frameworks */,
 				4AE33917259FD7E300F034A1 /* MultipeerMessages in Frameworks */,
 			);
@@ -147,16 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AA82DA625DBA28100354BF2 /* CupertinoJWT in Frameworks */,
 				4AE3392B259FDE5900F034A1 /* MultipeerMessages in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4AAAFB6E25994DCB00FD8EAD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4AE3392D259FDE5F00F034A1 /* MultipeerMessages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +145,6 @@
 				4A872B8F24565775002A0523 /* TurncastServer */,
 				4AAAFB6225994DC900FD8EAD /* Shared */,
 				4AAAFB6B25994DCB00FD8EAD /* iOS */,
-				4AAAFB7225994DCB00FD8EAD /* macOS */,
 				4AE338AF259E8A6700F034A1 /* Turncast */,
 				4A872B8E24565775002A0523 /* Products */,
 				4AAAFB542599493E00FD8EAD /* Frameworks */,
@@ -192,7 +156,6 @@
 			children = (
 				4A872B8D24565775002A0523 /* Turncast Server.app */,
 				4AAAFB6A25994DCB00FD8EAD /* Turncast.app */,
-				4AAAFB7125994DCB00FD8EAD /* Turncast.app */,
 				4AE338AE259E8A6700F034A1 /* Turncast (tvOS).app */,
 			);
 			name = Products;
@@ -204,18 +167,14 @@
 				4A1A13E62634B684001298B9 /* AppleTVSettingsView.swift */,
 				4A01FD662635F67100CFC204 /* AppleTVUtilities.swift */,
 				4ABC440C2574869C0078378C /* AudioListener.swift */,
-				4ABC440F257486AE0078378C /* PlayStatus.swift */,
+				4ABC440F257486AE0078378C /* AudioDetectionStatus.swift */,
 				4A872B9224565775002A0523 /* ContentView.swift */,
-				4ABC441425748AC20078378C /* DecimalField.swift */,
 				4A1A13DC2634B46B001298B9 /* InputSettingsView.swift */,
-				4AFD72BA25D79D7D009D5D3D /* IntegerField.swift */,
 				4A8A9AE125A11E7900116AD4 /* IPAddressHelper.swift */,
 				4AE3387E259BCE4200F034A1 /* Metadata.swift */,
 				4AE2B4B626800A84004EAE4D /* MetadataOverride.swift */,
 				4AE2B4B826800B45004EAE4D /* MetadataSettings.swift */,
 				4AE3390A259FD20500F034A1 /* MultipeerManager.swift */,
-				4AE338A2259D427F00F034A1 /* ResultsObserver.swift */,
-				4AE33887259BCEA600F034A1 /* URLHelpers.swift */,
 				4A872B9424565777002A0523 /* Assets.xcassets */,
 				4A872B9C24565777002A0523 /* Info.plist */,
 				4A872B9D24565777002A0523 /* TurncastServer.entitlements */,
@@ -249,13 +208,11 @@
 				4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */,
 				4AAAFB6425994DC900FD8EAD /* ContentView.swift */,
 				4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */,
-				4AAAFBA625995BAB00FD8EAD /* SettingsView.swift */,
 				4AE3380C2599634700F034A1 /* StreamSource.swift */,
 				4AE338042599620A00F034A1 /* AirPlayRoutePickerView.swift */,
 				4AE338EC259E98A100F034A1 /* MetadataStore.swift */,
 				4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */,
 				4AD6362525D3B03C00133C39 /* URLTester.swift */,
-				4AA82D7E25DB93AE00354BF2 /* BridgingHeader.h */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -266,15 +223,6 @@
 				4AAAFB6C25994DCB00FD8EAD /* Info.plist */,
 			);
 			path = iOS;
-			sourceTree = "<group>";
-		};
-		4AAAFB7225994DCB00FD8EAD /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				4AAAFB7325994DCB00FD8EAD /* Info.plist */,
-				4AAAFB7425994DCB00FD8EAD /* macOS.entitlements */,
-			);
-			path = macOS;
 			sourceTree = "<group>";
 		};
 		4AE338AF259E8A6700F034A1 /* Turncast */ = {
@@ -317,7 +265,6 @@
 			name = "Turncast Server";
 			packageProductDependencies = (
 				4AE33916259FD7E300F034A1 /* MultipeerMessages */,
-				4AA82DA025DBA25B00354BF2 /* CupertinoJWT */,
 				4AAEE18A263FBFA800CB3F5B /* HaishinKit */,
 			);
 			productName = TurntableMonitor;
@@ -341,31 +288,9 @@
 			name = "Turncast (iOS)";
 			packageProductDependencies = (
 				4AE3392A259FDE5900F034A1 /* MultipeerMessages */,
-				4AA82DA525DBA28100354BF2 /* CupertinoJWT */,
 			);
 			productName = "Turncast (iOS)";
 			productReference = 4AAAFB6A25994DCB00FD8EAD /* Turncast.app */;
-			productType = "com.apple.product-type.application";
-		};
-		4AAAFB7025994DCB00FD8EAD /* Turncast (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4AAAFB7E25994DCB00FD8EAD /* Build configuration list for PBXNativeTarget "Turncast (macOS)" */;
-			buildPhases = (
-				4AAAFB6D25994DCB00FD8EAD /* Sources */,
-				4AAAFB6E25994DCB00FD8EAD /* Frameworks */,
-				4AAAFB6F25994DCB00FD8EAD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4AE33937259FDE9900F034A1 /* PBXTargetDependency */,
-			);
-			name = "Turncast (macOS)";
-			packageProductDependencies = (
-				4AE3392C259FDE5F00F034A1 /* MultipeerMessages */,
-			);
-			productName = "Turncast (macOS)";
-			productReference = 4AAAFB7125994DCB00FD8EAD /* Turncast.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4AE338AD259E8A6700F034A1 /* Turncast (tvOS) */ = {
@@ -405,9 +330,6 @@
 					4AAAFB6925994DCB00FD8EAD = {
 						CreatedOnToolsVersion = 12.3;
 					};
-					4AAAFB7025994DCB00FD8EAD = {
-						CreatedOnToolsVersion = 12.3;
-					};
 					4AE338AD259E8A6700F034A1 = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -424,7 +346,6 @@
 			mainGroup = 4A872B8424565775002A0523;
 			packageReferences = (
 				4AC5CE50259925430045B371 /* XCRemoteSwiftPackageReference "HaishinKit" */,
-				4AA82D9F25DBA25B00354BF2 /* XCRemoteSwiftPackageReference "CupertinoJWT" */,
 			);
 			productRefGroup = 4A872B8E24565775002A0523 /* Products */;
 			projectDirPath = "";
@@ -432,7 +353,6 @@
 			targets = (
 				4A872B8C24565775002A0523 /* Turncast Server */,
 				4AAAFB6925994DCB00FD8EAD /* Turncast (iOS) */,
-				4AAAFB7025994DCB00FD8EAD /* Turncast (macOS) */,
 				4AE338AD259E8A6700F034A1 /* Turncast (tvOS) */,
 			);
 		};
@@ -456,14 +376,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4AAAFB6F25994DCB00FD8EAD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4AAAFB7A25994DCB00FD8EAD /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4AE338AC259E8A6700F034A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,21 +393,17 @@
 			files = (
 				4A1A13EC2634BD93001298B9 /* Shell.swift in Sources */,
 				4AE33890259BCEAA00F034A1 /* Metadata.swift in Sources */,
-				4AE338A3259D427F00F034A1 /* ResultsObserver.swift in Sources */,
 				4A872B9324565775002A0523 /* ContentView.swift in Sources */,
 				4A01FD672635F67100CFC204 /* AppleTVUtilities.swift in Sources */,
-				4AE33888259BCEA600F034A1 /* URLHelpers.swift in Sources */,
-				4ABC4410257486AE0078378C /* PlayStatus.swift in Sources */,
+				4ABC4410257486AE0078378C /* AudioDetectionStatus.swift in Sources */,
 				4AE2B4B926800B45004EAE4D /* MetadataSettings.swift in Sources */,
 				4A1A13CD2634B1FD001298B9 /* TurncastServerApp.swift in Sources */,
 				4A1A13D82634B3C0001298B9 /* SettingsView.swift in Sources */,
-				4ABC441525748AC20078378C /* DecimalField.swift in Sources */,
 				4AE3390B259FD20500F034A1 /* MultipeerManager.swift in Sources */,
 				4A1A13E72634B684001298B9 /* AppleTVSettingsView.swift in Sources */,
 				4ABC440D2574869C0078378C /* AudioListener.swift in Sources */,
 				4A8A9AE225A11E7900116AD4 /* IPAddressHelper.swift in Sources */,
 				4A1A13DD2634B46B001298B9 /* InputSettingsView.swift in Sources */,
-				4AFD72BB25D79D7D009D5D3D /* IntegerField.swift in Sources */,
 				4AE2B4B726800A84004EAE4D /* MetadataOverride.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,26 +414,11 @@
 			files = (
 				4AD6362625D3B03C00133C39 /* URLTester.swift in Sources */,
 				4AE338ED259E98A100F034A1 /* MetadataStore.swift in Sources */,
-				4AAAFBA725995BAB00FD8EAD /* SettingsView.swift in Sources */,
 				4AAAFB7725994DCB00FD8EAD /* ContentView.swift in Sources */,
 				4AE3380D2599634700F034A1 /* StreamSource.swift in Sources */,
 				4AE3391F259FDDE300F034A1 /* MultipeerManager.swift in Sources */,
 				4AE338052599620A00F034A1 /* AirPlayRoutePickerView.swift in Sources */,
 				4AAAFB7525994DCB00FD8EAD /* TurncastApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4AAAFB6D25994DCB00FD8EAD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4AAAFBA825995BAB00FD8EAD /* SettingsView.swift in Sources */,
-				4AAAFB7825994DCB00FD8EAD /* ContentView.swift in Sources */,
-				4AE33920259FDDE300F034A1 /* MultipeerManager.swift in Sources */,
-				4AD6362725D3B03C00133C39 /* URLTester.swift in Sources */,
-				4AE338EE259E98A100F034A1 /* MetadataStore.swift in Sources */,
-				4AE3380E2599634700F034A1 /* StreamSource.swift in Sources */,
-				4AAAFB7625994DCB00FD8EAD /* TurncastApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,10 +458,6 @@
 		4AE33935259FDE9500F034A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 4AE33934259FDE9500F034A1 /* MultipeerMessages */;
-		};
-		4AE33937259FDE9900F034A1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 4AE33936259FDE9900F034A1 /* MultipeerMessages */;
 		};
 		4AE33939259FDE9D00F034A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -700,7 +589,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 44;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_ASSET_PATHS = "TurncastServer/Preview\\ Content";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -712,7 +601,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.1.2;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.TurncastServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -727,7 +616,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 44;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_ASSET_PATHS = "TurncastServer/Preview\\ Content";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -739,7 +628,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.1.2;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.TurncastServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -754,7 +643,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Turncast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_PREVIEWS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -763,12 +652,12 @@
 					HOME_USE,
 				);
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				OTHER_SWIFT_FLAGS = "-DHOME_USE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = Turncast;
@@ -787,16 +676,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Turncast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = Turncast;
@@ -808,60 +697,6 @@
 			};
 			name = Release;
 		};
-		4AAAFB7F25994DCB00FD8EAD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B5TXHQBF3Z;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
-				PRODUCT_NAME = Turncast;
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		4AAAFB8025994DCB00FD8EAD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B5TXHQBF3Z;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
-				PRODUCT_NAME = Turncast;
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		4AE338BB259E8A6A00F034A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -870,7 +705,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Turncast (tvOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Turncast/Preview Content\"";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_PREVIEWS = YES;
@@ -879,7 +714,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -897,7 +732,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Turncast (tvOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Turncast/Preview Content\"";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_PREVIEWS = YES;
@@ -906,7 +741,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -947,15 +782,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4AAAFB7E25994DCB00FD8EAD /* Build configuration list for PBXNativeTarget "Turncast (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4AAAFB7F25994DCB00FD8EAD /* Debug */,
-				4AAAFB8025994DCB00FD8EAD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4AE338BA259E8A6A00F034A1 /* Build configuration list for PBXNativeTarget "Turncast (tvOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -968,14 +794,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4AA82D9F25DBA25B00354BF2 /* XCRemoteSwiftPackageReference "CupertinoJWT" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/terwanerik/CupertinoJWT.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.2;
-			};
-		};
 		4AC5CE50259925430045B371 /* XCRemoteSwiftPackageReference "HaishinKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/shogo4405/HaishinKit.swift";
@@ -987,16 +805,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4AA82DA025DBA25B00354BF2 /* CupertinoJWT */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4AA82D9F25DBA25B00354BF2 /* XCRemoteSwiftPackageReference "CupertinoJWT" */;
-			productName = CupertinoJWT;
-		};
-		4AA82DA525DBA28100354BF2 /* CupertinoJWT */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4AA82D9F25DBA25B00354BF2 /* XCRemoteSwiftPackageReference "CupertinoJWT" */;
-			productName = CupertinoJWT;
-		};
 		4AAAFB5F25994AF200FD8EAD /* SimplePushKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SimplePushKit;
@@ -1027,19 +835,11 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = MultipeerMessages;
 		};
-		4AE3392C259FDE5F00F034A1 /* MultipeerMessages */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MultipeerMessages;
-		};
 		4AE3392E259FDE6600F034A1 /* MultipeerMessages */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MultipeerMessages;
 		};
 		4AE33934259FDE9500F034A1 /* MultipeerMessages */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MultipeerMessages;
-		};
-		4AE33936259FDE9900F034A1 /* MultipeerMessages */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MultipeerMessages;
 		};

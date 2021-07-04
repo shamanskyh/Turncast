@@ -8,8 +8,7 @@
 
 import Foundation
 
-enum ConnectionStatus {
-    case connected
-    case disconnected
-    case waitingToDisconnect
+enum AudioDetectionStatus {
+    case detectingAudio
+    case notDetectingAudio
 }

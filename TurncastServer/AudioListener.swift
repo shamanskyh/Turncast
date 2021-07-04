@@ -23,7 +23,6 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     @AppStorage("inputName") var inputName: String = "iMic"
     @AppStorage("offThreshold") var offThreshold: Double = -47.0
     @AppStorage("onThreshold") var onThreshold: Double = -30.0
-    @AppStorage("disconnectDelay") var disconnectDelay: Double = 1200.0
     @AppStorage("onLength") var onLength: Double = 2.0
     @AppStorage("offLength") var offLength: Double = 4.0
     @AppStorage("launchAppleTV") var launchAppleTV: Bool = false
@@ -33,7 +32,7 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     @AppStorage("MetadataOverrides") var metadataOverrides: [MetadataOverride] = []
     
     let sampleRate: Int = 16000
-    @Published var connectionStatus = ConnectionStatus.disconnected
+    @Published var audioDetectionStatus = AudioDetectionStatus.notDetectingAudio
     @Published var averagePowerLevel: Float = Float.leastNormalMagnitude
     @Published var errorMessage: String? = nil
     var nextUIUpdateDate = Date()
@@ -44,7 +43,7 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     var httpStream: HTTPStream?
     var httpService: HLSService?
     
-    internal var recognize = true
+    internal var recognize = false
     
     internal var blockBroadcast = false
     fileprivate static let unknownAlbumImageName = "UnknownAlbum"
@@ -145,41 +144,8 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
             }
         }
         
-        // warm our connection
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) { [weak self] in
-            self?.beginStreaming(warmConnection: true)
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(10)) { [weak self] in
-                self?.endStreaming(delayBeforeDisconnect: 1.0)
-            }
-        }
-    }
-    
-    /// must be called on main
-    func beginStreaming(warmConnection: Bool = false) {
-        recognize = true
-        
-        if connectionStatus == .waitingToDisconnect {
-            connectionStatus = .connected
-        }
-        
-        // connect to our apple tv if we have one
-        if !warmConnection && launchAppleTV && !pathToATVRemote.isEmpty && !appleTVID.isEmpty && !appleTVCredentials.isEmpty {
-            AppleTVUtilities.openTurncast(atvRemotePath: pathToATVRemote,
-                                          appleTVID: appleTVID,
-                                          appleTVCredentials: appleTVCredentials)
-        }
-        
-        // broadcast temporary data
-        if !warmConnection {
-            albumTitle = "Listening…"
-            albumArtist = ""
-            albumImageURL = nil
-            albumImage = Image(AudioListener.unknownAlbumImageName)
-        }
-        
-        // Stream
+        // start streaming
         httpStream = HTTPStream()
-        
         if let device = captureDevice, let stream = httpStream {
             
             stream.attachAudio(device)
@@ -188,42 +154,40 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
             httpService = HLSService(domain: "", type: "_http._tcp", name: "HaishinKit", port: 8080)
             httpService?.addHTTPStream(stream)
             httpService?.startRunning()
-            
-            connectionStatus = .connected
-        } else {
-            connectionStatus = .disconnected
-            errorMessage = "Could not start HTTP stream/service"
         }
+    }
+
+    /// must be called on main
+    func audioDetected() {
+        recognize = true
+        
+        // connect to our apple tv if we have one
+        if !pathToATVRemote.isEmpty && !appleTVID.isEmpty && !appleTVCredentials.isEmpty {
+            AppleTVUtilities.openTurncast(atvRemotePath: pathToATVRemote,
+                                          appleTVID: appleTVID,
+                                          appleTVCredentials: appleTVCredentials)
+        }
+        
+        // broadcast temporary data
+        albumTitle = "Listening…"
+        albumArtist = ""
+        albumImageURL = nil
+        albumImage = Image(AudioListener.unknownAlbumImageName)
+        
+        audioDetectionStatus = .detectingAudio
     }
     
     /// Must be called on main
-    func endStreaming(delayBeforeDisconnect: Double? = nil) {
-        let service = httpService
-        let stream = httpStream
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(Int(delayBeforeDisconnect ?? disconnectDelay))) { [weak self] in
-            guard let strongSelf = self else { return }
-            if strongSelf.connectionStatus == .waitingToDisconnect {
-                if let stream = stream {
-                    stream.attachAudio(nil)
-                    service?.removeHTTPStream(stream)
-                    service?.stopRunning()
-                    stream.publish(nil)
-                }
-                strongSelf.httpStream = nil
-                strongSelf.connectionStatus = .disconnected
-            }
-        }
-        
-        // set our connectionStatus
-        connectionStatus = .waitingToDisconnect
-        
-        // prepare to recognize again
-        recognize = true
+    func audioNotDetected() {
+        // stop recognizing
+        recognize = false
         
         // reset metadata
         albumTitle = Self.notPlayingAlbum
         albumArtist = Self.notPlayingArtist
         albumImageURL = nil
+        
+        audioDetectionStatus = .notDetectingAudio
     }
 }
 
@@ -233,7 +197,7 @@ extension AudioListener: AVCaptureAudioDataOutputSampleBufferDelegate {
                        from connection: AVCaptureConnection) {
         
         // generate a signature if we're connected
-        if connectionStatus == .connected && recognize {
+        if audioDetectionStatus == .detectingAudio && recognize {
             // need to make a PCM buffer here
             let numSamples = CMSampleBufferGetNumSamples(sampleBuffer)
             if let formatDescription = CMSampleBufferGetFormatDescription(sampleBuffer) {
@@ -250,13 +214,13 @@ extension AudioListener: AVCaptureAudioDataOutputSampleBufferDelegate {
         if Date() > nextUIUpdateDate {
             if let channel = connection.audioChannels.first {
                     averagePowerLevel = channel.averagePowerLevel
-                if channel.averagePowerLevel > Float(onThreshold) && (connectionStatus == .disconnected || connectionStatus == .waitingToDisconnect) {
+                if channel.averagePowerLevel > Float(onThreshold) && audioDetectionStatus == .notDetectingAudio {
                     
                     // check time constraint
                     offDate = nil   // flip our offDate to nil, just in case
                     if let prevOnDate = onDate {
                         if prevOnDate.timeIntervalSinceNow <= (-1.0 * onLength) {
-                            beginStreaming()
+                            audioDetected()
                             onDate = nil
                         } else {
                             // do nothing; keep waiting
@@ -264,16 +228,14 @@ extension AudioListener: AVCaptureAudioDataOutputSampleBufferDelegate {
                     } else {
                         onDate = Date()
                     }
-                } else if channel.averagePowerLevel < Float(offThreshold) && connectionStatus == .connected {
+                } else if channel.averagePowerLevel < Float(offThreshold) && audioDetectionStatus == .detectingAudio {
                     if let prevOffDate = offDate {
                         
                         // check time constraint
                         onDate = nil    // flip our onDate to nil, just in case
                         if prevOffDate.timeIntervalSinceNow <= (-1.0 * offLength) {
-                            endStreaming()
+                            audioNotDetected()
                             offDate = nil
-                        } else {
-                            // do nothing; keep waiting
                         }
                     } else {
                         offDate = Date()

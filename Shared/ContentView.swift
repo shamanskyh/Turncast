@@ -49,9 +49,13 @@ struct ContentView: View {
         }
         .background(.regularMaterial)
         .background(alignment: .center) {
-            metadataStore.albumImage
-                .resizable()
-                .aspectRatio(contentMode: .fill)
+            if metadataStore.albumImage != Image("NoInfo") {
+                metadataStore.albumImage
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            } else {
+                EmptyView()
+            }
         }
         .onAppear {
             metadataStore.multipeerManager = multipeerManager

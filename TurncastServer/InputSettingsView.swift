@@ -22,7 +22,7 @@ struct InputSettingsView: View {
                     get: { String(listener.onThreshold) },
                     set: { listener.onThreshold = Double($0) ?? 0.0 }
                 ))
-                    .help("At what volume level (or greater) should Turncast begin the HTTP stream?")
+                    .help("At what volume level (or greater) should Turncast begin recognizing audio?")
                 Text("dB")
             }
             HStack {
@@ -38,7 +38,7 @@ struct InputSettingsView: View {
                     get: { String(listener.offThreshold) },
                     set: { listener.offThreshold = Double($0) ?? 0.0 }
                 ))
-                    .help("At what volume level (or less) should Turncast schedule disconnection?")
+                    .help("At what volume level (or less) should Turncast reset for new audio recognition?")
                 Text("dB")
             }
             HStack {
@@ -47,14 +47,6 @@ struct InputSettingsView: View {
                     set: { listener.offLength = Double($0) ?? 0.0 }
                 ))
                     .help("How long, in seconds, should Turncast detect audio below the 'Off Threshold' before stopping?")
-                Text("seconds")
-            }
-            HStack {
-                TextField("Disconnect Delay", text: Binding(
-                    get: { String(listener.disconnectDelay) },
-                    set: { listener.disconnectDelay = Double($0) ?? 0.0 }
-                ))
-                    .help("How long, in seconds, after Turncast turns off should it disconnect the stream? Note that this value refers to the HTTP streaming capability and not the audio threshold levels defined by the 'Off Delay'")
                 Text("seconds")
             }
         }

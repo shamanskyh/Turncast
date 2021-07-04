@@ -13,8 +13,6 @@ struct ContentView: View {
     
     @ObservedObject var listener: AudioListener
     let formatter = NumberFormatter()
-    
-    @State var showingImageImporter = false
 
     var body: some View {
         VStack(spacing: 20.0) {
@@ -35,25 +33,19 @@ struct ContentView: View {
                     self.listener.beginListening()
                 }, label: { Text("Reconnect") }).padding()
             } else {
-                switch listener.connectionStatus {
-                case .connected:
-                    Text("Connected".uppercased())
+                switch listener.audioDetectionStatus {
+                case .detectingAudio:
+                    Text("Playing".uppercased())
                         .foregroundColor(.white)
                         .padding(8)
                         .background(RoundedRectangle(cornerRadius: 12.0, style: .continuous)
                             .foregroundColor(.green))
-                case .disconnected:
-                    Text("Not Connected".uppercased())
+                case .notDetectingAudio:
+                    Text("Not Playing".uppercased())
                         .foregroundColor(.white)
                         .padding(8)
                         .background(RoundedRectangle(cornerRadius: 12.0, style: .continuous)
                             .foregroundColor(.red))
-                case .waitingToDisconnect:
-                    Text("Waiting to Disconnect".uppercased())
-                        .foregroundColor(.white)
-                        .padding(8)
-                        .background(RoundedRectangle(cornerRadius: 12.0, style: .continuous)
-                            .foregroundColor(.orange))
                 }
                 if listener.averagePowerLevel == Float.leastNormalMagnitude {
                     Text("Audio Level: -∞ dB")
