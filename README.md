@@ -2,7 +2,7 @@
 
 Turncast is an open source server/client application designed to easily stream audio input from an analog source (like a record player) to Airplay 2 compatible speakers. To use it, you will need a Mac running as a server as well as an iPhone or Apple TV which acts as the client (and streams to speakers).
 
-
+![Diagram showing connection between audio source, Mac, and client](https://github.com/shamanskyh/Turncast/blob/main/Diagram.png?raw=true)
 
 Isn't this overkill/unnecessary? Absolutely. There are plenty of much easier ways to play analog audio through speakers, of course, and this is just one implementation that attempts to integrate a record player into a house of HomePods or other Airplay speakers.
 
