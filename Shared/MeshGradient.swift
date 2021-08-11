@@ -15,7 +15,7 @@ struct MeshGradient: View {
     let image: UIImage?
     let opacity: Binding<Double>
     
-    @State var colors: [Color] = [Color(white: 0.5), Color(white: 0.8), Color(white: 0.2), Color(white: 0.4)]
+    @State var colors: [Color] = [Color(white: 0.5), Color(white: 0.6), Color(white: 0.4), Color(white: 0.4)]
     
     var body: some View {
         AngularGradient(colors: colors, center: UnitPoint(x: 0.5, y: 0.5))
@@ -34,6 +34,8 @@ struct MeshGradient: View {
                             }
                         }
                     }
+                } else {
+                    colors = colors.shuffled()
                 }
             }
     }
