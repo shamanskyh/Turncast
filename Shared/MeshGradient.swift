@@ -19,14 +19,17 @@ struct MeshGradient: View {
     
     var body: some View {
         AngularGradient(colors: colors, center: UnitPoint(x: 0.5, y: 0.5))
-            .blur(radius: 20)
+            .blur(radius: blurRadius)
             .scaleEffect(1.1)
             .opacity(opacity.wrappedValue)
             .onAppear {
                 if let image = image {
                     DispatchQueue.global(qos: .background).async {
                         let colorPalette = ColorThief.getPalette(from: image, colorCount: 8, quality: 10)
-                        let mappedColors = colorPalette?.map({ Color(uiColor: $0.makeUIColor()) }).shuffled() ?? []
+                        var mappedColors = colorPalette?.map({ Color(uiColor: $0.makeUIColor()) }).shuffled() ?? []
+                        if let firstColor = mappedColors.first {
+                            mappedColors.append(firstColor)
+                        }
                         DispatchQueue.main.async {
                             colors = mappedColors
                             withAnimation(.linear(duration: 4.0)) {
@@ -38,5 +41,13 @@ struct MeshGradient: View {
                     colors = colors.shuffled()
                 }
             }
+    }
+    
+    var blurRadius: Double {
+        #if os(tvOS)
+        return 80.0
+        #else
+        return 20.0
+        #endif
     }
 }

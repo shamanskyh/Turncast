@@ -57,7 +57,7 @@ struct ContentView: View {
                 if metadataStore.albumImage != Image("NoInfo") {
                     MeshGradient(image: UIImage(cgImage: metadataStore.albumImageData), opacity: $backgroundOpacity)
                 }
-                Rectangle().foregroundColor(.black).opacity(0.2)
+                Rectangle().foregroundColor(.black).opacity(0.25)
             }.edgesIgnoringSafeArea(.all)
         }
         .onAppear {
@@ -73,6 +73,14 @@ struct ContentView: View {
         return 12.0
         #else
         return 6.0
+        #endif
+    }
+    
+    var albumArtSize: CGFloat {
+        #if os(tvOS)
+        return 600.0
+        #else
+        return 200.0
         #endif
     }
     
