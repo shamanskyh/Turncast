@@ -170,7 +170,7 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
         
         // broadcast temporary data
         albumTitle = "Listening…"
-        albumArtist = ""
+        albumArtist = " "
         albumImageURL = nil
         albumImage = Image(AudioListener.unknownAlbumImageName)
         
