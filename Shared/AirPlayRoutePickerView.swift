@@ -17,7 +17,7 @@ struct AirPlayRoutePickerView: UIViewRepresentable {
         let routePickerView = AVRoutePickerView()
         routePickerView.backgroundColor = UIColor.clear
         routePickerView.activeTintColor = UIColor(named: "AccentColor")
-        routePickerView.tintColor = UIColor.label
+        routePickerView.tintColor = UIColor.white
         routePickerView.prioritizesVideoDevices = false
         return routePickerView
     }

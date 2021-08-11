@@ -80,7 +80,7 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
         }
     }
     fileprivate static let unknownArtist = "Unknown Artist"
-    fileprivate static let notPlayingArtist = ""
+    fileprivate static let notPlayingArtist = " "
     var albumArtist = notPlayingArtist {
         willSet {
             objectWillChange.send()

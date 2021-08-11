@@ -14,6 +14,9 @@ struct ContentView: View {
     @StateObject var streamSource = StreamSource()
     @StateObject var metadataStore = MetadataStore()
     
+    @State var backgroundOpacity: Double = 0.0
+    @State var backgroundPlaceholderOpacity: Double = 1.0
+    
     let multipeerManager = MultipeerManager.shared
     
     var body: some View {
@@ -25,9 +28,9 @@ struct ContentView: View {
                     metadataStore.albumImage
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: albumArtSize)
                         .cornerRadius(12.0)
-                        .padding()
+                        .shadow(color: Color.black.opacity(0.4), radius: 8)
+                        .padding(30.0)
                     Text(metadataStore.albumTitle).font(.headline)
                     Text(metadataStore.artist).font(.subheadline)
                     HStack {
@@ -42,20 +45,20 @@ struct ContentView: View {
                         AirPlayRoutePickerView()
                             .frame(width: 50, height: 50)
                         #endif
-                    }.padding(.top, 40)
-                }
+                    }.padding(20)
+                }.padding(20)
+                .preferredColorScheme(.dark)
                 Spacer()
             }
         }
-        .background(.regularMaterial)
         .background(alignment: .center) {
-            if metadataStore.albumImage != Image("NoInfo") {
-                metadataStore.albumImage
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            } else {
-                EmptyView()
-            }
+            ZStack {
+                MeshGradient(image: nil, opacity: $backgroundPlaceholderOpacity)
+                if metadataStore.albumImage != Image("NoInfo") {
+                    MeshGradient(image: UIImage(cgImage: metadataStore.albumImageData), opacity: $backgroundOpacity)
+                }
+                Rectangle().foregroundColor(.black).opacity(0.2)
+            }.edgesIgnoringSafeArea(.all)
         }
         .onAppear {
             metadataStore.multipeerManager = multipeerManager
@@ -70,14 +73,6 @@ struct ContentView: View {
         return 12.0
         #else
         return 6.0
-        #endif
-    }
-    
-    var albumArtSize: CGFloat {
-        #if os(tvOS)
-        return 600.0
-        #else
-        return 200.0
         #endif
     }
     

@@ -2,12 +2,21 @@
   "object": {
     "pins": [
       {
-        "package": "HaishinKit.swift",
-        "repositoryURL": "https://github.com/shogo4405/HaishinKit.swift",
+        "package": "ColorThiefSwift",
+        "repositoryURL": "https://github.com/yamoridon/ColorThiefSwift.git",
         "state": {
           "branch": null,
-          "revision": "36c35833a29ea9acf6c034bcfb3fa79f3f656a69",
-          "version": "1.1.5"
+          "revision": "c86f0e574d1ccb80f719ad1f25baa7dc938e3e1a",
+          "version": "0.4.1"
+        }
+      },
+      {
+        "package": "HaishinKit.swift",
+        "repositoryURL": "https://github.com/shamanskyh/HaishinKit.swift.git",
+        "state": {
+          "branch": "master",
+          "revision": "dd47b80d861698efc32b46ca70f1f46c1fb66bbf",
+          "version": null
         }
       },
       {

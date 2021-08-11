@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A00CF4826C23A2B005FDE45 /* ColorThiefSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A00CF4726C23A2B005FDE45 /* ColorThiefSwift */; };
 		4A01FD672635F67100CFC204 /* AppleTVUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A01FD662635F67100CFC204 /* AppleTVUtilities.swift */; };
 		4A1A13CD2634B1FD001298B9 /* TurncastServerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13CC2634B1FD001298B9 /* TurncastServerApp.swift */; };
 		4A1A13D82634B3C0001298B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13D72634B3C0001298B9 /* SettingsView.swift */; };
 		4A1A13DD2634B46B001298B9 /* InputSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13DC2634B46B001298B9 /* InputSettingsView.swift */; };
 		4A1A13E72634B684001298B9 /* AppleTVSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13E62634B684001298B9 /* AppleTVSettingsView.swift */; };
 		4A1A13EC2634BD93001298B9 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13EB2634BD93001298B9 /* Shell.swift */; };
+		4A6886AF26C36EDD00D30D1F /* HaishinKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4A6886AE26C36EDD00D30D1F /* HaishinKit */; };
+		4A6886B126C36EEB00D30D1F /* HaishinKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4A6886B026C36EEB00D30D1F /* HaishinKit */; };
+		4A6886B326C36EF100D30D1F /* HaishinKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4A6886B226C36EF100D30D1F /* HaishinKit */; };
 		4A872B9324565775002A0523 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A872B9224565775002A0523 /* ContentView.swift */; };
 		4A872B9524565777002A0523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A872B9424565777002A0523 /* Assets.xcassets */; };
 		4A872B9824565777002A0523 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A872B9724565777002A0523 /* Preview Assets.xcassets */; };
@@ -20,11 +24,12 @@
 		4AAAFB7525994DCB00FD8EAD /* TurncastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6325994DC900FD8EAD /* TurncastApp.swift */; };
 		4AAAFB7725994DCB00FD8EAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6425994DC900FD8EAD /* ContentView.swift */; };
 		4AAAFB7925994DCB00FD8EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFB6525994DCB00FD8EAD /* Assets.xcassets */; };
-		4AAEE18B263FBFA800CB3F5B /* HaishinKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4AAEE18A263FBFA800CB3F5B /* HaishinKit */; };
 		4ABC440D2574869C0078378C /* AudioListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC440C2574869C0078378C /* AudioListener.swift */; };
 		4ABC4410257486AE0078378C /* AudioDetectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC440F257486AE0078378C /* AudioDetectionStatus.swift */; };
 		4AD6362625D3B03C00133C39 /* URLTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD6362525D3B03C00133C39 /* URLTester.swift */; };
 		4AD6362825D3B03C00133C39 /* URLTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD6362525D3B03C00133C39 /* URLTester.swift */; };
+		4AD8FEA026C2357B006DA003 /* MeshGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8FE9F26C2357B006DA003 /* MeshGradient.swift */; };
+		4AD8FEA126C2357B006DA003 /* MeshGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8FE9F26C2357B006DA003 /* MeshGradient.swift */; };
 		4AE2B4B726800A84004EAE4D /* MetadataOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4B626800A84004EAE4D /* MetadataOverride.swift */; };
 		4AE2B4B926800B45004EAE4D /* MetadataSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2B4B826800B45004EAE4D /* MetadataSettings.swift */; };
 		4AE338052599620A00F034A1 /* AirPlayRoutePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE338042599620A00F034A1 /* AirPlayRoutePickerView.swift */; };
@@ -93,6 +98,7 @@
 		4ABC440C2574869C0078378C /* AudioListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListener.swift; sourceTree = "<group>"; };
 		4ABC440F257486AE0078378C /* AudioDetectionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDetectionStatus.swift; sourceTree = "<group>"; };
 		4AD6362525D3B03C00133C39 /* URLTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLTester.swift; sourceTree = "<group>"; };
+		4AD8FE9F26C2357B006DA003 /* MeshGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshGradient.swift; sourceTree = "<group>"; };
 		4AE2B4B626800A84004EAE4D /* MetadataOverride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataOverride.swift; sourceTree = "<group>"; };
 		4AE2B4B826800B45004EAE4D /* MetadataSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataSettings.swift; sourceTree = "<group>"; };
 		4AE338042599620A00F034A1 /* AirPlayRoutePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayRoutePickerView.swift; sourceTree = "<group>"; };
@@ -112,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AAEE18B263FBFA800CB3F5B /* HaishinKit in Frameworks */,
+				4A6886AF26C36EDD00D30D1F /* HaishinKit in Frameworks */,
 				4AE33917259FD7E300F034A1 /* MultipeerMessages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +127,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A00CF4826C23A2B005FDE45 /* ColorThiefSwift in Frameworks */,
+				4A6886B126C36EEB00D30D1F /* HaishinKit in Frameworks */,
 				4AE3392B259FDE5900F034A1 /* MultipeerMessages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A6886B326C36EF100D30D1F /* HaishinKit in Frameworks */,
 				4AE3392F259FDE6600F034A1 /* MultipeerMessages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +222,7 @@
 				4AE338EC259E98A100F034A1 /* MetadataStore.swift */,
 				4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */,
 				4AD6362525D3B03C00133C39 /* URLTester.swift */,
+				4AD8FE9F26C2357B006DA003 /* MeshGradient.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -265,7 +275,7 @@
 			name = "Turncast Server";
 			packageProductDependencies = (
 				4AE33916259FD7E300F034A1 /* MultipeerMessages */,
-				4AAEE18A263FBFA800CB3F5B /* HaishinKit */,
+				4A6886AE26C36EDD00D30D1F /* HaishinKit */,
 			);
 			productName = TurntableMonitor;
 			productReference = 4A872B8D24565775002A0523 /* Turncast Server.app */;
@@ -288,6 +298,8 @@
 			name = "Turncast (iOS)";
 			packageProductDependencies = (
 				4AE3392A259FDE5900F034A1 /* MultipeerMessages */,
+				4A00CF4726C23A2B005FDE45 /* ColorThiefSwift */,
+				4A6886B026C36EEB00D30D1F /* HaishinKit */,
 			);
 			productName = "Turncast (iOS)";
 			productReference = 4AAAFB6A25994DCB00FD8EAD /* Turncast.app */;
@@ -309,6 +321,7 @@
 			name = "Turncast (tvOS)";
 			packageProductDependencies = (
 				4AE3392E259FDE6600F034A1 /* MultipeerMessages */,
+				4A6886B226C36EF100D30D1F /* HaishinKit */,
 			);
 			productName = Turncast;
 			productReference = 4AE338AE259E8A6700F034A1 /* Turncast (tvOS).app */;
@@ -345,7 +358,8 @@
 			);
 			mainGroup = 4A872B8424565775002A0523;
 			packageReferences = (
-				4AC5CE50259925430045B371 /* XCRemoteSwiftPackageReference "HaishinKit" */,
+				4A00CF4626C23A2B005FDE45 /* XCRemoteSwiftPackageReference "ColorThiefSwift" */,
+				4A6886AD26C36EDD00D30D1F /* XCRemoteSwiftPackageReference "HaishinKit.swift" */,
 			);
 			productRefGroup = 4A872B8E24565775002A0523 /* Products */;
 			projectDirPath = "";
@@ -412,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD8FEA026C2357B006DA003 /* MeshGradient.swift in Sources */,
 				4AD6362625D3B03C00133C39 /* URLTester.swift in Sources */,
 				4AE338ED259E98A100F034A1 /* MetadataStore.swift in Sources */,
 				4AAAFB7725994DCB00FD8EAD /* ContentView.swift in Sources */,
@@ -426,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD8FEA126C2357B006DA003 /* MeshGradient.swift in Sources */,
 				4AE338E3259E8BBB00F034A1 /* AirPlayRoutePickerView.swift in Sources */,
 				4AE33921259FDDE400F034A1 /* MultipeerManager.swift in Sources */,
 				4AE338C9259E8AC900F034A1 /* TurncastApp.swift in Sources */,
@@ -589,7 +605,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_ASSET_PATHS = "TurncastServer/Preview\\ Content";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -601,7 +617,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.TurncastServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -616,7 +632,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_ASSET_PATHS = "TurncastServer/Preview\\ Content";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -628,7 +644,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.TurncastServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -657,12 +673,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 4.0;
 				OTHER_SWIFT_FLAGS = "-DHOME_USE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = Turncast;
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = Shared/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -685,12 +700,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 4.0;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = Turncast;
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = Shared/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -714,7 +728,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -741,7 +755,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -794,6 +808,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4A00CF4626C23A2B005FDE45 /* XCRemoteSwiftPackageReference "ColorThiefSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yamoridon/ColorThiefSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
+		4A6886AD26C36EDD00D30D1F /* XCRemoteSwiftPackageReference "HaishinKit.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shamanskyh/HaishinKit.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		4AC5CE50259925430045B371 /* XCRemoteSwiftPackageReference "HaishinKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/shogo4405/HaishinKit.swift";
@@ -805,14 +835,29 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4A00CF4726C23A2B005FDE45 /* ColorThiefSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A00CF4626C23A2B005FDE45 /* XCRemoteSwiftPackageReference "ColorThiefSwift" */;
+			productName = ColorThiefSwift;
+		};
+		4A6886AE26C36EDD00D30D1F /* HaishinKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A6886AD26C36EDD00D30D1F /* XCRemoteSwiftPackageReference "HaishinKit.swift" */;
+			productName = HaishinKit;
+		};
+		4A6886B026C36EEB00D30D1F /* HaishinKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A6886AD26C36EDD00D30D1F /* XCRemoteSwiftPackageReference "HaishinKit.swift" */;
+			productName = HaishinKit;
+		};
+		4A6886B226C36EF100D30D1F /* HaishinKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A6886AD26C36EDD00D30D1F /* XCRemoteSwiftPackageReference "HaishinKit.swift" */;
+			productName = HaishinKit;
+		};
 		4AAAFB5F25994AF200FD8EAD /* SimplePushKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SimplePushKit;
-		};
-		4AAEE18A263FBFA800CB3F5B /* HaishinKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4AC5CE50259925430045B371 /* XCRemoteSwiftPackageReference "HaishinKit" */;
-			productName = HaishinKit;
 		};
 		4AC5CE5525993AF40045B371 /* HaishinKit */ = {
 			isa = XCSwiftPackageProductDependency;
