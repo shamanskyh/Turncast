@@ -274,7 +274,7 @@ extension AudioListener: SHSessionDelegate {
                 
                 defer {
                     // at the end of it all, grab whatever we set and store it
-                    let metadataOverride = MetadataOverride(isrc: mediaItem.isrc ?? "\(Date())",
+                    let metadataOverride = MetadataOverride(isrc: mediaItem.isrc ?? mediaItem.shazamID ?? "UNKNOWN-\(mediaItem.title?.replacingOccurrences(of: " ", with: "") ?? "UNKNOWN")",
                                                             album: strongSelf.albumTitle,
                                                             artist: strongSelf.albumArtist,
                                                             imageURL: strongSelf.albumImageURL?.absoluteString ?? "",

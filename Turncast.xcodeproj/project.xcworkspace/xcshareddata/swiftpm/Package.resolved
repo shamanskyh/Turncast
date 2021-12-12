@@ -11,7 +11,7 @@
         }
       },
       {
-        "package": "HaishinKit.swift",
+        "package": "HaishinKit",
         "repositoryURL": "https://github.com/shamanskyh/HaishinKit.swift.git",
         "state": {
           "branch": "master",
