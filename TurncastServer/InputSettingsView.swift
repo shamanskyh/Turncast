@@ -50,5 +50,6 @@ struct InputSettingsView: View {
                 Text("seconds")
             }
         }
+        .padding()
     }
 }

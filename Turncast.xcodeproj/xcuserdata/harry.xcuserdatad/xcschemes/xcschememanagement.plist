@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Turncast (iOS).xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
 		<key>Turncast (macOS).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>Turncast (tvOS).xcscheme_^#shared#^_</key>
+		<key>Turncast Client - Release.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Turncast Client.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
@@ -33,6 +33,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>4A872B8C24565775002A0523</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4AAAFB6925994DCB00FD8EAD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

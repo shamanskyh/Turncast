@@ -232,7 +232,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C25CFECD-5D6F-416F-9772-89AB9DFC6D0F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TurncastServer/AudioListener.swift"
@@ -242,29 +242,45 @@
             endingLineNumber = "323"
             landmarkName = "session(_:didNotFindMatchFor:error:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3B8DFE56-094E-48DF-B3BF-838938E89283"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TurncastServer/AudioListener.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
-            landmarkName = "captureOutput(_:didOutput:from:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C25CFECD-5D6F-416F-9772-89AB9DFC6D0F - fb2bd807a2addf8e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Turncast_Server.AudioListener.session(_: __C.SHSession, didNotFindMatchFor: __C.SHSignature, error: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/Documents/Technology/macOSDevelopment/Turncast/TurncastServer/AudioListener.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "323"
+                  endingLineNumber = "323"
+                  offsetFromSymbolStart = "262">
+               </Location>
+               <Location
+                  uuid = "C25CFECD-5D6F-416F-9772-89AB9DFC6D0F - fb2bd807a2addf8e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Turncast_Server.AudioListener.session(_: __C.SHSession, didNotFindMatchFor: __C.SHSignature, error: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/Documents/Technology/macOSDevelopment/Turncast/TurncastServer/AudioListener.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "323"
+                  endingLineNumber = "323"
+                  offsetFromSymbolStart = "598">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F576735D-11B9-426E-AC5B-AE7F142F8668"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TurncastServer/AudioListener.swift"

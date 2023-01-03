@@ -35,6 +35,6 @@ struct AppleTVSettingsView: View {
                 }.disabled(!listener.launchAppleTV)
             }
             Text("Use the commands `atvremote scan` and `atvremote -i <AppleTVID> --protocol companion pair` to capture ID and credentials.").italic().lineLimit(5).frame(height: 50)
-        }
+        }.padding()
     }
 }
