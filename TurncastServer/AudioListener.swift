@@ -285,7 +285,8 @@ extension AudioListener: SHSessionDelegate {
             guard let strongSelf = self else { return }
             if let mediaItem = match.mediaItems.first {
                 
-                strongSelf.isrc = mediaItem.isrc
+                let identifier = mediaItem.isrc ?? mediaItem.shazamID ?? "UNKNOWN-\(mediaItem.title?.replacingOccurrences(of: " ", with: "") ?? "UNKNOWN")"
+                strongSelf.isrc = identifier
                 
                 // see if we have an override -- if we do, return early
                 if let isrc = mediaItem.isrc, let metadataOverride = strongSelf.metadataOverrides.filter({ $0.isrc == isrc }).first {
@@ -308,7 +309,7 @@ extension AudioListener: SHSessionDelegate {
                 
                 defer {
                     // at the end of it all, grab whatever we set and store it
-                    let metadataOverride = MetadataOverride(isrc: mediaItem.isrc ?? mediaItem.shazamID ?? "UNKNOWN-\(mediaItem.title?.replacingOccurrences(of: " ", with: "") ?? "UNKNOWN")",
+                    let metadataOverride = MetadataOverride(isrc: identifier,
                                                             album: strongSelf.albumTitle,
                                                             artist: strongSelf.albumArtist,
                                                             imageURL: strongSelf.albumImageURL?.absoluteString ?? "",
