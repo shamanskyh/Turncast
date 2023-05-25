@@ -30,8 +30,8 @@
             filePath = "TurncastServer/MultipeerManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "browser(_:didNotStartBrowsingForPeers:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "TurncastServer/MultipeerManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "session(_:peer:didChange:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,10 +62,42 @@
             filePath = "TurncastServer/MultipeerManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "browser(_:didNotStartBrowsingForPeers:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2D1AABA3-416D-4929-A6B6-5DC8324F33D3 - 7242c33106456292"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Turncast_Server.MultipeerManager.browser(_: __C.MCNearbyServiceBrowser, didNotStartBrowsingForPeers: Swift.Error) -&gt; ()"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/Documents/Technology/macOSDevelopment/Turncast/TurncastServer/MultipeerManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "1234">
+               </Location>
+               <Location
+                  uuid = "2D1AABA3-416D-4929-A6B6-5DC8324F33D3 - 7242c331064562f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Turncast_Server.MultipeerManager.browser(_: __C.MCNearbyServiceBrowser, didNotStartBrowsingForPeers: Swift.Error) -&gt; ()"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/Documents/Technology/macOSDevelopment/Turncast/TurncastServer/MultipeerManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "1234">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -78,8 +110,8 @@
             filePath = "Shared/MetadataStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "albumImage"
             landmarkType = "24">
          </BreakpointContent>
@@ -94,8 +126,8 @@
             filePath = "Shared/MetadataStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "albumTitle"
             landmarkType = "24">
          </BreakpointContent>
@@ -110,8 +142,8 @@
             filePath = "Shared/MetadataStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "artist"
             landmarkType = "24">
          </BreakpointContent>
@@ -222,10 +254,72 @@
             filePath = "TurncastServer/AudioListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
             landmarkName = "session(_:didFind:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F9B9F0C6-75A8-4761-98D3-332E302B74FF - 714bd57d6654f169"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in Turncast_Server.AudioListener.session(_: __C.SHSession, didFind: __C.SHMatch) -&gt; ()"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/Documents/Technology/macOSDevelopment/Turncast/TurncastServer/AudioListener.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "256"
+                  endingLineNumber = "256"
+                  offsetFromSymbolStart = "829">
+               </Location>
+               <Location
+                  uuid = "F9B9F0C6-75A8-4761-98D3-332E302B74FF - 714bd57d6654f2d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in Turncast_Server.AudioListener.session(_: __C.SHSession, didFind: __C.SHMatch) -&gt; ()"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/Documents/Technology/macOSDevelopment/Turncast/TurncastServer/AudioListener.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "252"
+                  endingLineNumber = "252"
+                  offsetFromSymbolStart = "829">
+               </Location>
+               <Location
+                  uuid = "F9B9F0C6-75A8-4761-98D3-332E302B74FF - 714bd57d6654f0e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in Turncast_Server.AudioListener.session(_: __C.SHSession, didFind: __C.SHMatch) -&gt; ()"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/Documents/Technology/macOSDevelopment/Turncast/TurncastServer/AudioListener.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "268"
+                  endingLineNumber = "268"
+                  offsetFromSymbolStart = "829">
+               </Location>
+               <Location
+                  uuid = "F9B9F0C6-75A8-4761-98D3-332E302B74FF - 714bd57d6654f537"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in Turncast_Server.AudioListener.session(_: __C.SHSession, didFind: __C.SHMatch) -&gt; ()"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/Documents/Technology/macOSDevelopment/Turncast/TurncastServer/AudioListener.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "286"
+                  endingLineNumber = "286"
+                  offsetFromSymbolStart = "829">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -238,8 +332,8 @@
             filePath = "TurncastServer/AudioListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
+            startingLineNumber = "357"
+            endingLineNumber = "357"
             landmarkName = "session(_:didNotFindMatchFor:error:)"
             landmarkType = "7">
             <Locations>
@@ -286,8 +380,8 @@
             filePath = "TurncastServer/AudioListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
             landmarkName = "captureOutput(_:didOutput:from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -306,6 +400,22 @@
             endingLineNumber = "26"
             landmarkName = "updateUIView(_:context:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "80DD0189-1406-4274-BB5D-15DC896A8176"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/CustomMetadataView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/shamanskyh/HaishinKit.swift.git",
         "state": {
           "branch": "master",
-          "revision": "dd47b80d861698efc32b46ca70f1f46c1fb66bbf",
+          "revision": "52ad7d6ad488734b61eb438894dd591baaf522df",
           "version": null
         }
       },
@@ -24,8 +24,26 @@
         "repositoryURL": "https://github.com/shogo4405/Logboard.git",
         "state": {
           "branch": null,
-          "revision": "8cc7656b07e4d327fae42e1320e2e48b8868e3f6",
-          "version": "2.2.2"
+          "revision": "e597fa65bb2ce9fc56935b4161b1af74495ddb52",
+          "version": "2.3.1"
+        }
+      },
+      {
+        "package": "SwiftDocCPlugin",
+        "repositoryURL": "https://github.com/apple/swift-docc-plugin",
+        "state": {
+          "branch": null,
+          "revision": "9b1258905c21fc1b97bf03d1b4ca12c4ec4e5fda",
+          "version": "1.2.0"
+        }
+      },
+      {
+        "package": "SymbolKit",
+        "repositoryURL": "https://github.com/apple/swift-docc-symbolkit",
+        "state": {
+          "branch": null,
+          "revision": "b45d1f2ed151d057b54504d653e0da5552844e34",
+          "version": "1.0.0"
         }
       }
     ]

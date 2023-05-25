@@ -3,17 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4A00CF4826C23A2B005FDE45 /* ColorThiefSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A00CF4726C23A2B005FDE45 /* ColorThiefSwift */; };
-		4A01FD672635F67100CFC204 /* AppleTVUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A01FD662635F67100CFC204 /* AppleTVUtilities.swift */; };
 		4A1A13CD2634B1FD001298B9 /* TurncastServerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13CC2634B1FD001298B9 /* TurncastServerApp.swift */; };
 		4A1A13D82634B3C0001298B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13D72634B3C0001298B9 /* SettingsView.swift */; };
 		4A1A13DD2634B46B001298B9 /* InputSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13DC2634B46B001298B9 /* InputSettingsView.swift */; };
-		4A1A13E72634B684001298B9 /* AppleTVSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13E62634B684001298B9 /* AppleTVSettingsView.swift */; };
+		4A1A13E72634B684001298B9 /* AutomationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13E62634B684001298B9 /* AutomationSettingsView.swift */; };
 		4A1A13EC2634BD93001298B9 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A13EB2634BD93001298B9 /* Shell.swift */; };
+		4A4C5D1C2A1EEBE300824D33 /* CustomMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C5D1B2A1EE7C500824D33 /* CustomMetadataView.swift */; };
 		4A6886AF26C36EDD00D30D1F /* HaishinKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4A6886AE26C36EDD00D30D1F /* HaishinKit */; };
 		4A6886B126C36EEB00D30D1F /* HaishinKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4A6886B026C36EEB00D30D1F /* HaishinKit */; };
 		4A872B9324565775002A0523 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A872B9224565775002A0523 /* ContentView.swift */; };
@@ -40,14 +40,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4AAAFB972599596D00FD8EAD /* Embed App Extensions */ = {
+		4AAAFB972599596D00FD8EAD /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4AC5CE54259925430045B371 /* Embed Frameworks */ = {
@@ -63,13 +63,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4A01FD662635F67100CFC204 /* AppleTVUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTVUtilities.swift; sourceTree = "<group>"; };
 		4A11A1E725D8D5AD004BC3D6 /* Turncast (tvOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Turncast (tvOS).entitlements"; sourceTree = "<group>"; };
 		4A1A13CC2634B1FD001298B9 /* TurncastServerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurncastServerApp.swift; sourceTree = "<group>"; };
 		4A1A13D72634B3C0001298B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4A1A13DC2634B46B001298B9 /* InputSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSettingsView.swift; sourceTree = "<group>"; };
-		4A1A13E62634B684001298B9 /* AppleTVSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTVSettingsView.swift; sourceTree = "<group>"; };
+		4A1A13E62634B684001298B9 /* AutomationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationSettingsView.swift; sourceTree = "<group>"; };
 		4A1A13EB2634BD93001298B9 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
+		4A4C5D1B2A1EE7C500824D33 /* CustomMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMetadataView.swift; sourceTree = "<group>"; };
 		4A872B8D24565775002A0523 /* Turncast Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Turncast Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A872B9224565775002A0523 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A872B9424565777002A0523 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,8 +151,7 @@
 		4A872B8F24565775002A0523 /* TurncastServer */ = {
 			isa = PBXGroup;
 			children = (
-				4A1A13E62634B684001298B9 /* AppleTVSettingsView.swift */,
-				4A01FD662635F67100CFC204 /* AppleTVUtilities.swift */,
+				4A1A13E62634B684001298B9 /* AutomationSettingsView.swift */,
 				4ABC440C2574869C0078378C /* AudioListener.swift */,
 				4ABC440F257486AE0078378C /* AudioDetectionStatus.swift */,
 				4A872B9224565775002A0523 /* ContentView.swift */,
@@ -201,6 +200,7 @@
 				4AE3391E259FDDE300F034A1 /* MultipeerManager.swift */,
 				4AD6362525D3B03C00133C39 /* URLTester.swift */,
 				4AD8FE9F26C2357B006DA003 /* MeshGradient.swift */,
+				4A4C5D1B2A1EE7C500824D33 /* CustomMetadataView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 				4AAAFB6625994DCB00FD8EAD /* Sources */,
 				4AAAFB6725994DCB00FD8EAD /* Frameworks */,
 				4AAAFB6825994DCB00FD8EAD /* Resources */,
-				4AAAFB972599596D00FD8EAD /* Embed App Extensions */,
+				4AAAFB972599596D00FD8EAD /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -289,8 +289,9 @@
 		4A872B8524565775002A0523 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1230;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Harry Shamansky";
 				TargetAttributes = {
 					4A872B8C24565775002A0523 = {
@@ -352,13 +353,12 @@
 				4A1A13EC2634BD93001298B9 /* Shell.swift in Sources */,
 				4AE33890259BCEAA00F034A1 /* Metadata.swift in Sources */,
 				4A872B9324565775002A0523 /* ContentView.swift in Sources */,
-				4A01FD672635F67100CFC204 /* AppleTVUtilities.swift in Sources */,
 				4ABC4410257486AE0078378C /* AudioDetectionStatus.swift in Sources */,
 				4AE2B4B926800B45004EAE4D /* MetadataSettings.swift in Sources */,
 				4A1A13CD2634B1FD001298B9 /* TurncastServerApp.swift in Sources */,
 				4A1A13D82634B3C0001298B9 /* SettingsView.swift in Sources */,
 				4AE3390B259FD20500F034A1 /* MultipeerManager.swift in Sources */,
-				4A1A13E72634B684001298B9 /* AppleTVSettingsView.swift in Sources */,
+				4A1A13E72634B684001298B9 /* AutomationSettingsView.swift in Sources */,
 				4ABC440D2574869C0078378C /* AudioListener.swift in Sources */,
 				4A8A9AE225A11E7900116AD4 /* IPAddressHelper.swift in Sources */,
 				4A1A13DD2634B46B001298B9 /* InputSettingsView.swift in Sources */,
@@ -371,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AD8FEA026C2357B006DA003 /* MeshGradient.swift in Sources */,
+				4A4C5D1C2A1EEBE300824D33 /* CustomMetadataView.swift in Sources */,
 				4AD6362625D3B03C00133C39 /* URLTester.swift in Sources */,
 				4AE338ED259E98A100F034A1 /* MetadataStore.swift in Sources */,
 				4AAAFB7725994DCB00FD8EAD /* ContentView.swift in Sources */,
@@ -441,6 +442,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -502,6 +504,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -530,7 +533,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 54;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "TurncastServer/Preview\\ Content";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -541,8 +545,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 4.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.TurncastServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -557,7 +561,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 54;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "TurncastServer/Preview\\ Content";
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -568,8 +573,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 4.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.TurncastServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -585,7 +590,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Turncast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 54;
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_PREVIEWS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -600,7 +605,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.3;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "-DHOME_USE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = Turncast;
@@ -622,7 +627,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Turncast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 54;
 				DEVELOPMENT_TEAM = B5TXHQBF3Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -632,7 +637,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.3;
+				MARKETING_VERSION = 5.1;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harryshamansky.Turncast;
 				PRODUCT_NAME = Turncast;

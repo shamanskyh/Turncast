@@ -33,6 +33,8 @@
 	<array>
 		<string>_turncast._tcp</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Turncast connects to devices on your local network to share metadata.</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Turncast connects to devices on your local network to share metadata.</string>
 	<key>UIApplicationSceneManifest</key>

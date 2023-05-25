@@ -14,6 +14,8 @@ struct MetadataSettings: View {
     @AppStorage("MetadataOverrides") var metadataOverrides: [MetadataOverride] = []
     @State var selectedMetadataOverride: MetadataOverride.ID? = nil
     
+    @ObservedObject var listener: AudioListener
+    
     var body: some View {
         VStack {
             Table($metadataOverrides, selection: $selectedMetadataOverride) {
@@ -42,6 +44,11 @@ struct MetadataSettings: View {
                 }
             }
             HStack {
+                Button {
+                    listener.audioDetected()
+                } label: {
+                    Image(systemName: "waveform.and.magnifyingglass")
+                }.help("Detect audio track currently playing")
                 Spacer()
                 Button {
                     // do deletion here

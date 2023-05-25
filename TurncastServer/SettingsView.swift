@@ -24,14 +24,14 @@ struct SettingsView: View {
                     Label("Input", systemImage: "waveform")
                 }
                 .tag(Tabs.input)
-            MetadataSettings()
+            MetadataSettings(listener: listener)
                 .tabItem {
                     Label("Metadata", systemImage: "music.note.list")
                 }
                 .tag(Tabs.metadata)
-            AppleTVSettingsView(listener: listener)
+            AutomationSettingsView(listener: listener)
                 .tabItem {
-                    Label("Apple TV", systemImage: "appletv")
+                    Label("Automation", systemImage: "sparkles.tv")
                 }
                 .tag(Tabs.appleTV)
         }

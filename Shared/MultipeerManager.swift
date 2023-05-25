@@ -139,7 +139,11 @@ extension MultipeerManager: MCSessionDelegate {
                     strongSelf.metadataStore?.albumImage = Image("NoInfo")
                     strongSelf.metadataStore?.albumImageData = UIImage(named: "NoInfo")!.cgImage!
                     strongSelf.metadataStore?.blockUpdates = false
-                    
+                case .stopPlayback:
+                    strongSelf.streamSource?.playing = false
+                case .overrideMetadata(_, _, _, _):
+                    // we don't respond to these
+                    break
                 }
             }
         }

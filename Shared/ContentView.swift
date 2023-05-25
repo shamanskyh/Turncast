@@ -16,6 +16,7 @@ struct ContentView: View {
     
     @State var backgroundOpacity: Double = 0.0
     @State var backgroundPlaceholderOpacity: Double = 1.0
+    @State var showingEditMetadataModal = false
     
     let multipeerManager = MultipeerManager.shared
     
@@ -30,6 +31,13 @@ struct ContentView: View {
                         .aspectRatio(contentMode: .fit)
                         .cornerRadius(12.0)
                         .shadow(color: Color.black.opacity(0.4), radius: 8)
+                        .contextMenu {
+                            Button {
+                                showingEditMetadataModal = true
+                            } label: {
+                                Label("Correct Metadata", systemImage: "pencil")
+                            }
+                        }
                         .padding(30.0)
                     Text(metadataStore.albumTitle).font(.headline)
                     Text(metadataStore.artist).font(.subheadline)
@@ -42,8 +50,6 @@ struct ContentView: View {
                             .frame(width: 50, height: 50)
                         #elseif os(tvOS)
                         playStopButton
-                        AirPlayRoutePickerView()
-                            .frame(width: 50, height: 50)
                         #endif
                     }.padding(20)
                 }.padding(20)
@@ -65,6 +71,12 @@ struct ContentView: View {
             multipeerManager.metadataStore = metadataStore
             multipeerManager.streamSource = streamSource
             streamSource.multipeerManager = multipeerManager
+        }
+        .sheet(isPresented: $showingEditMetadataModal) {
+            CustomMetadataView(album: metadataStore.albumTitle,
+                               artist: metadataStore.artist,
+                               imageURL: metadataStore.albumImageURL,
+                               notes: "")
         }
     }
     

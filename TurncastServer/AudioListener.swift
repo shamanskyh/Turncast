@@ -25,10 +25,8 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     @AppStorage("onThreshold") var onThreshold: Double = -30.0
     @AppStorage("onLength") var onLength: Double = 2.0
     @AppStorage("offLength") var offLength: Double = 4.0
-    @AppStorage("launchAppleTV") var launchAppleTV: Bool = false
-    @AppStorage("pathToAtvRemote") var pathToATVRemote: String = ""
-    @AppStorage("appleTVID") var appleTVID: String = ""
-    @AppStorage("appleTVCredentials") var appleTVCredentials: String = ""
+    @AppStorage("launchShortcut") var launchShortcut: Bool = false
+    @AppStorage("shortcutName") var shortcutName: String = ""
     @AppStorage("MetadataOverrides") var metadataOverrides: [MetadataOverride] = []
     
     let sampleRate: Int = 16000
@@ -86,6 +84,39 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
             objectWillChange.send()
             if !blockBroadcast {
                 multipeerManager?.broadcast(message: .artist(newValue))
+            }
+        }
+    }
+    
+    /// The ISRC of the currently playing song, if detected
+    var isrc: String?
+    
+    @MainActor func updateMetadata(albumTitle: String?, artist: String?, imageURL: String?, notes: String?) {
+        guard let isrc = isrc else { return }
+        if let metadata = metadataOverrides.first(where: { $0.isrc == isrc }) {
+            let newMetadata = MetadataOverride(isrc: isrc,
+                                               album: albumTitle ?? metadata.album,
+                                               artist: artist ?? metadata.artist,
+                                               imageURL: imageURL ?? metadata.imageURL,
+                                               notes: notes ?? metadata.notes)
+            if let index = metadataOverrides.firstIndex(where: { $0.isrc == isrc }) {
+                metadataOverrides.remove(at: index)
+                metadataOverrides.insert(newMetadata, at: index)
+            }
+            
+            self.albumTitle = newMetadata.album
+            self.albumArtist = newMetadata.artist
+            if let artworkURL = URL(string: newMetadata.imageURL) {
+                self.albumImageURL = artworkURL
+                DispatchQueue.global(qos: .background).async { [weak self] in
+                    if let nsImage = NSImage(contentsOf: artworkURL) {
+                        let swiftImage = Image(nsImage: nsImage)
+                        DispatchQueue.main.async { [weak self] in
+                            guard let strongSelf = self else { return }
+                            strongSelf.albumImage = swiftImage
+                        }
+                    }
+                }
             }
         }
     }
@@ -161,11 +192,9 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     func audioDetected() {
         recognize = true
         
-        // connect to our apple tv if we have one
-        if !pathToATVRemote.isEmpty && !appleTVID.isEmpty && !appleTVCredentials.isEmpty {
-            AppleTVUtilities.openTurncast(atvRemotePath: pathToATVRemote,
-                                          appleTVID: appleTVID,
-                                          appleTVCredentials: appleTVCredentials)
+        // run our shortcut if we have one
+        if launchShortcut && !shortcutName.isEmpty, let percentEncodedShortcutName = shortcutName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let shortcutURL = URL(string: "shortcuts://run-shortcut?name=\(percentEncodedShortcutName)") {
+            NSWorkspace.shared.open(shortcutURL)
         }
         
         // broadcast temporary data
@@ -186,8 +215,11 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
         albumTitle = Self.notPlayingAlbum
         albumArtist = Self.notPlayingArtist
         albumImageURL = nil
+        isrc = nil
         
         audioDetectionStatus = .notDetectingAudio
+        
+        multipeerManager?.broadcast(message: .stopPlayback)
     }
 }
 
@@ -252,6 +284,8 @@ extension AudioListener: SHSessionDelegate {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
             if let mediaItem = match.mediaItems.first {
+                
+                strongSelf.isrc = mediaItem.isrc
                 
                 // see if we have an override -- if we do, return early
                 if let isrc = mediaItem.isrc, let metadataOverride = strongSelf.metadataOverrides.filter({ $0.isrc == isrc }).first {
@@ -327,6 +361,7 @@ extension AudioListener: SHSessionDelegate {
             guard let strongSelf = self else { return }
             strongSelf.albumTitle = "Unknown Album"
             strongSelf.albumArtist = "Unknown Artist"
+            strongSelf.isrc = nil
             if let unknownAlbumImage = NSImage(named: Self.unknownAlbumImageName) {
                 strongSelf.albumImage = Image(nsImage: unknownAlbumImage)
                 strongSelf.albumImageURL = nil

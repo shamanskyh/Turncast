@@ -18,6 +18,7 @@ protocol MetadataSource: AnyObject {
     var albumTitle: String { get set }
     var albumArtist: String { get set }
     var blockBroadcast: Bool { get set }
+    func updateMetadata(albumTitle: String?, artist: String?, imageURL: String?, notes: String?)
 }
 
 class MultipeerManager: NSObject {
@@ -168,6 +169,12 @@ extension MultipeerManager: MCSessionDelegate {
                     strongSelf.delegate?.blockBroadcast = true
                     strongSelf.delegate?.albumImageURL = nil
                     strongSelf.delegate?.blockBroadcast = false
+                case .stopPlayback:
+                    // nothing for us to do here, really -- this message is only relevant to peers
+                    break
+                case .overrideMetadata(albumTitle: let albumTitle, artist: let artist, imageURL: let imageURL, notes: let notes):
+                    // forward the call to our delegate
+                    strongSelf.delegate?.updateMetadata(albumTitle: albumTitle, artist: artist, imageURL: imageURL, notes: notes)
                 }
             }
         }

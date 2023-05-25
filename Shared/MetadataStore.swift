@@ -17,6 +17,8 @@ class MetadataStore: ObservableObject {
     
     var blockUpdates: Bool = false
     
+    var albumImageURL: String = ""
+    
     var albumImageData: CGImage = UIImage(named: "NoInfo")!.cgImage! {
         willSet {
             objectWillChange.send()
