@@ -41,7 +41,7 @@ struct CustomMetadataView: View {
                     }
                 }
             }
-            .navigationTitle("Correct Metadata")
+            .navigationTitle("Custom Metadata")
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif

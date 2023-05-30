@@ -16,7 +16,7 @@ struct ContentView: View {
     
     @State var backgroundOpacity: Double = 0.0
     @State var backgroundPlaceholderOpacity: Double = 1.0
-    @State var showingEditMetadataModal = false
+    @State var metadataModal: MetadataModalType? = nil
     
     let multipeerManager = MultipeerManager.shared
     
@@ -33,9 +33,14 @@ struct ContentView: View {
                         .shadow(color: Color.black.opacity(0.4), radius: 8)
                         .contextMenu {
                             Button {
-                                showingEditMetadataModal = true
+                                metadataModal = .appleMusic
                             } label: {
-                                Label("Correct Metadata", systemImage: "pencil")
+                                Label("Choose Album", systemImage: "square.stack")
+                            }
+                            Button {
+                                metadataModal = .custom
+                            } label: {
+                                Label("Edit", systemImage: "pencil")
                             }
                         }
                         .padding(30.0)
@@ -72,12 +77,19 @@ struct ContentView: View {
             multipeerManager.streamSource = streamSource
             streamSource.multipeerManager = multipeerManager
         }
-        .sheet(isPresented: $showingEditMetadataModal) {
-            CustomMetadataView(album: metadataStore.albumTitle,
-                               artist: metadataStore.artist,
-                               imageURL: metadataStore.albumImageURL,
-                               notes: "")
-        }
+        .sheet(item: $metadataModal, content: { modalType in
+            switch modalType {
+            #if os(iOS)
+            case .appleMusic:
+                MediaPickerView()
+            #endif
+            case .custom:
+                CustomMetadataView(album: metadataStore.albumTitle,
+                                   artist: metadataStore.artist,
+                                   imageURL: metadataStore.albumImageURL,
+                                   notes: "")
+            }
+        })
     }
     
     var albumArtCornerRadius: CGFloat {
