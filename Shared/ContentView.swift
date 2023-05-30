@@ -32,11 +32,13 @@ struct ContentView: View {
                         .cornerRadius(12.0)
                         .shadow(color: Color.black.opacity(0.4), radius: 8)
                         .contextMenu {
+                            #if os(iOS)
                             Button {
                                 metadataModal = .appleMusic
                             } label: {
                                 Label("Choose Album", systemImage: "square.stack")
                             }
+                            #endif
                             Button {
                                 metadataModal = .custom
                             } label: {

@@ -11,7 +11,7 @@ import MediaPlayer
 import MusicKit
 import SwiftUI
 
-@available(iOS 16, *)
+#if os(iOS)
 struct MediaPickerView: UIViewControllerRepresentable {
     
     func makeCoordinator() -> Coordinator {
@@ -61,3 +61,4 @@ struct MediaPickerView: UIViewControllerRepresentable {
         }
     }
 }
+#endif

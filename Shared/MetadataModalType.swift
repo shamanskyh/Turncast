@@ -10,8 +10,9 @@ import Foundation
 
 enum MetadataModalType: String, Identifiable {
     
-    @available(iOS 16, *)
+    #if os(iOS)
     case appleMusic
+    #endif
     
     case custom
     
