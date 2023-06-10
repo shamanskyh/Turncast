@@ -16,7 +16,7 @@ struct ContentView: View {
     
     @State var backgroundOpacity: Double = 0.0
     @State var backgroundPlaceholderOpacity: Double = 1.0
-    @State var metadataModal: MetadataModalType? = nil
+    @State var showingEditMetadataModal: Bool = false
     
     let multipeerManager = MultipeerManager.shared
     
@@ -31,18 +31,12 @@ struct ContentView: View {
                         .aspectRatio(contentMode: .fit)
                         .cornerRadius(12.0)
                         .shadow(color: Color.black.opacity(0.4), radius: 8)
+                        .focusable()
                         .contextMenu {
-                            #if os(iOS)
                             Button {
-                                metadataModal = .appleMusic
+                                showingEditMetadataModal = true
                             } label: {
-                                Label("Choose Album", systemImage: "square.stack")
-                            }
-                            #endif
-                            Button {
-                                metadataModal = .custom
-                            } label: {
-                                Label("Edit", systemImage: "pencil")
+                                Label("Edit Metadata", systemImage: "pencil")
                             }
                         }
                         .padding(30.0)
@@ -79,19 +73,9 @@ struct ContentView: View {
             multipeerManager.streamSource = streamSource
             streamSource.multipeerManager = multipeerManager
         }
-        .sheet(item: $metadataModal, content: { modalType in
-            switch modalType {
-            #if os(iOS)
-            case .appleMusic:
-                MediaPickerView()
-            #endif
-            case .custom:
-                CustomMetadataView(album: metadataStore.albumTitle,
-                                   artist: metadataStore.artist,
-                                   imageURL: metadataStore.albumImageURL,
-                                   notes: "")
-            }
-        })
+        .sheet(isPresented: $showingEditMetadataModal) {
+            SearchForAlbumView()
+        }
     }
     
     var albumArtCornerRadius: CGFloat {
