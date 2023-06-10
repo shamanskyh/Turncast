@@ -36,7 +36,12 @@ struct SearchForAlbumView: View {
                                     ArtworkImage(artwork, height: listRowHeight)
                                         .clipShape(RoundedRectangle(cornerRadius: listRowHeight / 8.0, style: .continuous))
                                 }
-                                VStack(alignment: .listRowSeparatorLeading) {
+                                #if os(iOS)
+                                let alignment = .listRowSeparatorLeading
+                                #else
+                                let alignment = HorizontalAlignment.leading
+                                #endif
+                                VStack(alignment: alignment) {
                                     Text(album.title)
                                         .font(.body)
                                         .lineLimit(1)
