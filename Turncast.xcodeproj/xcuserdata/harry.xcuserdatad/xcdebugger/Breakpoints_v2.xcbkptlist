@@ -273,6 +273,21 @@
                   endingLineNumber = "81"
                   offsetFromSymbolStart = "214">
                </Location>
+               <Location
+                  uuid = "4F99F73D-D55B-4A69-9505-F96086C247C6 - 686726e29167cbd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc Turncast.MultipeerManager.advertiser(_: __C.MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer: Swift.Error) -&gt; ()"
+                  moduleName = "Turncast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/code/Turncast/Shared/MultipeerManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "180">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

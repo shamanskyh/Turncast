@@ -70,22 +70,23 @@ struct SearchForAlbumView: View {
                     }
                 }
             }
-            .searchable(text: $searchTerm,
-                        prompt: Text("Search for an album"))
+            .task(id: searchTerm, debounceTime: .milliseconds(100)) {
+                let _ = await MusicAuthorization.request()
+                var request = MusicCatalogSearchRequest(term: searchTerm, types: [Album.self])
+                request.includeTopResults = true
+                if let response = try? await request.response() {
+                    DispatchQueue.main.async {
+                        self.albums = response.albums
+                    }
+                }
+            }
             .overlay {
-                if searchTerm.isEmpty {
+                if !searchTerm.isEmpty && albums.isEmpty {
                     ContentUnavailableView.search
                 }
             }
-        }
-        .task(id: searchTerm, debounceTime: .milliseconds(100)) {
-            //let _ = await MusicAuthorization.request()
-            var request = MusicCatalogSearchRequest(term: searchTerm, types: [Album.self])
-            request.includeTopResults = true
-            if let response = try? await request.response() {
-                albums = response.albums
-            }
-        }
+        }.searchable(text: $searchTerm,
+                     prompt: Text("Search for an album"))
     }
 }
 
