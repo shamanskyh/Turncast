@@ -204,6 +204,8 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
         albumImage = Image(AudioListener.unknownAlbumImageName)
         
         audioDetectionStatus = .detectingAudio
+        
+        multipeerManager?.broadcast(message: .startPlayback)
     }
     
     /// Must be called on main

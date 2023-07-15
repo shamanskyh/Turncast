@@ -141,6 +141,8 @@ extension MultipeerManager: MCSessionDelegate {
                     strongSelf.metadataStore?.blockUpdates = false
                 case .stopPlayback:
                     strongSelf.streamSource?.playing = false
+                case .startPlayback:
+                    strongSelf.streamSource?.playing = true
                 case .overrideMetadata(_, _, _, _):
                     // we don't respond to these
                     break
