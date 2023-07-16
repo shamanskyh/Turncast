@@ -147,7 +147,7 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
             }
         } else {
             captureSession.beginConfiguration()
-            let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInMicrophone], mediaType: nil, position: AVCaptureDevice.Position.unspecified)
+            let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.microphone], mediaType: nil, position: AVCaptureDevice.Position.unspecified)
             if let device = discoverySession.devices.filter({ $0.localizedName.contains(inputName) }).first, let deviceInput = try? AVCaptureDeviceInput(device: device) {
                 captureDevice = deviceInput.device
                 captureSession.addInput(deviceInput)
