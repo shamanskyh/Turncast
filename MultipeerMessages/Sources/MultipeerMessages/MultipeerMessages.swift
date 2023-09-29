@@ -20,5 +20,6 @@ public enum MultipeerMessage: Codable {
     case imageURL(URL)
     case clearImageURL
     case stopPlayback
+    case startPlayback
     case overrideMetadata(albumTitle: String?, artist: String?, imageURL: String?, notes: String?)
 }

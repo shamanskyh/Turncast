@@ -11,11 +11,20 @@
         }
       },
       {
+        "package": "DebouncedOnChange",
+        "repositoryURL": "https://github.com/Tunous/DebouncedOnChange.git",
+        "state": {
+          "branch": null,
+          "revision": "b699017e13966e35c9388c8cc97151c8883dda1e",
+          "version": "1.1.0"
+        }
+      },
+      {
         "package": "HaishinKit",
         "repositoryURL": "https://github.com/shamanskyh/HaishinKit.swift.git",
         "state": {
           "branch": "master",
-          "revision": "52ad7d6ad488734b61eb438894dd591baaf522df",
+          "revision": "8c9045baf790a47a0a330b3c17a3757753c8eb2e",
           "version": null
         }
       },

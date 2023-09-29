@@ -19,32 +19,30 @@ struct CustomMetadataView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationView {
-            Form {
-                TextField("Album", text: $album)
-                TextField("Artist", text: $artist)
-                TextField("Image URL", text: $imageURL)
-                TextField("Notes", text: $notes)
-            }
-            .padding()
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") {
-                        MultipeerManager.shared.sendMessageToServer(message: .overrideMetadata(albumTitle: album,
-                                                                                               artist: artist,
-                                                                                               imageURL: imageURL,
-                                                                                               notes: notes.isEmpty ? nil : notes))
-                        dismiss()
-                    }
-                    Button("Cancel", role: .cancel) {
-                        dismiss()
-                    }
+        Form {
+            TextField("Album", text: $album)
+            TextField("Artist", text: $artist)
+            TextField("Image URL", text: $imageURL)
+            TextField("Notes", text: $notes)
+        }
+        .padding()
+        .toolbar {
+            ToolbarItem(placement: .confirmationAction) {
+                Button("Done") {
+                    MultipeerManager.shared.sendMessageToServer(message: .overrideMetadata(albumTitle: album,
+                                                                                           artist: artist,
+                                                                                           imageURL: imageURL,
+                                                                                           notes: notes.isEmpty ? nil : notes))
+                    dismiss()
+                }
+                Button("Cancel", role: .cancel) {
+                    dismiss()
                 }
             }
-            .navigationTitle("Custom Metadata")
-            #if os(iOS)
-            .navigationBarTitleDisplayMode(.inline)
-            #endif
         }
+        .navigationTitle("Custom Metadata")
+        #if os(iOS)
+        .navigationBarTitleDisplayMode(.inline)
+        #endif
     }
 }

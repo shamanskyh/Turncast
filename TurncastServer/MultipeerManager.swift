@@ -172,6 +172,9 @@ extension MultipeerManager: MCSessionDelegate {
                 case .stopPlayback:
                     // nothing for us to do here, really -- this message is only relevant to peers
                     break
+                case .startPlayback:
+                    // nothing for us to do here, really -- this message is only relevant to peers
+                    break
                 case .overrideMetadata(albumTitle: let albumTitle, artist: let artist, imageURL: let imageURL, notes: let notes):
                     // forward the call to our delegate
                     strongSelf.delegate?.updateMetadata(albumTitle: albumTitle, artist: artist, imageURL: imageURL, notes: notes)

@@ -242,6 +242,53 @@
             endingLineNumber = "81"
             landmarkName = "advertiser(_:didNotStartAdvertisingPeer:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4F99F73D-D55B-4A69-9505-F96086C247C6 - 10e8edbe085321a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc Turncast.MultipeerManager.advertiser(_: __C.MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer: Swift.Error) -&gt; ()"
+                  moduleName = "Turncast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/Documents/Technology/macOSDevelopment/Turncast/Shared/MultipeerManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "4F99F73D-D55B-4A69-9505-F96086C247C6 - 9ab0d09ad8b032fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Turncast.MultipeerManager.advertiser(_: __C.MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer: Swift.Error) -&gt; ()"
+                  moduleName = "Turncast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/Documents/Technology/macOSDevelopment/Turncast/Shared/MultipeerManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "214">
+               </Location>
+               <Location
+                  uuid = "4F99F73D-D55B-4A69-9505-F96086C247C6 - 686726e29167cbd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc Turncast.MultipeerManager.advertiser(_: __C.MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer: Swift.Error) -&gt; ()"
+                  moduleName = "Turncast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/code/Turncast/Shared/MultipeerManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "180">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -254,8 +301,8 @@
             filePath = "TurncastServer/AudioListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "session(_:didFind:)"
             landmarkType = "7">
             <Locations>
@@ -332,8 +379,8 @@
             filePath = "TurncastServer/AudioListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "358"
-            endingLineNumber = "358"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
             landmarkName = "session(_:didNotFindMatchFor:error:)"
             landmarkType = "7">
             <Locations>
@@ -380,8 +427,8 @@
             filePath = "TurncastServer/AudioListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "captureOutput(_:didOutput:from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -400,38 +447,6 @@
             endingLineNumber = "26"
             landmarkName = "updateUIView(_:context:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "80DD0189-1406-4274-BB5D-15DC896A8176"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/CustomMetadataView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4ECE5833-9B65-43DF-B89C-721AEC3BCC4B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/CustomMetadataView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "body"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
