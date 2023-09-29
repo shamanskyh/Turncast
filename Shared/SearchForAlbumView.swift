@@ -37,7 +37,7 @@ struct SearchForAlbumView: View {
                                         .clipShape(RoundedRectangle(cornerRadius: listRowHeight / 8.0, style: .continuous))
                                 }
                                 #if os(iOS)
-                                let alignment = .listRowSeparatorLeading
+                                let alignment = HorizontalAlignment.listRowSeparatorLeading
                                 #else
                                 let alignment = HorizontalAlignment.leading
                                 #endif
