@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "ColorThiefSwift",
-        "repositoryURL": "https://github.com/yamoridon/ColorThiefSwift.git",
+        "repositoryURL": "http://github.com/shamanskyh/ColorThiefSwift",
         "state": {
-          "branch": null,
-          "revision": "c86f0e574d1ccb80f719ad1f25baa7dc938e3e1a",
-          "version": "0.4.1"
+          "branch": "master",
+          "revision": "581f981103a512341f459d1b43002fb311d089a3",
+          "version": null
         }
       },
       {

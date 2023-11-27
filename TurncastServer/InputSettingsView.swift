@@ -49,6 +49,12 @@ struct InputSettingsView: View {
                     .help("How long, in seconds, should Turncast detect audio below the 'Off Threshold' before stopping?")
                 Text("seconds")
             }
+            Toggle(isOn: listener.$streamLocally) {
+                Text("Play audio through default output")
+            }
+            Toggle(isOn: listener.$streamOverNetwork) {
+                Text("Stream audio over HTTP")
+            }
         }
         .padding()
     }

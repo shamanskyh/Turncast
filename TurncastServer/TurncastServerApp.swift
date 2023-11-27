@@ -18,12 +18,13 @@ struct TurncastServerApp: App {
         WindowGroup {
             ContentView(listener: listener).onDisappear {
                 exit(0)
-            }
+            }.preferredColorScheme(.dark)
         }.commands {
             CommandGroup(replacing: .newItem, addition: { })
         }
         Settings {
             SettingsView(listener: listener)
+                .preferredColorScheme(.dark)
         }
     }
 }
