@@ -97,6 +97,21 @@
                   endingLineNumber = "103"
                   offsetFromSymbolStart = "1234">
                </Location>
+               <Location
+                  uuid = "2D1AABA3-416D-4929-A6B6-5DC8324F33D3 - 33635eed3125ef2b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Turncast_Server.MultipeerManager.browser(_: __C.MCNearbyServiceBrowser, didNotStartBrowsingForPeers: Swift.Error) -&gt; ()"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/code/Turncast/TurncastServer/MultipeerManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "1234">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -295,14 +310,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F9B9F0C6-75A8-4761-98D3-332E302B74FF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TurncastServer/AudioListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
+            startingLineNumber = "353"
+            endingLineNumber = "353"
             landmarkName = "session(_:didFind:)"
             landmarkType = "7">
             <Locations>
@@ -366,6 +381,66 @@
                   endingLineNumber = "286"
                   offsetFromSymbolStart = "829">
                </Location>
+               <Location
+                  uuid = "F9B9F0C6-75A8-4761-98D3-332E302B74FF - 8d4ba5f5a8986b59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in Turncast_Server.AudioListener.session(_: __C.SHSession, didFind: __C.SHMatch) -&gt; ()"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/code/Turncast/TurncastServer/AudioListener.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "293"
+                  endingLineNumber = "293"
+                  offsetFromSymbolStart = "836">
+               </Location>
+               <Location
+                  uuid = "F9B9F0C6-75A8-4761-98D3-332E302B74FF - 8d4ba5f5a8986a1f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in Turncast_Server.AudioListener.session(_: __C.SHSession, didFind: __C.SHMatch) -&gt; ()"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/code/Turncast/TurncastServer/AudioListener.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "299"
+                  endingLineNumber = "299"
+                  offsetFromSymbolStart = "836">
+               </Location>
+               <Location
+                  uuid = "F9B9F0C6-75A8-4761-98D3-332E302B74FF - 8d4ba5f5a8986af4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in Turncast_Server.AudioListener.session(_: __C.SHSession, didFind: __C.SHMatch) -&gt; ()"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/code/Turncast/TurncastServer/AudioListener.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "306"
+                  endingLineNumber = "306"
+                  offsetFromSymbolStart = "836">
+               </Location>
+               <Location
+                  uuid = "F9B9F0C6-75A8-4761-98D3-332E302B74FF - 8d4ba5f5a89869ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in Turncast_Server.AudioListener.session(_: __C.SHSession, didFind: __C.SHMatch) -&gt; ()"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/code/Turncast/TurncastServer/AudioListener.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "313"
+                  endingLineNumber = "313"
+                  offsetFromSymbolStart = "836">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -379,8 +454,8 @@
             filePath = "TurncastServer/AudioListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "360"
-            endingLineNumber = "360"
+            startingLineNumber = "437"
+            endingLineNumber = "437"
             landmarkName = "session(_:didNotFindMatchFor:error:)"
             landmarkType = "7">
             <Locations>
@@ -427,8 +502,8 @@
             filePath = "TurncastServer/AudioListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
             landmarkName = "captureOutput(_:didOutput:from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -459,9 +534,166 @@
             filePath = "TurncastServer/AudioListener.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "updateMetadata(albumTitle:artist:imageURL:notes:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0054058E-EA1B-4DAE-AC8F-46D067ABA710"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TurncastServer/AudioListener.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "albumImageData"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "0054058E-EA1B-4DAE-AC8F-46D067ABA710 - d9ed10ca80a3b3e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Turncast_Server.AudioListener.albumImageData.willset : __C.CGImageRef"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/code/Turncast/TurncastServer/AudioListener.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "38">
+               </Location>
+               <Location
+                  uuid = "0054058E-EA1B-4DAE-AC8F-46D067ABA710 - d9ed10ca80a3b3c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Turncast_Server.AudioListener.albumImageData.willset : __C.CGImageRef"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/code/Turncast/TurncastServer/AudioListener.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "210">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9EC628C-B305-452F-82F7-4F4D0B1411BB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/MeshGradient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A9EC628C-B305-452F-82F7-4F4D0B1411BB - 39c60e1048291569"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in closure #1 () -&gt; () in Turncast_Server.MeshGradient.body.getter : some"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/code/Turncast/Shared/MeshGradient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "375">
+               </Location>
+               <Location
+                  uuid = "A9EC628C-B305-452F-82F7-4F4D0B1411BB - 358ba492af423050"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ColorThiefSwift.MMCQ.Color) -&gt; SwiftUI.Color in closure #1 @Sendable () -&gt; () in closure #1 () -&gt; () in Turncast_Server.MeshGradient.body.getter : some"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/code/Turncast/Shared/MeshGradient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "43">
+               </Location>
+               <Location
+                  uuid = "A9EC628C-B305-452F-82F7-4F4D0B1411BB - ea0362e4362e831c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in closure #1 @Sendable () -&gt; () in closure #1 () -&gt; () in Turncast_Server.MeshGradient.body.getter : some"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/code/Turncast/Shared/MeshGradient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "66">
+               </Location>
+               <Location
+                  uuid = "A9EC628C-B305-452F-82F7-4F4D0B1411BB - 39c60e1048291569"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in closure #1 () -&gt; () in Turncast_Server.MeshGradient.body.getter : some"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/code/Turncast/Shared/MeshGradient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "332">
+               </Location>
+               <Location
+                  uuid = "A9EC628C-B305-452F-82F7-4F4D0B1411BB - ea0362e4362e831c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in closure #1 @Sendable () -&gt; () in closure #1 () -&gt; () in Turncast_Server.MeshGradient.body.getter : some"
+                  moduleName = "Turncast Server"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry/code/Turncast/Shared/MeshGradient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "41">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "528005BA-BB43-468E-AD2C-2B994682554C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/Turncast-cfpxzowmtbvqdodmiuojshbiyzjc/SourcePackages/checkouts/ColorThiefSwift/ColorThiefSwift/Classes/ColorThief.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "makeBytes(from:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

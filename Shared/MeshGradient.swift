@@ -10,44 +10,45 @@ import ColorThiefSwift
 import Foundation
 import SwiftUI
 
+extension Color {
+    init(platformNativeColor: PlatformNativeColor) {
+        #if canImport(UIKit)
+        self.init(uiColor: platformNativeColor)
+        #elseif canImport(AppKit)
+        self.init(nsColor: platformNativeColor)
+        #endif
+    }
+}
+
 struct MeshGradient: View {
-    
-    let image: UIImage?
-    let opacity: Binding<Double>
+
+    var image: PlatformNativeImage?
     
     @State var colors: [Color] = [Color(white: 0.5), Color(white: 0.6), Color(white: 0.4), Color(white: 0.4)]
     
     var body: some View {
-        AngularGradient(colors: colors, center: UnitPoint(x: 0.5, y: 0.5))
-            .blur(radius: blurRadius)
-            .scaleEffect(1.1)
-            .opacity(opacity.wrappedValue)
+        FloatingClouds(colors: colors)
             .onAppear {
                 if let image = image {
                     DispatchQueue.global(qos: .background).async {
                         let colorPalette = ColorThief.getPalette(from: image, colorCount: 8, quality: 10)
-                        var mappedColors = colorPalette?.map({ Color(uiColor: $0.makeUIColor()) }).shuffled() ?? []
+                        var mappedColors = colorPalette?.map({ Color(platformNativeColor: $0.makePlatformNativeColor()) }).shuffled() ?? []
                         if let firstColor = mappedColors.first {
                             mappedColors.append(firstColor)
                         }
                         DispatchQueue.main.async {
                             colors = mappedColors
-                            withAnimation(.linear(duration: 4.0)) {
-                                opacity.wrappedValue = 1.0
-                            }
                         }
                     }
-                } else {
-                    colors = colors.shuffled()
                 }
-            }
+            }.tag(image.hashValue)
     }
     
-    var blurRadius: Double {
-        #if os(tvOS)
-        return 80.0
-        #else
-        return 20.0
-        #endif
-    }
+//    var blurRadius: Double {
+//        #if os(tvOS)
+//        return 80.0
+//        #else
+//        return 20.0
+//        #endif
+//    }
 }

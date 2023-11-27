@@ -18,6 +18,7 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     
     let captureSession = AVCaptureSession()
     let audioOutput = AVCaptureAudioDataOutput()
+    let audioPreviewOutput = AVCaptureAudioPreviewOutput()
     var shazamSession = SHSession()
     
     @AppStorage("inputName") var inputName: String = "iMic"
@@ -25,9 +26,15 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     @AppStorage("onThreshold") var onThreshold: Double = -30.0
     @AppStorage("onLength") var onLength: Double = 2.0
     @AppStorage("offLength") var offLength: Double = 4.0
-    @AppStorage("launchShortcut") var launchShortcut: Bool = false
-    @AppStorage("shortcutName") var shortcutName: String = ""
+    @AppStorage("launchShortcut") var launchStartShortcut: Bool = false
+    @AppStorage("shortcutName") var startShortcutName: String = ""
+    @AppStorage("launchStopShortcut") var launchStopShortcut: Bool = false
+    @AppStorage("stopShortcutName") var stopShortcutName: String = ""
     @AppStorage("MetadataOverrides") var metadataOverrides: [MetadataOverride] = []
+    @AppStorage("streamLocally") var streamLocally: Bool = false
+    @AppStorage("streamOverNetwork") var streamOverNetwork: Bool = true
+    @AppStorage("enterFullscreenWhenListening") var enterFullscreenWhenListening: Bool = false
+    @AppStorage("exitFullscreenWhenStopped") var exitFullscreenWhenStopped: Bool = false
     
     let sampleRate: Int = 16000
     @Published var audioDetectionStatus = AudioDetectionStatus.notDetectingAudio
@@ -47,6 +54,13 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     fileprivate static let unknownAlbumImageName = "UnknownAlbum"
     var albumImage = Image(unknownAlbumImageName) {
         willSet {
+            objectWillChange.send()
+        }
+    }
+    
+    var albumImageData = NSImage(named: unknownAlbumImageName)!.cgImage(forProposedRect: nil, context: nil, hints: nil)! {
+        willSet {
+            print("Setting album image data")
             objectWillChange.send()
         }
     }
@@ -107,13 +121,21 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
             self.albumTitle = newMetadata.album
             self.albumArtist = newMetadata.artist
             if let artworkURL = URL(string: newMetadata.imageURL) {
-                self.albumImageURL = artworkURL
-                DispatchQueue.global(qos: .background).async { [weak self] in
-                    if let nsImage = NSImage(contentsOf: artworkURL) {
-                        let swiftImage = Image(nsImage: nsImage)
-                        DispatchQueue.main.async { [weak self] in
-                            guard let strongSelf = self else { return }
-                            strongSelf.albumImage = swiftImage
+                if artworkURL != self.albumImageURL {
+                    self.albumImageURL = artworkURL
+                    DispatchQueue.global(qos: .background).async { [weak self] in
+                        if let nsImage = NSImage(contentsOf: artworkURL) {
+                            let swiftImage = Image(nsImage: nsImage)
+                            let imageData = nsImage.cgImage(forProposedRect: nil, context: nil, hints: nil)
+                            DispatchQueue.main.async { [weak self] in
+                                guard let strongSelf = self else { return }
+                                withAnimation {
+                                    strongSelf.albumImage = swiftImage
+                                    if let data = imageData {
+                                        strongSelf.albumImageData = data
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -166,6 +188,13 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
                     errorMessage = "Cannot add output"
                 }
                 
+                if streamLocally && captureSession.canAddOutput(audioPreviewOutput) {
+                    captureSession.addOutput(audioPreviewOutput)
+                    audioPreviewOutput.volume = 0.5
+                } else {
+                    errorMessage = "Could not begin local stream"
+                }
+                
                 captureSession.commitConfiguration()
                 captureSession.startRunning()
                 print("Began running capture session")
@@ -176,15 +205,17 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
         }
         
         // start streaming
-        httpStream = HTTPStream()
-        if let device = captureDevice, let stream = httpStream {
-            
-            stream.attachAudio(device)
-            stream.publish("turntable")
+        if streamOverNetwork {
+            httpStream = HTTPStream()
+            if let device = captureDevice, let stream = httpStream {
+                
+                stream.attachAudio(device)
+                stream.publish("turntable")
 
-            httpService = HLSService(domain: "", type: "_http._tcp", name: "HaishinKit", port: 8080)
-            httpService?.addHTTPStream(stream)
-            httpService?.startRunning()
+                httpService = HLSService(domain: "", type: "_http._tcp", name: "HaishinKit", port: 8080)
+                httpService?.addHTTPStream(stream)
+                httpService?.startRunning()
+            }
         }
     }
 
@@ -193,35 +224,69 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
         recognize = true
         
         // run our shortcut if we have one
-        if launchShortcut && !shortcutName.isEmpty, let percentEncodedShortcutName = shortcutName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let shortcutURL = URL(string: "shortcuts://run-shortcut?name=\(percentEncodedShortcutName)") {
-            NSWorkspace.shared.open(shortcutURL)
+        if launchStartShortcut && !startShortcutName.isEmpty, let percentEncodedShortcutName = startShortcutName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let shortcutURL = URL(string: "shortcuts://run-shortcut?name=\(percentEncodedShortcutName)") {
+            let config = NSWorkspace.OpenConfiguration()
+            config.hides = true
+            config.promptsUserIfNeeded = false
+            NSWorkspace.shared.open(shortcutURL, configuration: config) { [weak self] app, error in
+                guard let strongSelf = self else { return }
+                // broadcast temporary data
+                strongSelf.albumTitle = "Listening…"
+                strongSelf.albumArtist = " "
+                strongSelf.albumImageURL = nil
+                strongSelf.albumImage = Image(AudioListener.unknownAlbumImageName)
+                
+                strongSelf.audioDetectionStatus = .detectingAudio
+                
+                strongSelf.multipeerManager?.broadcast(message: .startPlayback)
+            }
+        } else {
+            // broadcast temporary data
+            albumTitle = "Listening…"
+            albumArtist = " "
+            albumImageURL = nil
+            albumImage = Image(AudioListener.unknownAlbumImageName)
+            
+            audioDetectionStatus = .detectingAudio
+            
+            multipeerManager?.broadcast(message: .startPlayback)
         }
-        
-        // broadcast temporary data
-        albumTitle = "Listening…"
-        albumArtist = " "
-        albumImageURL = nil
-        albumImage = Image(AudioListener.unknownAlbumImageName)
-        
-        audioDetectionStatus = .detectingAudio
-        
-        multipeerManager?.broadcast(message: .startPlayback)
     }
     
     /// Must be called on main
     func audioNotDetected() {
         // stop recognizing
         recognize = false
+        audioPreviewOutput.volume = 0.0
         
-        // reset metadata
-        albumTitle = Self.notPlayingAlbum
-        albumArtist = Self.notPlayingArtist
-        albumImageURL = nil
-        isrc = nil
-        
-        audioDetectionStatus = .notDetectingAudio
-        
-        multipeerManager?.broadcast(message: .stopPlayback)
+        // run our shortcut if we have one
+        if launchStopShortcut && !stopShortcutName.isEmpty, let percentEncodedShortcutName = stopShortcutName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let shortcutURL = URL(string: "shortcuts://run-shortcut?name=\(percentEncodedShortcutName)") {
+            let config = NSWorkspace.OpenConfiguration()
+            config.hides = true
+            config.promptsUserIfNeeded = false
+            NSWorkspace.shared.open(shortcutURL, configuration: config) { [weak self] app, error in
+                guard let strongSelf = self else { return }
+                // reset metadata
+                strongSelf.albumTitle = Self.notPlayingAlbum
+                strongSelf.albumArtist = Self.notPlayingArtist
+                strongSelf.albumImageURL = nil
+                strongSelf.isrc = nil
+                
+                strongSelf.audioDetectionStatus = .notDetectingAudio
+                
+                strongSelf.multipeerManager?.broadcast(message: .stopPlayback)
+            }
+        } else {
+            // reset metadata
+            albumTitle = Self.notPlayingAlbum
+            albumArtist = Self.notPlayingArtist
+            albumImageURL = nil
+            isrc = nil
+            
+            audioDetectionStatus = .notDetectingAudio
+            
+            multipeerManager?.broadcast(message: .stopPlayback)
+        }
     }
 }
 
@@ -295,13 +360,21 @@ extension AudioListener: SHSessionDelegate {
                     strongSelf.albumTitle = metadataOverride.album
                     strongSelf.albumArtist = metadataOverride.artist
                     if let artworkURL = URL(string: metadataOverride.imageURL) {
-                        strongSelf.albumImageURL = artworkURL
-                        DispatchQueue.global(qos: .background).async { [weak self] in
-                            if let nsImage = NSImage(contentsOf: artworkURL) {
-                                let swiftImage = Image(nsImage: nsImage)
-                                DispatchQueue.main.async { [weak self] in
-                                    guard let strongSelf = self else { return }
-                                    strongSelf.albumImage = swiftImage
+                        if strongSelf.albumImageURL != artworkURL {
+                            strongSelf.albumImageURL = artworkURL
+                            DispatchQueue.global(qos: .background).async { [weak self] in
+                                if let nsImage = NSImage(contentsOf: artworkURL) {
+                                    let swiftImage = Image(nsImage: nsImage)
+                                    let imageData = nsImage.cgImage(forProposedRect: nil, context: nil, hints: nil)
+                                    DispatchQueue.main.async { [weak self] in
+                                        guard let strongSelf = self else { return }
+                                        withAnimation {
+                                            strongSelf.albumImage = swiftImage
+                                            if let data = imageData {
+                                                strongSelf.albumImageData = data
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -337,13 +410,17 @@ extension AudioListener: SHSessionDelegate {
                     strongSelf.recognize = false
                 }
                 if let artworkURL = mediaItem.artworkURL {
-                    strongSelf.albumImageURL = artworkURL
-                    DispatchQueue.global(qos: .background).async { [weak self] in
-                        if let nsImage = NSImage(contentsOf: artworkURL) {
-                            let swiftImage = Image(nsImage: nsImage)
-                            DispatchQueue.main.async { [weak self] in
-                                guard let strongSelf = self else { return }
-                                strongSelf.albumImage = swiftImage
+                    if artworkURL != strongSelf.albumImageURL {
+                        strongSelf.albumImageURL = artworkURL
+                        DispatchQueue.global(qos: .background).async { [weak self] in
+                            if let nsImage = NSImage(contentsOf: artworkURL) {
+                                let swiftImage = Image(nsImage: nsImage)
+                                DispatchQueue.main.async { [weak self] in
+                                    guard let strongSelf = self else { return }
+                                    withAnimation {
+                                        strongSelf.albumImage = swiftImage
+                                    }
+                                }
                             }
                         }
                     }

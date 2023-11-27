@@ -13,9 +13,7 @@ struct ContentView: View {
     
     @StateObject var streamSource = StreamSource()
     @StateObject var metadataStore = MetadataStore()
-    
-    @State var backgroundOpacity: Double = 0.0
-    @State var backgroundPlaceholderOpacity: Double = 1.0
+
     @State var showingEditMetadataModal: Bool = false
     
     let multipeerManager = MultipeerManager.shared
@@ -60,9 +58,9 @@ struct ContentView: View {
         }
         .background(alignment: .center) {
             ZStack {
-                MeshGradient(image: nil, opacity: $backgroundPlaceholderOpacity)
+                MeshGradient(image: nil)
                 if metadataStore.albumImage != Image("NoInfo") {
-                    MeshGradient(image: UIImage(cgImage: metadataStore.albumImageData), opacity: $backgroundOpacity)
+                    MeshGradient(image: UIImage(cgImage: metadataStore.albumImageData))
                 }
                 Rectangle().foregroundColor(.black).opacity(0.25)
             }.edgesIgnoringSafeArea(.all)
