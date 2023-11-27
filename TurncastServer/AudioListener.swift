@@ -223,6 +223,10 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     func audioDetected() {
         recognize = true
         
+        if streamLocally {
+            audioPreviewOutput.volume = 0.5
+        }
+        
         // run our shortcut if we have one
         if launchStartShortcut && !startShortcutName.isEmpty, let percentEncodedShortcutName = startShortcutName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let shortcutURL = URL(string: "shortcuts://run-shortcut?name=\(percentEncodedShortcutName)") {
             let config = NSWorkspace.OpenConfiguration()

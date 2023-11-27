@@ -104,14 +104,18 @@ struct ContentView: View {
                 listener.enterFullscreenWhenListening {
                 withAnimation {
                     CGDisplayHideCursor(CGMainDisplayID())
-                    NSApplication.shared.mainWindow?.toggleFullScreen(nil)
+                    if !isFullscreenPresentation {
+                        NSApplication.shared.mainWindow?.toggleFullScreen(nil)
+                    }
                 }
             } else if oldValue == .detectingAudio &&
                         newValue == .notDetectingAudio &&
                         listener.exitFullscreenWhenStopped {
                 withAnimation {
                     CGDisplayShowCursor(CGMainDisplayID())
-                    NSApplication.shared.mainWindow?.toggleFullScreen(nil)
+                    if isFullscreenPresentation {
+                        NSApplication.shared.mainWindow?.toggleFullScreen(nil)
+                    }
                 }
             }
         }
@@ -121,6 +125,7 @@ struct ContentView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: NSWindow.willExitFullScreenNotification)) { notification in
             isFullscreenPresentation = false
+            CGDisplayShowCursor(CGMainDisplayID())
         }
     }
     
