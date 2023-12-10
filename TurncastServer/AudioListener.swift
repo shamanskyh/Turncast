@@ -188,11 +188,13 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
                     errorMessage = "Cannot add output"
                 }
                 
-                if streamLocally && captureSession.canAddOutput(audioPreviewOutput) {
-                    captureSession.addOutput(audioPreviewOutput)
-                    audioPreviewOutput.volume = 0.5
-                } else {
-                    errorMessage = "Could not begin local stream"
+                if streamLocally {
+                    if captureSession.canAddOutput(audioPreviewOutput) {
+                        captureSession.addOutput(audioPreviewOutput)
+                        audioPreviewOutput.volume = 0.5
+                    } else {
+                        errorMessage = "Could not begin local stream"
+                    }
                 }
                 
                 captureSession.commitConfiguration()
