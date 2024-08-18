@@ -1,5 +1,5 @@
 //
-//  MeshGradient.swift
+//  HSSMeshGradient.swift
 //  Turncast
 //
 //  Created by Harry Shamansky on 8/9/21.
@@ -20,7 +20,7 @@ extension Color {
     }
 }
 
-struct MeshGradient: View {
+struct HSSMeshGradient: View {
 
     var image: PlatformNativeImage?
     

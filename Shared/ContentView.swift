@@ -58,9 +58,9 @@ struct ContentView: View {
         }
         .background(alignment: .center) {
             ZStack {
-                MeshGradient(image: nil)
+                HSSMeshGradient(image: nil)
                 if metadataStore.albumImage != Image("NoInfo") {
-                    MeshGradient(image: UIImage(cgImage: metadataStore.albumImageData))
+                    HSSMeshGradient(image: UIImage(cgImage: metadataStore.albumImageData))
                 }
                 Rectangle().foregroundColor(.black).opacity(0.25)
             }.edgesIgnoringSafeArea(.all)

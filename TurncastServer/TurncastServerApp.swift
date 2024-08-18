@@ -21,7 +21,7 @@ struct TurncastServerApp: App {
             }.preferredColorScheme(.dark)
         }.commands {
             CommandGroup(replacing: .newItem, addition: { })
-        }
+        }.windowStyle(.hiddenTitleBar)
         Settings {
             SettingsView(listener: listener)
                 .preferredColorScheme(.dark)

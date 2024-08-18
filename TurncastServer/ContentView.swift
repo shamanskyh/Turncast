@@ -91,7 +91,7 @@ struct ContentView: View {
             }.frame(width: proxy.size.width, height: proxy.size.height, alignment: .center)
         }
         .background {
-            MeshGradient(image: NSImage(cgImage: listener.albumImageData, size: CGSize(width: listener.albumImageData.height, height: listener.albumImageData.width)))
+            HSSMeshGradient(image: NSImage(cgImage: listener.albumImageData, size: CGSize(width: listener.albumImageData.height, height: listener.albumImageData.width)))
                 .edgesIgnoringSafeArea(.all)
                 .id(listener.albumImageData.hashValue)
         }
