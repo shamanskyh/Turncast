@@ -21,8 +21,13 @@ struct FloatingClouds: View {
     var body: some View {
         if differentiateWithoutColor || testDifferentiateWithoutColor {
         #if canImport(UIKit)
-            Color(.systemBackgroundColor)
+            #if os(iOS)
+            Color(.systemBackground)
                 .ignoresSafeArea()
+            #elseif os(tvOS)
+            Color(.lightGray)
+                .ignoresSafeArea()
+            #endif
         #elseif canImport(AppKit)
             Color(.windowBackgroundColor)
                 .ignoresSafeArea()
@@ -47,7 +52,12 @@ struct FloatingCloudsInner: View {
         GeometryReader { proxy in
             ZStack {
                 #if canImport(UIKit)
-                Color(uiColor: .systemBackgroundColor)
+                #if os(iOS)
+                Color(uiColor: .systemBackground)
+                #elseif os(tvOS)
+                Rectangle()
+                    .foregroundStyle(.regularMaterial)
+                #endif
                 #elseif canImport(AppKit)
                 Color(nsColor: .windowBackgroundColor)
                 #endif

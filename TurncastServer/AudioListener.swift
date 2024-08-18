@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import AudioToolbox
 import Combine
 import Foundation
 import HaishinKit
@@ -18,7 +19,6 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     
     let captureSession = AVCaptureSession()
     let audioOutput = AVCaptureAudioDataOutput()
-    let audioPreviewOutput = AVCaptureAudioPreviewOutput()
     var shazamSession = SHSession()
     
     @AppStorage("inputName") var inputName: String = "iMic"
@@ -47,6 +47,8 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     var captureDevice: AVCaptureDevice?
     var httpStream: HTTPStream?
     var httpService: HLSService?
+    
+    let localAudioEngine = AVAudioEngine()
     
     internal var recognize = false
     
@@ -105,7 +107,8 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     /// The ISRC of the currently playing song, if detected
     var isrc: String?
     
-    @MainActor func updateMetadata(albumTitle: String?, artist: String?, imageURL: String?, notes: String?) {
+    @MainActor
+    func updateMetadata(albumTitle: String?, artist: String?, imageURL: String?, notes: String?) {
         guard let isrc = isrc else { return }
         if let metadata = metadataOverrides.first(where: { $0.isrc == isrc }) {
             let newMetadata = MetadataOverride(isrc: isrc,
@@ -189,12 +192,7 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
                 }
                 
                 if streamLocally {
-                    if captureSession.canAddOutput(audioPreviewOutput) {
-                        captureSession.addOutput(audioPreviewOutput)
-                        audioPreviewOutput.volume = 0.5
-                    } else {
-                        errorMessage = "Could not begin local stream"
-                    }
+                    startLocalAudioConnection()
                 }
                 
                 captureSession.commitConfiguration()
@@ -224,10 +222,6 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     /// must be called on main
     func audioDetected() {
         recognize = true
-        
-        if streamLocally {
-            audioPreviewOutput.volume = 0.5
-        }
         
         // run our shortcut if we have one
         if launchStartShortcut && !startShortcutName.isEmpty, let percentEncodedShortcutName = startShortcutName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let shortcutURL = URL(string: "shortcuts://run-shortcut?name=\(percentEncodedShortcutName)") {
@@ -263,7 +257,6 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     func audioNotDetected() {
         // stop recognizing
         recognize = false
-        audioPreviewOutput.volume = 0.0
         
         // run our shortcut if we have one
         if launchStopShortcut && !stopShortcutName.isEmpty, let percentEncodedShortcutName = stopShortcutName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let shortcutURL = URL(string: "shortcuts://run-shortcut?name=\(percentEncodedShortcutName)") {
@@ -293,6 +286,33 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
             
             multipeerManager?.broadcast(message: .stopPlayback)
         }
+    }
+    
+    func startLocalAudioConnection() {
+        let systemInput = localAudioEngine.inputNode
+        let systemOutput = localAudioEngine.outputNode
+        localAudioEngine.connect(systemInput, to: systemOutput, format: systemInput.outputFormat(forBus: 0))
+        var ioBufferFrameSize: UInt32 = 32
+        setCurrentIOBufferFrameSize(inAUHAL: systemInput.audioUnit!, inIOBufferFrameSize: &ioBufferFrameSize);
+        do {
+            try localAudioEngine.start()
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func stopLocalAudioConnection() {
+        localAudioEngine.stop()
+    }
+    
+    func setCurrentIOBufferFrameSize(inAUHAL: AudioUnit,
+                                     inIOBufferFrameSize: inout UInt32) -> OSStatus {
+        return AudioUnitSetProperty(inAUHAL,
+                                    kAudioDevicePropertyBufferFrameSize,
+                                    kAudioUnitScope_Global,
+                                    0,
+                                    &inIOBufferFrameSize,
+                                    UInt32(MemoryLayout<UInt32>.size));
     }
 }
 

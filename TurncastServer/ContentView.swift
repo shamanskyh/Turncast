@@ -24,7 +24,7 @@ struct ContentView: View {
                     if isFullscreenPresentation {
                         listener.albumImage
                             .resizable()
-                            .cornerRadius(20.0)
+                            .cornerRadius(10.0)
                             .frame(width: proxy.size.height / 2.0, height: proxy.size.height / 2.0)
                             .tag("AlbumImage")
                         Text(listener.albumTitle)
