@@ -28,7 +28,7 @@
 		<true/>
 	</dict>
 	<key>NSAppleMusicUsageDescription</key>
-	<string>Turncast uses your music library to import an album's artwork, title, and artist easily.</string>
+	<string>Turncast uses your music library to import an album&apos;s artwork, title, and artist easily.</string>
 	<key>NSBonjourServices</key>
 	<array>
 		<string>_turncast._tcp</string>
@@ -37,6 +37,8 @@
 	<string>Turncast connects to devices on your local network to share metadata.</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Turncast connects to devices on your local network to share metadata.</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
