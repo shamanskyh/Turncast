@@ -9,45 +9,35 @@
 import Foundation
 
 class IPAddressHelper {
-    enum NetworkingInterface: String {
-        case en0 = "en0"
-        case en1 = "en1"
-    }
-    
-    static func getIPAddress(for interface: NetworkingInterface = .en0) -> String? {
-        var address : String?
+    static func getIPAddresses() -> [String]? {
+        var addresses = [String]()
 
         // Get list of all interfaces on the local machine:
         var ifaddr : UnsafeMutablePointer<ifaddrs>?
-        guard getifaddrs(&ifaddr) == 0 else { return nil }
-        guard let firstAddr = ifaddr else { return nil }
+        guard getifaddrs(&ifaddr) == 0 else { return [] }
+        guard let firstAddr = ifaddr else { return [] }
 
         // For each interface ...
-        for ifptr in sequence(first: firstAddr, next: { $0.pointee.ifa_next }) {
-            let networkingInterface = ifptr.pointee
+        for ptr in sequence(first: firstAddr, next: { $0.pointee.ifa_next }) {
+            let flags = Int32(ptr.pointee.ifa_flags)
+            let addr = ptr.pointee.ifa_addr.pointee
 
-            // Check for IPv4 or IPv6 interface:
-            let addrFamily = networkingInterface.ifa_addr.pointee.sa_family
-            if addrFamily == UInt8(AF_INET) || addrFamily == UInt8(AF_INET6) {
-
-                // Check interface name:
-                let name = String(cString: networkingInterface.ifa_name)
-                if  name == interface.rawValue {
+            // Check for running IPv4 interfaces. Skip the loopback interface.
+            if (flags & (IFF_UP|IFF_RUNNING|IFF_LOOPBACK)) == (IFF_UP|IFF_RUNNING) {
+                if addr.sa_family == UInt8(AF_INET) {
 
                     // Convert interface address to a human readable string:
                     var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
-                    getnameinfo(networkingInterface.ifa_addr, socklen_t(networkingInterface.ifa_addr.pointee.sa_len),
-                                &hostname, socklen_t(hostname.count),
-                                nil, socklen_t(0), NI_NUMERICHOST)
-                    let possibleAddress = String(cString: hostname)
-                    if !possibleAddress.contains(":") {
-                        address = possibleAddress
+                    if (getnameinfo(ptr.pointee.ifa_addr, socklen_t(addr.sa_len), &hostname, socklen_t(hostname.count),
+                                    nil, socklen_t(0), NI_NUMERICHOST) == 0) {
+                        let address = String(cString: hostname)
+                        addresses.append(address)
                     }
                 }
             }
         }
-        freeifaddrs(ifaddr)
 
-        return address
+        freeifaddrs(ifaddr)
+        return addresses
     }
 }

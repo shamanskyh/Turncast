@@ -81,9 +81,9 @@ extension MultipeerManager: MCNearbyServiceBrowserDelegate {
         }
         
         // send the IP Address so the client knows how to get the stream
-        if let ipAddress = IPAddressHelper.getIPAddress() ?? IPAddressHelper.getIPAddress(for: .en1) {
-            logger.debug("Detected server IP address of \(ipAddress, privacy: .public)")
-            let data = ipAddress.data(using: .utf8)
+        if let addresses = IPAddressHelper.getIPAddresses(), let firstAddress = addresses.first {
+            logger.debug("Detected server IP address of \(firstAddress, privacy: .public)")
+            let data = firstAddress.data(using: .utf8)
             logger.debug("Inviting \(peerID, privacy: .public) to session")
             browser.invitePeer(peerID, to: session, withContext: data, timeout: 120.0)
         } else {
