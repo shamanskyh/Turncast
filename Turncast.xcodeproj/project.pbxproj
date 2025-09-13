@@ -17,10 +17,8 @@
 		4A23ECCA2B1416FD006F4D2C /* MeshGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8FE9F26C2357B006DA003 /* MeshGradient.swift */; };
 		4A23ECCC2B14217E006F4D2C /* FloatingCloudsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A23ECCB2B14217E006F4D2C /* FloatingCloudsView.swift */; };
 		4A23ECCD2B14217E006F4D2C /* FloatingCloudsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A23ECCB2B14217E006F4D2C /* FloatingCloudsView.swift */; };
-		4A3B341A2E755DCC001AEC47 /* TurncastIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B34182E755DCC001AEC47 /* TurncastIcon.icon */; };
-		4A3B341B2E755DCC001AEC47 /* TurncastServerIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B34192E755DCC001AEC47 /* TurncastServerIcon.icon */; };
-		4A3B341C2E755DCC001AEC47 /* TurncastIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B34182E755DCC001AEC47 /* TurncastIcon.icon */; };
-		4A3B341D2E755DCC001AEC47 /* TurncastServerIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B34192E755DCC001AEC47 /* TurncastServerIcon.icon */; };
+		4A3B341F2E75EED8001AEC47 /* TurncastIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B341E2E75EED8001AEC47 /* TurncastIcon.icon */; };
+		4A3B34212E75EEE9001AEC47 /* TurncastServerIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B34202E75EEE9001AEC47 /* TurncastServerIcon.icon */; };
 		4A3CCA2B2A3517DF003ACA98 /* MultipeerMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 4A3CCA2A2A3517DF003ACA98 /* MultipeerMessages */; };
 		4A4C5D1C2A1EEBE300824D33 /* CustomMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C5D1B2A1EE7C500824D33 /* CustomMetadataView.swift */; };
 		4A6886AF26C36EDD00D30D1F /* HaishinKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4A6886AE26C36EDD00D30D1F /* HaishinKit */; };
@@ -81,8 +79,8 @@
 		4A1A13E62634B684001298B9 /* AutomationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationSettingsView.swift; sourceTree = "<group>"; };
 		4A1A13EB2634BD93001298B9 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		4A23ECCB2B14217E006F4D2C /* FloatingCloudsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingCloudsView.swift; sourceTree = "<group>"; };
-		4A3B34182E755DCC001AEC47 /* TurncastIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = TurncastIcon.icon; sourceTree = "<group>"; };
-		4A3B34192E755DCC001AEC47 /* TurncastServerIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = TurncastServerIcon.icon; sourceTree = "<group>"; };
+		4A3B341E2E75EED8001AEC47 /* TurncastIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = TurncastIcon.icon; sourceTree = "<group>"; };
+		4A3B34202E75EEE9001AEC47 /* TurncastServerIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = TurncastServerIcon.icon; sourceTree = "<group>"; };
 		4A4C5D1B2A1EE7C500824D33 /* CustomMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMetadataView.swift; sourceTree = "<group>"; };
 		4A872B8D24565775002A0523 /* Turncast Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Turncast Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A872B9224565775002A0523 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,8 +146,8 @@
 				4A11A1E725D8D5AD004BC3D6 /* Turncast (tvOS).entitlements */,
 				4AE338FB259FD07B00F034A1 /* MultipeerMessages */,
 				4AAAFB8325994DE000FD8EAD /* Turncast.entitlements */,
-				4A3B34182E755DCC001AEC47 /* TurncastIcon.icon */,
-				4A3B34192E755DCC001AEC47 /* TurncastServerIcon.icon */,
+				4A3B341E2E75EED8001AEC47 /* TurncastIcon.icon */,
+				4A3B34202E75EEE9001AEC47 /* TurncastServerIcon.icon */,
 				4A872B8F24565775002A0523 /* TurncastServer */,
 				4AAAFB6225994DC900FD8EAD /* Shared */,
 				4AAAFB6B25994DCB00FD8EAD /* iOS */,
@@ -357,8 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A872B9824565777002A0523 /* Preview Assets.xcassets in Resources */,
-				4A3B341A2E755DCC001AEC47 /* TurncastIcon.icon in Resources */,
-				4A3B341B2E755DCC001AEC47 /* TurncastServerIcon.icon in Resources */,
+				4A3B34212E75EEE9001AEC47 /* TurncastServerIcon.icon in Resources */,
 				4A872B9524565777002A0523 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,8 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AAAFB7925994DCB00FD8EAD /* Assets.xcassets in Resources */,
-				4A3B341C2E755DCC001AEC47 /* TurncastIcon.icon in Resources */,
-				4A3B341D2E755DCC001AEC47 /* TurncastServerIcon.icon in Resources */,
+				4A3B341F2E75EED8001AEC47 /* TurncastIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,7 +639,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = TurncastIcon;
-				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=appletvos*]" = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Turncast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -686,7 +681,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = TurncastIcon;
-				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=appletvos*]" = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Turncast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
