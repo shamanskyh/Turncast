@@ -22,7 +22,7 @@ extension MetadataOverride: Identifiable {
     }
 }
 
-extension Array: RawRepresentable where Iterator.Element == MetadataOverride {
+extension Array: @retroactive RawRepresentable where Iterator.Element == MetadataOverride {
     public init?(rawValue: String) {
         guard let data = rawValue.data(using: .utf8),
             let result = try? JSONDecoder().decode([MetadataOverride].self, from: data)

@@ -107,7 +107,6 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
     /// The ISRC of the currently playing song, if detected
     var isrc: String?
     
-    @MainActor
     func updateMetadata(albumTitle: String?, artist: String?, imageURL: String?, notes: String?) {
         guard let isrc = isrc else { return }
         if let metadata = metadataOverrides.first(where: { $0.isrc == isrc }) {
@@ -293,7 +292,7 @@ class AudioListener: NSObject, ObservableObject, MetadataSource {
         let systemOutput = localAudioEngine.outputNode
         localAudioEngine.connect(systemInput, to: systemOutput, format: systemInput.outputFormat(forBus: 0))
         var ioBufferFrameSize: UInt32 = 32
-        setCurrentIOBufferFrameSize(inAUHAL: systemInput.audioUnit!, inIOBufferFrameSize: &ioBufferFrameSize);
+        let _ = setCurrentIOBufferFrameSize(inAUHAL: systemInput.audioUnit!, inIOBufferFrameSize: &ioBufferFrameSize);
         do {
             try localAudioEngine.start()
         } catch let error {

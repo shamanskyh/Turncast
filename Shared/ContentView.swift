@@ -101,8 +101,8 @@ struct ContentView: View {
                 Image(systemName: "stop.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 30)
-                    .padding(EdgeInsets(top: 9, leading: 0, bottom: 8, trailing: 0))
+                    .padding(6)
+                    .frame(width: 44, height: 44)
                 #else
                 Image(systemName: "stop.fill")
                 #endif
@@ -111,13 +111,17 @@ struct ContentView: View {
                 Image(systemName: "play.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 30)
-                    .padding(EdgeInsets(top: 9, leading: 0, bottom: 8, trailing: 0))
+                    .padding(6)
+                    .frame(width: 44, height: 44)
                 #else
                 Image(systemName: "play.fill")
                 #endif
             }
         }
+        #if os(tvOS)
+        .buttonBorderShape(.circle)
+        .buttonStyle(.glass)
+        #endif
     }
 }
 
