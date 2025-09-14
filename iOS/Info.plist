@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>7.0</string>
+	<string>26.0</string>
 	<key>CFBundleVersion</key>
 	<string>101</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
@@ -30,15 +30,15 @@
 		<true/>
 	</dict>
 	<key>NSAppleMusicUsageDescription</key>
-	<string>Turncast uses your music library to import an album's artwork, title, and artist easily.</string>
+	<string>This app uses your music library to import an album's artwork, title, and artist easily.</string>
 	<key>NSBonjourServices</key>
 	<array>
 		<string>_turncast._tcp</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string>Turncast connects to devices on your local network to share metadata.</string>
+	<string>This app connects to devices on your local network to share metadata.</string>
 	<key>NSLocalNetworkUsageDescription</key>
-	<string>Turncast connects to devices on your local network to share metadata.</string>
+	<string>This app connects to devices on your local network to share metadata.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
