@@ -1,0 +1,68 @@
+{
+  "images" : [
+    {
+      "filename" : "TurncastServerIcon-iOS-Default-1024x1024@1x 9.jpeg",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "16x16"
+    },
+    {
+      "filename" : "TurncastServerIcon-iOS-Default-1024x1024@1x 8.jpeg",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "16x16"
+    },
+    {
+      "filename" : "TurncastServerIcon-iOS-Default-1024x1024@1x 7.jpeg",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "32x32"
+    },
+    {
+      "filename" : "TurncastServerIcon-iOS-Default-1024x1024@1x 6.jpeg",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "32x32"
+    },
+    {
+      "filename" : "TurncastServerIcon-iOS-Default-1024x1024@1x 5.jpeg",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "128x128"
+    },
+    {
+      "filename" : "TurncastServerIcon-iOS-Default-1024x1024@1x 4.jpeg",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "128x128"
+    },
+    {
+      "filename" : "TurncastServerIcon-iOS-Default-1024x1024@1x 3.jpeg",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "256x256"
+    },
+    {
+      "filename" : "TurncastServerIcon-iOS-Default-1024x1024@1x 2.jpeg",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "256x256"
+    },
+    {
+      "filename" : "TurncastServerIcon-iOS-Default-1024x1024@1x 1.jpeg",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "512x512"
+    },
+    {
+      "filename" : "TurncastServerIcon-iOS-Default-1024x1024@1x.jpeg",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "512x512"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
