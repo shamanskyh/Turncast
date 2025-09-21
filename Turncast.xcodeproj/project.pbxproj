@@ -568,7 +568,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = TurncastServerIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				ASSETCATALOG_OTHER_FLAGS = "--enable-icon-stack-fallback-generation=disabled";
+				ASSETCATALOG_OTHER_FLAGS = "--enable-icon-stack-fallback-generation=disabled --include-all-app-icons";
 				CODE_SIGN_ENTITLEMENTS = TurncastServer/TurncastServer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -606,7 +606,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = TurncastServerIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				ASSETCATALOG_OTHER_FLAGS = "--enable-icon-stack-fallback-generation=disabled";
+				ASSETCATALOG_OTHER_FLAGS = "--enable-icon-stack-fallback-generation=disabled --include-all-app-icons";
 				CODE_SIGN_ENTITLEMENTS = TurncastServer/TurncastServer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
